@@ -1,0 +1,139 @@
+{
+  "questions": [
+    {
+      "question": "What is the primary goal of preparing for Azure AI development?",
+      "options": [
+        "To learn programming languages",
+        "To identify AI services and create a development environment",
+        "To deploy applications on Azure",
+        "To manage Azure subscriptions"
+      ],
+      "answer": "To identify AI services and create a development environment"
+    },
+    {
+      "question": "Which of the following best defines Artificial Intelligence?",
+      "options": [
+        "A system that stores large amounts of data",
+        "A set of algorithms that mimic human intelligence",
+        "A cloud-based storage solution",
+        "A programming language for automation"
+      ],
+      "answer": "A set of algorithms that mimic human intelligence"
+    },
+    {
+      "question": "Which capabilities are commonly associated with AI?",
+      "options": [
+        "Vision",
+        "Speech",
+        "Language understanding",
+        "Decision-making",
+        "Data storage"
+      ],
+      "answer": [
+        "Vision",
+        "Speech",
+        "Language understanding",
+        "Decision-making"
+      ]
+    },
+    {
+      "question": "Which Azure service would you use to add speech recognition to your application?",
+      "options": [
+        "Azure Blob Storage",
+        "Azure Cognitive Services",
+        "Azure Virtual Machines",
+        "Azure Functions"
+      ],
+      "answer": "Azure Cognitive Services"
+    },
+    {
+      "question": "Azure AI Services include which of the following?",
+      "options": ["Language", "Vision", "Speech", "Decision", "Networking"],
+      "answer": ["Language", "Vision", "Speech", "Decision"]
+    },
+    {
+      "question": "What is the purpose of Azure AI Foundry?",
+      "options": [
+        "To manage Azure subscriptions",
+        "To provide a framework for building AI solutions",
+        "To monitor network traffic",
+        "To store AI models"
+      ],
+      "answer": "To provide a framework for building AI solutions"
+    },
+    {
+      "question": "Which feature of Azure AI Foundry helps in managing harmful content?",
+      "options": [
+        "Azure Monitor",
+        "Content Safety",
+        "Azure Firewall",
+        "Azure Key Vault"
+      ],
+      "answer": "Content Safety"
+    },
+    {
+      "question": "Which SDK is commonly used for developing AI applications in Azure?",
+      "options": [
+        "Azure DevOps SDK",
+        "Azure AI Foundry SDK",
+        "Azure Storage SDK",
+        "Azure Compute SDK"
+      ],
+      "answer": "Azure AI Foundry SDK"
+    },
+    {
+      "question": "What are the benefits of using SDKs in AI development?",
+      "options": [
+        "Simplified integration",
+        "Pre-built functions",
+        "Faster development",
+        "Increased storage capacity"
+      ],
+      "answer": [
+        "Simplified integration",
+        "Pre-built functions",
+        "Faster development"
+      ]
+    },
+    {
+      "question": "Which of the following are principles of responsible AI?",
+      "options": [
+        "Fairness",
+        "Reliability",
+        "Privacy",
+        "Inclusiveness",
+        "Profitability"
+      ],
+      "answer": ["Fairness", "Reliability", "Privacy", "Inclusiveness"]
+    },
+    {
+      "question": "Scenario: You are building an AI model that makes hiring recommendations. What responsible AI consideration is most critical?",
+      "options": [
+        "Cost optimization",
+        "Fairness and bias mitigation",
+        "Speed of deployment",
+        "Storage efficiency"
+      ],
+      "answer": "Fairness and bias mitigation"
+    },
+    {
+      "question": "Scenario: You are tasked with building a chatbot using Azure AI. Which services would you likely use?",
+      "options": [
+        "Azure Bot Service",
+        "Azure Cognitive Services - Language",
+        "Azure AI Foundry",
+        "Azure Virtual Network"
+      ],
+      "answer": [
+        "Azure Bot Service",
+        "Azure Cognitive Services - Language",
+        "Azure AI Foundry"
+      ]
+    },
+    {
+      "question": "Scenario: Your application needs to analyze customer feedback from images and text. Which Azure AI services should you integrate?",
+      "options": ["Vision", "Language", "Networking", "Compute"],
+      "answer": ["Vision", "Language"]
+    }
+  ]
+}
