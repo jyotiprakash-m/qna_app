@@ -1,0 +1,300 @@
+{
+  "units": [
+    {
+      "name": "Unit 1: Analyze text with Azure AI Language",
+      "questions": [
+        {
+          "question": "What is the first step to use Azure AI Language service?",
+          "options": [
+            "Install Microsoft Graph SDK",
+            "Provision an Azure AI Language resource",
+            "Build a REST client manually",
+            "Create a VM"
+          ],
+          "answer": "Provision an Azure AI Language resource",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ You need to provision the managed Language resource before using any API :contentReference[oaicite:2]{index=2}. Others don’t enable service usage."
+        },
+        {
+          "question": "Which HTTP header is required to call Text Analysis API?",
+          "options": [
+            "Authorization: Bearer <token>",
+            "Ocp-Apim-Subscription-Key",
+            "x-ms-request-id",
+            "Content-Type: text/plain"
+          ],
+          "answer": "Ocp-Apim-Subscription-Key",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ The REST API requires apim subscription header :contentReference[oaicite:3]{index=3}. 'Bearer' works only with OAuth but not primary."
+        },
+        {
+          "question": "Which tasks are supported by the analyze-text endpoint? (Select 4)",
+          "options": [
+            "Language Detection",
+            "Key Phrase Extraction",
+            "Sentiment Analysis",
+            "Machine Translation"
+          ],
+          "answer": [
+            "Language Detection",
+            "Key Phrase Extraction",
+            "Sentiment Analysis",
+            "Entity Linking"
+          ],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "✅ The REST `analyze-text` supports detection, extraction, sentiment, entities, and linking :contentReference[oaicite:4]{index=4}. Machine Translation is separate."
+        },
+        {
+          "question": "Scenario: You need to find the main topics in user reviews. Which task do you choose?",
+          "options": [
+            "Entity Linking",
+            "Key Phrase Extraction",
+            "Sentiment Analysis",
+            "Language Detection"
+          ],
+          "answer": "Key Phrase Extraction",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Key phrases identify the main ideas; entity linking connects entities; sentiment handles mood."
+        },
+        {
+          "question": "What sentiment labels are returned by the service?",
+          "options": [
+            "Positive/Negative/Neutral/Mixed",
+            "Happy/Sad",
+            "Agree/Disagree",
+            "True/False"
+          ],
+          "answer": "Positive/Negative/Neutral/Mixed",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Comprehensive sentiment includes Mixed along with positive, neutral, negative :contentReference[oaicite:5]{index=5}."
+        },
+        {
+          "question": "Which of these is NOT output from detect-language?",
+          "options": [
+            "Detected language code",
+            "Confidence score",
+            "Translated text",
+            "Document ID"
+          ],
+          "answer": "Translated text",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Language detection returns ID, code, confidence; does not perform translation."
+        },
+        {
+          "question": "Scenario: Analyze text in French. What property should you set?",
+          "options": [
+            "analysisInput.language",
+            "analysisInput.countryHint",
+            "parameters.modelVersion",
+            "headers.AcceptLanguage"
+          ],
+          "answer": "analysisInput.countryHint",
+          "type": "hard",
+          "explanation": "✅ CountryHint helps language detection when text is such; language property isn’t available at input."
+        },
+        {
+          "question": "What does entity linking produce?",
+          "options": [
+            "Phrases only",
+            "Entities + Wikipedia URLs",
+            "Sentiment scores",
+            "Language codes"
+          ],
+          "answer": "Entities + Wikipedia URLs",
+          "type": "medium",
+          "explanation": "✅ Linking returns candidate entities with reference links such as Wikipedia sources."
+        },
+        {
+          "question": "Which SDK would you install for Python text analysis?",
+          "options": [
+            "azure-ai-textanalytics",
+            "azure-language-sdk",
+            "azure-cognitiveservices-nlp",
+            "azure-ai-language-analysis"
+          ],
+          "answer": "azure-ai-textanalytics",
+          "type": "medium",
+          "explanation": "✅ That is the official Python SDK; others don’t exist or are outdated."
+        },
+        {
+          "question": "Module assessment: True or False — You can perform multiple tasks (like sentiment and key phrases) in one call.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ `analyze-text` supports batching multiple analysis tasks in a single request :contentReference[oaicite:6]{index=6}."
+        },
+        {
+          "question": "What confidence range does sentiment API return?",
+          "options": ["0.0 to 1.0", "-1 to +1", "1 to 5", "0 to 100"],
+          "answer": "0.0 to 1.0",
+          "type": "medium",
+          "explanation": "✅ Confidence values are normalized from 0 to 1 :contentReference[oaicite:7]{index=7}."
+        },
+        {
+          "question": "How many characters per document are supported in standard plan?",
+          "options": ["5,120", "10,000", "1,024", "2,147,483,647"],
+          "answer": "5,120",
+          "type": "hard",
+          "explanation": "✅ The limit per document is 5,120 characters :contentReference[oaicite:8]{index=8}."
+        },
+        {
+          "question": "Scenario: You only want opinion sentiment about 'battery'. What should you use?",
+          "options": [
+            "Opinion mining",
+            "Key phrase extraction",
+            "Entity recognition",
+            "Language detection"
+          ],
+          "answer": "Opinion mining",
+          "type": "medium",
+          "explanation": "✅ Opinion mining extracts sentiment associated with specific aspects like 'battery' :contentReference[oaicite:9]{index=9}."
+        },
+        {
+          "question": "Which property groups sentence opinions under targets?",
+          "options": [
+            "sentenceOpinions",
+            "sentimentTargets",
+            "keyPhraseSentiments",
+            "aspectSentiments"
+          ],
+          "answer": "sentenceOpinions",
+          "type": "hard",
+          "explanation": "✅ Opinion mining structures results under sentenceOpinions array :contentReference[oaicite:10]{index=10}."
+        },
+        {
+          "question": "Which task type finds PII entities like SSNs?",
+          "options": [
+            "Entity Recognition",
+            "Sentiment Analysis",
+            "Linked Entities",
+            "Key Phrase Extraction"
+          ],
+          "answer": "Entity Recognition",
+          "type": "medium",
+          "explanation": "✅ Entity Recognition includes hidden PII types when specified; linking connects entities to Wikipedia."
+        },
+        {
+          "question": "Coding: In C# SDK, which method runs AnalyzeText?",
+          "options": [
+            "client.AnalyzeTextAsync(...)",
+            "client.RunTextTasks(...)",
+            "client.TextAnalysis(...)",
+            "client.ExecuteAnalysis(...)"
+          ],
+          "answer": "client.AnalyzeTextAsync(...)",
+          "type": "hard",
+          "explanation": "✅ That is the pattern used in SDK samples :contentReference[oaicite:11]{index=11}."
+        },
+        {
+          "question": "Why use Language Studio over REST?",
+          "options": [
+            "No code UI to test tasks",
+            "REST unsupported tasks",
+            "Cheaper",
+            "Private network only"
+          ],
+          "answer": "No code UI to test tasks",
+          "type": "medium",
+          "explanation": "✅ Language Studio provides UI experience without writing code; pricing and network aren't distinguishing factors."
+        },
+        {
+          "question": "Which output includes a confidence score per sentence?",
+          "options": [
+            "Sentiment Analysis",
+            "Key Phrase Extraction",
+            "Entity Linking",
+            "Language Detection"
+          ],
+          "answer": "Sentiment Analysis",
+          "type": "medium",
+          "explanation": "✅ Sentiment scores are returned per sentence and document."
+        },
+        {
+          "question": "Scenario: Calling REST API you get 429. What happened?",
+          "options": [
+            "Too many requests throttled",
+            "Bad authentication header",
+            "Endpoint wrong region",
+            "Document too large"
+          ],
+          "answer": "Too many requests throttled",
+          "type": "hard",
+          "explanation": "✅ HTTP 429 indicates rate limiting; others are 401, 404, or 413 respectively."
+        },
+        {
+          "question": "What does linked-entity provide that entity-recognition doesn’t?",
+          "options": [
+            "URL, data source",
+            "Confidence score",
+            "Text span positions",
+            "All entity types"
+          ],
+          "answer": "URL, data source",
+          "type": "medium",
+          "explanation": "✅ Linked entities include knowledge base links, entity types and matches; recognition gives type and text only."
+        },
+        {
+          "question": "Module assessment: True or False — Language detection returns a single language only.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ The service returns a single dominant language per document."
+        },
+        {
+          "question": "Which REST parameter sets model version?",
+          "options": [
+            "parameters.modelVersion",
+            "analysisInput.version",
+            "headers.X-Model-Version",
+            "querystring 'version'"
+          ],
+          "answer": "parameters.modelVersion",
+          "type": "hard",
+          "explanation": "✅ In REST body you specify \\\"parameters\\\": {'modelVersion':'latest'} :contentReference[oaicite:12]{index=12}."
+        },
+        {
+          "question": "What metadata appears in response if showStats=true?",
+          "options": [
+            "Character count",
+            "Execution region",
+            "Billing cost",
+            "Model architecture"
+          ],
+          "answer": "Character count",
+          "type": "medium",
+          "explanation": "✅ DocumentStatistics with character/token counts are returned when stats enabled :contentReference[oaicite:13]{index=13}."
+        },
+        {
+          "question": "Which SDK supports opinion mining explicitly?",
+          "options": [
+            "azure-ai-textanalytics",
+            "azure-cognitiveservices-nlp",
+            "azure-language-opinion",
+            "azure-ai-language-v3"
+          ],
+          "answer": "azure-ai-textanalytics",
+          "type": "hard",
+          "explanation": "✅ The main SDK supports opinion mining; others not supported or deprecated."
+        },
+        {
+          "question": "Which limitation applies to batch size?",
+          "options": [
+            "Max 1,000 documents",
+            "No limit",
+            "Max 10 documents per call",
+            "Max 100 KB total text"
+          ],
+          "answer": "Max 1,000 documents",
+          "type": "hard",
+          "explanation": "✅ The service supports up to 1,000 documents per batch."
+        }
+      ]
+    }
+  ]
+}
