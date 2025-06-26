@@ -597,6 +597,1140 @@
           "explanation": "✅ Active learning improves KB, doesn’t impact chat flow."
         }
       ]
+    },
+    {
+      "name": "Unit 3: Create a custom text classification solution",
+      "questions": [
+        {
+          "question": "What defines custom text classification in Azure AI Language?",
+          "options": [
+            "General sentiment service",
+            "Ability to build a model for user-defined categories",
+            "Image classification tool",
+            "Storage service"
+          ],
+          "answer": "Ability to build a model for user-defined categories",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Custom text classification lets you define your own categories and build a model. Others are unrelated :contentReference[oaicite:2]{index=2}."
+        },
+        {
+          "question": "Which two project types are supported?",
+          "options": [
+            "Single label classification",
+            "Multi label classification",
+            "Sentiment analysis only",
+            "Translation"
+          ],
+          "answer": [
+            "Single label classification",
+            "Multi label classification"
+          ],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "✅ The service supports both single- and multi-label projects. Others not supported :contentReference[oaicite:3]{index=3}."
+        },
+        {
+          "question": "What is the first step in project lifecycle?",
+          "options": [
+            "Train model",
+            "Define schema and classes",
+            "Upload to Cosmos DB",
+            "Create VM"
+          ],
+          "answer": "Define schema and classes",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ After provisioning, first define your classification schema. Training comes later :contentReference[oaicite:4]{index=4}."
+        },
+        {
+          "question": "Scenario: You need to classify research papers into domains with only one class per doc. Choose project type:",
+          "options": [
+            "Multi-label classification",
+            "Single-label classification",
+            "Sentiment analysis",
+            "Group chat"
+          ],
+          "answer": "Single-label classification",
+          "type": "medium",
+          "explanation": "✅ One document, one label➡single-label classification."
+        },
+        {
+          "question": "What storage service is required for data ingestion?",
+          "options": [
+            "Azure Blob Storage",
+            "Cosmos DB",
+            "File share",
+            "Key Vault"
+          ],
+          "answer": "Azure Blob Storage",
+          "type": "medium",
+          "explanation": "✅ Custom classification uses Azure Blob to upload .txt or JSON files :contentReference[oaicite:5]{index=5}."
+        },
+        {
+          "question": "Which permission must be granted on storage account?",
+          "options": [
+            "Owner",
+            "Storage Blob Data Contributor",
+            "Reader",
+            "DNS Zone Contributor"
+          ],
+          "answer": "Storage Blob Data Contributor",
+          "type": "hard",
+          "explanation": "✅ Language resource needs permission to read labeled data blobs :contentReference[oaicite:6]{index=6}."
+        },
+        {
+          "question": "How many training jobs can run simultaneously?",
+          "options": ["Only one", "Unlimited", "Two", "Ten"],
+          "answer": "Only one",
+          "type": "medium",
+          "explanation": "✅ Only one training job per project can run at a time :contentReference[oaicite:7]{index=7}."
+        },
+        {
+          "question": "What split of training/testing is recommended?",
+          "options": ["80%-20%", "50%-50%", "90%-10%", "100%-0%"],
+          "answer": "80%-20%",
+          "type": "medium",
+          "explanation": "✅ Recommended split is 80% for training and 20% for testing :contentReference[oaicite:8]{index=8}."
+        },
+        {
+          "question": "Scenario: You have a multilingual dataset in English and French. What setting enables both?",
+          "options": [
+            "Enable multilingual option",
+            "Create two projects",
+            "Translate all to one language",
+            "Use sentiment project"
+          ],
+          "answer": "Enable multilingual option",
+          "type": "medium",
+          "explanation": "✅ Multi-lingual option allows multiple languages in same project :contentReference[oaicite:9]{index=9}."
+        },
+        {
+          "question": "Which languages are supported for multilingual?",
+          "options": [
+            "French, German, Mandarin, Japanese, Korean, etc.",
+            "Only English",
+            "All languages",
+            "Only Latin scripts"
+          ],
+          "answer": "French, German, Mandarin, Japanese, Korean, etc.",
+          "type": "hard",
+          "explanation": "✅ Supported include popular languages beyond English :contentReference[oaicite:10]{index=10}."
+        },
+        {
+          "question": "Coding: Which REST endpoint imports project data?",
+          "options": [
+            "POST /language/authoring/analyze-text/projects/{name}/:import",
+            "GET /projects/{name}/import",
+            "POST /projects/:upload",
+            "PATCH /import"
+          ],
+          "answer": "POST /language/authoring/analyze-text/projects/{name}/:import",
+          "type": "hard",
+          "explanation": "✅ Import endpoint for labeling data via REST :contentReference[oaicite:11]{index=11}."
+        },
+        {
+          "question": "How do you monitor training status via API?",
+          "options": [
+            "GET using operation-location URL",
+            "GET /status only",
+            "POST status query",
+            "Check portal only"
+          ],
+          "answer": "GET using operation-location URL",
+          "type": "hard",
+          "explanation": "✅ You poll the job URL from operation-location header :contentReference[oaicite:12]{index=12}."
+        },
+        {
+          "question": "Module assessment: True or False — Training jobs expire after seven days.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ Jobs expire after 7 days; but models stay available :contentReference[oaicite:13]{index=13}."
+        },
+        {
+          "question": "Which API classifies live texts?",
+          "options": [
+            "POST /language/analyze-text/jobs",
+            "POST /analyze",
+            "GET /classify",
+            "PUT /model/predict"
+          ],
+          "answer": "POST /language/analyze-text/jobs",
+          "type": "medium",
+          "explanation": "✅ Endpoint for runtime classify requests :contentReference[oaicite:14]{index=14}."
+        },
+        {
+          "question": "What indicates multi-label output in runtime response?",
+          "options": [
+            "Multiple category entries ordered by confidence",
+            "Single category",
+            "Sentiment score",
+            "Key phrases"
+          ],
+          "answer": "Multiple category entries ordered by confidence",
+          "type": "medium",
+          "explanation": "✅ Multi-label returns array of categories with confidence scores."
+        },
+        {
+          "question": "Scenario: A document belongs to two classes—movie categories. Which classification type?",
+          "options": [
+            "Multi-label classification",
+            "Single-label classification",
+            "Sentiment analysis",
+            "NER only"
+          ],
+          "answer": "Multi-label classification",
+          "type": "medium",
+          "explanation": "✅ Allows assigning multiple labels per document."
+        },
+        {
+          "question": "What performance metrics are shown after training?",
+          "options": [
+            "Accuracy, precision, recall, F1 score",
+            "Latency only",
+            "Cost per doc",
+            "No metrics"
+          ],
+          "answer": "Accuracy, precision, recall, F1 score",
+          "type": "hard",
+          "explanation": "✅ Standard classification metrics are provided on evaluation :contentReference[oaicite:15]{index=15}."
+        },
+        {
+          "question": "Why label data carefully in single-label project?",
+          "options": [
+            "Ambiguity lowers accuracy when a document could belong to multiple classes",
+            "It doesn’t matter",
+            "Model handles ambiguity automatically",
+            "System rejects ambiguous documents"
+          ],
+          "answer": "Ambiguity lowers accuracy when a document could belong to multiple classes",
+          "type": "medium",
+          "explanation": "✅ Avoid multi-label samples in single-label to prevent mis-train :contentReference[oaicite:16]{index=16}."
+        },
+        {
+          "question": "Coding: Which SDK would you use in Python to classify text at runtime?",
+          "options": [
+            "azure-ai-language",
+            "azure-ai-textanalytics",
+            "azure-language-runtime",
+            "azure-ai-language-text"
+          ],
+          "answer": "azure-ai-language",
+          "type": "hard",
+          "explanation": "✅ New unified `azure-ai-language` SDK covers runtime classification."
+        },
+        {
+          "question": "Module assessment: True or False — You can delete projects via Language Studio.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ Language Studio allows deleting a project :contentReference[oaicite:17]{index=17}."
+        },
+        {
+          "question": "Which of these is NOT part of custom classification lifecycle?",
+          "options": [
+            "Train model",
+            "Deploy to Azure Functions",
+            "Label data",
+            "Evaluate model"
+          ],
+          "answer": "Deploy to Azure Functions",
+          "type": "medium",
+          "explanation": "✅ Deployment refers to model endpoint, not Functions."
+        },
+        {
+          "question": "What enables cross-language classification?",
+          "options": [
+            "Multilingual model training",
+            "Translate before classify",
+            "Train separate projects per language",
+            "Use sentiment analysis"
+          ],
+          "answer": "Multilingual model training",
+          "type": "hard",
+          "explanation": "✅ Multi-lingual option enables direct cross-language predictions :contentReference[oaicite:18]{index=18}."
+        },
+        {
+          "question": "Scenario: You need to classify incoming tweets in various languages. Best approach?",
+          "options": [
+            "Enable multilingual project",
+            "Create separate projects",
+            "Use detect-language then route",
+            "Use sentiment API"
+          ],
+          "answer": "Enable multilingual project",
+          "type": "hard",
+          "explanation": "✅ Multilingual project supports all languages in one model."
+        },
+        {
+          "question": "How many docs are in quickstart sample?",
+          "options": [
+            " ~200 for multi-label, ~210 for single-label",
+            "~1000",
+            "~10",
+            "None"
+          ],
+          "answer": "~200 for multi-label, ~210 for single-label",
+          "type": "hard",
+          "explanation": "✅ Quickstart documents counts reported :contentReference[oaicite:19]{index=19}."
+        },
+        {
+          "question": "Why use REST API instead of Studio?",
+          "options": [
+            "Automate project management",
+            "Studio is deprecated",
+            "REST is free",
+            "Studio can't label"
+          ],
+          "answer": "Automate project management",
+          "type": "medium",
+          "explanation": "✅ REST helps script creation/import/training :contentReference[oaicite:20]{index=20}."
+        },
+        {
+          "question": "Which feature allows rebuilding the model with improved data?",
+          "options": [
+            "Retrain model after label improvements",
+            "Train only once",
+            "Train on deployment",
+            "Label outside studio"
+          ],
+          "answer": "Retrain model after label improvements",
+          "type": "medium",
+          "explanation": "✅ You iterate by relabeling and retraining for performance."
+        }
+      ]
+    },
+    {
+      "name": "Unit 6: Custom Named Entity Recognition",
+      "questions": [
+        {
+          "question": "What defines a custom NER solution in Azure AI Language?",
+          "options": [
+            "A model for generic entity types",
+            "A model trained to extract user-defined entities",
+            "An image recognition model",
+            "A chatbot"
+          ],
+          "answer": "A model trained to extract user-defined entities",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Custom NER extracts domain-specific entities you define :contentReference[oaicite:2]{index=2}."
+        },
+        {
+          "question": "Which file format is required to import labeled data?",
+          "options": [
+            "CSV",
+            "JSON following project schema",
+            "TXT only",
+            "Excel"
+          ],
+          "answer": "JSON following project schema",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ Imports require JSON formatted per schema :contentReference[oaicite:3]{index=3}."
+        },
+        {
+          "question": "What are the main steps in the custom NER lifecycle? (Select 3)",
+          "options": [
+            "Define schema",
+            "Train model",
+            "Label data",
+            "Translate data"
+          ],
+          "answer": ["Define schema", "Label data", "Train model"],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "✅ Core steps are schema, labeling, training, then evaluation :contentReference[oaicite:4]{index=4}."
+        },
+        {
+          "question": "Scenario: You notice your model misses many addresses. What should you do?",
+          "options": [
+            "Add more address-labeled examples",
+            "Change pricing tier",
+            "Enable sentiment analysis",
+            "Switch to prebuilt NER"
+          ],
+          "answer": "Add more address-labeled examples",
+          "type": "medium",
+          "explanation": "✅ More labeled examples improve recall for that entity."
+        },
+        {
+          "question": "Which metric indicates how many predicted entities are correct?",
+          "options": ["Precision", "Recall", "Accuracy", "Latency"],
+          "answer": "Precision",
+          "type": "medium",
+          "explanation": "✅ Precision = TP/(TP+FP) :contentReference[oaicite:5]{index=5}."
+        },
+        {
+          "question": "Which metric measures ability to find all true entities?",
+          "options": ["Recall", "Precision", "F1 Score", "Throughput"],
+          "answer": "Recall",
+          "type": "medium",
+          "explanation": "✅ Recall = TP/(TP+FN) :contentReference[oaicite:6]{index=6}."
+        },
+        {
+          "question": "What is the F1 score used for?",
+          "options": [
+            "Balance between precision and recall",
+            "Compute cost",
+            "Latency measure",
+            "Feature extraction"
+          ],
+          "answer": "Balance between precision and recall",
+          "type": "medium",
+          "explanation": "✅ F1 harmonizes precision and recall :contentReference[oaicite:7]{index=7}."
+        },
+        {
+          "question": "How long after training does the job record persist?",
+          "options": ["7 days", "30 days", "Indefinitely", "24 hours"],
+          "answer": "7 days",
+          "type": "hard",
+          "explanation": "✅ Training job details expire after 7 days :contentReference[oaicite:8]{index=8}."
+        },
+        {
+          "question": "True or False: You can run multiple training jobs simultaneously.",
+          "options": ["True", "False"],
+          "answer": "False",
+          "type": "medium",
+          "explanation": "✅ Only one training job per project is allowed :contentReference[oaicite:9]{index=9}."
+        },
+        {
+          "question": "Which permission is needed to connect storage account?",
+          "options": [
+            "Storage Blob Data Contributor",
+            "Reader",
+            "VM Contributor",
+            "DNS Admin"
+          ],
+          "answer": "Storage Blob Data Contributor",
+          "type": "hard",
+          "explanation": "✅ Required for resource to access labeled blobs :contentReference[oaicite:10]{index=10}."
+        },
+        {
+          "question": "Which languages are supported for multilingual NER? (Select 2)",
+          "options": ["French", "Korean", "Latin", "Only English"],
+          "answer": ["French", "Korean"],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "✅ Many languages supported including French, Korean :contentReference[oaicite:11]{index=11}."
+        },
+        {
+          "question": "Scenario: You trained model in English, query in Japanese. It fails. What next?",
+          "options": [
+            "Enable multilingual and add Japanese samples",
+            "Retrain English only",
+            "Switch to prebuilt",
+            "Change pricing tier"
+          ],
+          "answer": "Enable multilingual and add Japanese samples",
+          "type": "hard",
+          "explanation": "✅ Multilingual setting plus examples improves cross-language extraction :contentReference[oaicite:12]{index=12}."
+        },
+        {
+          "question": "What is the API limit for characters per document?",
+          "options": [
+            "125,000 chars",
+            "10,000 chars",
+            "512 chars",
+            "1 million chars"
+          ],
+          "answer": "125,000 chars",
+          "type": "hard",
+          "explanation": "✅ Limit per request is 125K chars :contentReference[oaicite:13]{index=13}."
+        },
+        {
+          "question": "How many documents per batch are allowed?",
+          "options": ["25", "100", "1000", "Unlimited"],
+          "answer": "25",
+          "type": "hard",
+          "explanation": "✅ Up to 25 documents per batch :contentReference[oaicite:14]{index=14}."
+        },
+        {
+          "question": "Which action trims document text automatically?",
+          "options": ["Chunking", "Translation", "Summarization", "Embedding"],
+          "answer": "Chunking",
+          "type": "medium",
+          "explanation": "✅ You can chunk text to fit within character limits."
+        },
+        {
+          "question": "Coding: Which REST endpoint starts training?",
+          "options": [
+            "POST /projects/{name}/:train",
+            "GET /models/{id}",
+            "POST /analyze",
+            "DELETE /project/{name}"
+          ],
+          "answer": "POST /projects/{name}/:train",
+          "type": "hard",
+          "explanation": "✅ That endpoint initiates training jobs :contentReference[oaicite:15]{index=15}."
+        },
+        {
+          "question": "Which JSON field defines entity span?",
+          "options": [
+            "regionOffset/regionLength",
+            "entitySpan",
+            "textSpan",
+            "start/end"
+          ],
+          "answer": "regionOffset/regionLength",
+          "type": "hard",
+          "explanation": "✅ Schema uses regionOffset and regionLength :contentReference[oaicite:16]{index=16}."
+        },
+        {
+          "question": "True or False: Empty documents are allowed in storage.",
+          "options": ["True", "False"],
+          "answer": "False",
+          "type": "medium",
+          "explanation": "✅ Documents must contain text; empty files are rejected :contentReference[oaicite:17]{index=17}."
+        },
+        {
+          "question": "What does azure-ai-language NER client method return?",
+          "options": [
+            "Extracted entities with offsets and scores",
+            "Only entity text",
+            "Only counts",
+            "XML response"
+          ],
+          "answer": "Extracted entities with offsets and scores",
+          "type": "medium",
+          "explanation": "✅ Runtime gives detailed entity info including position/score."
+        },
+        {
+          "question": "Module assessment: True or False — You can delete a custom NER project in Studio.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ Language Studio supports project deletion :contentReference[oaicite:18]{index=18}."
+        },
+        {
+          "question": "Why examine the confusion matrix?",
+          "options": [
+            "To identify entity-type misclassifications",
+            "For memory management",
+            "To reduce latency",
+            "To monitor billing"
+          ],
+          "answer": "To identify entity-type misclassifications",
+          "type": "medium",
+          "explanation": "✅ It shows FP/FN cross-entity confusion :contentReference[oaicite:19]{index=19}."
+        },
+        {
+          "question": "Scenario: One label dominates counts in training set. Issue?",
+          "options": [
+            "Bias toward that label; add more underrepresented samples",
+            "Faster training",
+            "Nothing",
+            "System rejects model"
+          ],
+          "answer": "Bias toward that label; add more underrepresented samples",
+          "type": "hard",
+          "explanation": "✅ Imbalance leads to bias; add data for fairness :contentReference[oaicite:20]{index=20}."
+        },
+        {
+          "question": "Which pricing tier allows unlimited projects?",
+          "options": ["Standard (S)", "Free (F0)", "Basic", "Premium"],
+          "answer": "Standard (S)",
+          "type": "medium",
+          "explanation": "✅ S tier supports unlimited projects; F0 restricted :contentReference[oaicite:21]{index=21}."
+        },
+        {
+          "question": "How many projects are allowed per resource?",
+          "options": ["500", "100", "10", "Unlimited"],
+          "answer": "500",
+          "type": "hard",
+          "explanation": "✅ Up to 500 projects per resource :contentReference[oaicite:22]{index=22}."
+        },
+        {
+          "question": "Which model evaluation data view shows performance per entity type?",
+          "options": [
+            "Entity type performance tab",
+            "Summary only",
+            "Deployment logs",
+            "JSON only"
+          ],
+          "answer": "Entity type performance tab",
+          "type": "medium",
+          "explanation": "✅ Studio shows per-entity metrics in that tab :contentReference[oaicite:23]{index=23}."
+        },
+        {
+          "question": "Why enable managed identity on Language resource?",
+          "options": [
+            "To authorize storage read access",
+            "To improve latency",
+            "To reduce cost",
+            "To enable translation"
+          ],
+          "answer": "To authorize storage read access",
+          "type": "hard",
+          "explanation": "✅ Managed identity grants blob read permissions :contentReference[oaicite:24]{index=24}."
+        }
+      ]
+    },
+    {
+      "name": "Unit 4: Build a conversational language understanding model",
+      "questions": [
+        {
+          "question": "What is Conversational Language Understanding (CLU)?",
+          "options": [
+            "A speech-to-text service",
+            "A model for intent and entity extraction from text",
+            "A translation service",
+            "An image classification model"
+          ],
+          "answer": "A model for intent and entity extraction from text",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ CLU enables extraction of intents and entities from natural language :contentReference[oaicite:1]{index=1}. The others are unrelated."
+        },
+        {
+          "question": "Which of the following can you define in a CLU project? (Select 3)",
+          "options": ["Intents", "Entities", "Utterances", "Images"],
+          "answer": ["Intents", "Entities", "Utterances"],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "✅ You define intents, entities, and utterances. CLU doesn't process images :contentReference[oaicite:2]{index=2}."
+        },
+        {
+          "question": "What's a prebuilt entity in CLU?",
+          "options": [
+            "Quantity.Number",
+            "Custom label",
+            "Image URL",
+            "Audio snippet"
+          ],
+          "answer": "Quantity.Number",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Quantity.Number is a supported prebuilt entity for numerical extraction :contentReference[oaicite:3]{index=3}."
+        },
+        {
+          "question": "Which language SDKs are supported for CLU authoring?",
+          "options": ["C# and Python", "JavaScript only", "Java only", "Go"],
+          "answer": "C# and Python",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ CLU SDK supports both C# and Python :contentReference[oaicite:4]{index=4}."
+        },
+        {
+          "question": "When should you use patterns in CLU?",
+          "options": [
+            "To differentiate similar utterances with entities",
+            "To translate text",
+            "For sentiment analysis",
+            "To upload images"
+          ],
+          "answer": "To differentiate similar utterances with entities",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Patterns allow intent differentiation when utterances vary only by entity :contentReference[oaicite:5]{index=5}."
+        },
+        {
+          "question": "Scenario: Both “Book flight to Paris” and “Book flight to Rome” should map to the same intent. Best approach?",
+          "options": [
+            "Use a pattern with {City}",
+            "Add each as separate intent",
+            "Use sentiment analysis",
+            "Use translation API"
+          ],
+          "answer": "Use a pattern with {City}",
+          "type": "medium",
+          "explanation": "✅ Patterns with placeholder entities handle these variations cleanly."
+        },
+        {
+          "question": "Which of these is NOT a prebuilt entity component?",
+          "options": [
+            "Quantity.Temperature",
+            "Person.Name",
+            "Email",
+            "Custom AirportCode"
+          ],
+          "answer": "Custom AirportCode",
+          "type": "medium",
+          "explanation": "✅ AirportCode isn't prebuilt; others are available :contentReference[oaicite:6]{index=6}."
+        },
+        {
+          "question": "What percent split is recommended between training and testing sets?",
+          "options": [
+            "80% training / 20% testing",
+            "100% training / 0% testing",
+            "50% / 50%",
+            "20% training / 80% testing"
+          ],
+          "answer": "80% training / 20% testing",
+          "type": "medium",
+          "explanation": "✅ The module recommends an 80/20 split :contentReference[oaicite:7]{index=7}."
+        },
+        {
+          "question": "True or False: Only one training job can run at a time per project.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ CLU limits to one active training job per project :contentReference[oaicite:8]{index=8}."
+        },
+        {
+          "question": "Which mode offers multilingual training and better performance?",
+          "options": ["Advanced", "Standard", "Basic", "None"],
+          "answer": "Advanced",
+          "type": "hard",
+          "explanation": "✅ Advanced training supports multiple languages with better accuracy :contentReference[oaicite:9]{index=9}."
+        },
+        {
+          "question": "Which REST endpoint initiates CLU training?",
+          "options": [
+            "POST /language/authoring/analyze-conversations/projects/{project}/:train",
+            "GET /train",
+            "POST /language/runtime/predict",
+            "DELETE /projects/{project}"
+          ],
+          "answer": "POST /language/authoring/analyze-conversations/projects/{project}/:train",
+          "type": "hard",
+          "explanation": "✅ This is the documented REST path for training jobs :contentReference[oaicite:10]{index=10}."
+        },
+        {
+          "question": "How do you specify pattern intent in payload?",
+          "options": [
+            "Use sample utterances with entity placeholders",
+            "Add JSON field ‘pattern’: true",
+            "Use SQL query",
+            "Use regex in utterance"
+          ],
+          "answer": "Use sample utterances with entity placeholders",
+          "type": "medium",
+          "explanation": "✅ Patterns are defined via utterance examples with placeholders."
+        },
+        {
+          "question": "Which header is required for authoring APIs?",
+          "options": [
+            "Ocp-Apim-Subscription-Key",
+            "Authorization: Bearer",
+            "Content-Encoding",
+            "Accept-Language"
+          ],
+          "answer": "Ocp-Apim-Subscription-Key",
+          "type": "hard",
+          "explanation": "✅ Authoring APIs require subscription key header; bearer is for runtime."
+        },
+        {
+          "question": "Scenario: “Order 5 pizzas” parsed city and number. Which entities should parse '5'?",
+          "options": [
+            "Quantity.Number",
+            "NumberRange",
+            "Custom IntEntity",
+            "Person.Name"
+          ],
+          "answer": "Quantity.Number",
+          "type": "medium",
+          "explanation": "✅ Prebuilt Quantity.Number handles cardinal numbers :contentReference[oaicite:11]{index=11}."
+        },
+        {
+          "question": "Module assessment: True or False—CLU supports multilingual prediction without retraining in all languages.",
+          "options": ["True", "False"],
+          "answer": "False",
+          "type": "medium",
+          "explanation": "✅ You need to add some utterances per new language for accuracy :contentReference[oaicite:12]{index=12}."
+        },
+        {
+          "question": "Which evaluation metric indicates how often the model predicts correctly?",
+          "options": ["Accuracy", "Precision", "Recall", "Latency"],
+          "answer": "Accuracy",
+          "type": "medium",
+          "explanation": "✅ Accuracy is % of correct predictions overall."
+        },
+        {
+          "question": "Coding: Which method fetches predictions using C# runtime SDK?",
+          "options": [
+            "client.PredictAsync(...)",
+            "client.PredictIntentAsync(...)",
+            "client.Analyzer.PredictAsync(...)",
+            "client.RunPrediction(...)"
+          ],
+          "answer": "client.PredictIntentAsync(...)",
+          "type": "hard",
+          "explanation": "✅ C# runtime uses PredictIntentAsync method."
+        },
+        {
+          "question": "In Python, how do you create a new CLU project via CLI?",
+          "options": [
+            "az language clu project create",
+            "az clu create",
+            "az language project new",
+            "az language clu new-project"
+          ],
+          "answer": "az language clu project create",
+          "type": "hard",
+          "explanation": "✅ This is the CLI command for CLU."
+        },
+        {
+          "question": "Why you would use patterns over utterances?",
+          "options": [
+            "Simplify training when utterance structure is consistent",
+            "For sentiment analysis",
+            "To translate intent",
+            "To avoid training"
+          ],
+          "answer": "Simplify training when utterance structure is consistent",
+          "type": "medium",
+          "explanation": "✅ Patterns reduce redundancy when utterance follows template."
+        },
+        {
+          "question": "Which prebuilt entity recognizes email addresses automatically?",
+          "options": ["Email", "URL", "Phone Number", "Quantity.Number"],
+          "answer": "Email",
+          "type": "medium",
+          "explanation": "✅ Email is a supported prebuilt component :contentReference[oaicite:13]{index=13}."
+        },
+        {
+          "question": "Module assessment: True or False—After publication, your model uses runtime endpoint only, community studio no longer needed.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ Published model is consumed via runtime endpoint :contentReference[oaicite:14]{index=14}."
+        },
+        {
+          "question": "What does model confidence represent?",
+          "options": [
+            "Probability the intent/entity is correct",
+            "Number of tokens",
+            "Latency score",
+            "Cost per query"
+          ],
+          "answer": "Probability the intent/entity is correct",
+          "type": "medium",
+          "explanation": "✅ Confidence indicates model certainty."
+        },
+        {
+          "question": "Scenario: You see uneven intent performances. What should you do?",
+          "options": [
+            "Add more labeled utterances for low-performing intents",
+            "Retrain delete model",
+            "Delete intents",
+            "Use sentiment analysis"
+          ],
+          "answer": "Add more labeled utterances for low-performing intents",
+          "type": "medium",
+          "explanation": "✅ More training data helps balance intent accuracy."
+        },
+        {
+          "question": "Which metric helps evaluate entity extraction accuracy?",
+          "options": [
+            "F1 Score",
+            "Throughput",
+            "Cost per document",
+            "Translation rate"
+          ],
+          "answer": "F1 Score",
+          "type": "medium",
+          "explanation": "✅ F1 balances precision and recall for entities."
+        },
+        {
+          "question": "True or False: You can edit utterances after publishing model.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ You can update project and retrain as needed."
+        },
+        {
+          "question": "Which builtin prebuilt component handles dates and times?",
+          "options": ["Datetime", "Quantity.Number", "Email", "URL"],
+          "answer": "Datetime",
+          "type": "medium",
+          "explanation": "✅ Datetime extracts date/time expressions :contentReference[oaicite:15]{index=15}."
+        },
+        {
+          "question": "Coding: How do you publish a model via CLI?",
+          "options": [
+            "az language clu project publish",
+            "az clu publish",
+            "az language project upload",
+            "az language publish-model"
+          ],
+          "answer": "az language clu project publish",
+          "type": "hard",
+          "explanation": "✅ Correct CLI command for publishing CLU project."
+        }
+      ]
+    },
+    {
+      "name": "Unit 5: Custom Named Entity Recognition",
+      "questions": [
+        {
+          "question": "What is Custom Named Entity Recognition (NER)?",
+          "options": [
+            "Image labeling service",
+            "Extracts user-defined entities from unstructured text",
+            "Speech-to-text engine",
+            "Pretrained translation model"
+          ],
+          "answer": "Extracts user-defined entities from unstructured text",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Custom NER lets you build models to extract domain-specific entities from text :contentReference[oaicite:1]{index=1}."
+        },
+        {
+          "question": "Which step is performed first in custom NER lifecycle?",
+          "options": [
+            "Train the model",
+            "Define entity schema",
+            "Deploy model",
+            "Extract entities"
+          ],
+          "answer": "Define entity schema",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ You must define your entity types before labeling or training :contentReference[oaicite:2]{index=2}."
+        },
+        {
+          "question": "Which storage is required for uploading labeled data?",
+          "options": ["Azure SQL", "Blob Storage", "File Share", "Cosmos DB"],
+          "answer": "Blob Storage",
+          "type": "medium",
+          "explanation": "✅ Language Studio requires Azure Blob Storage for labeled data files :contentReference[oaicite:3]{index=3}."
+        },
+        {
+          "question": "True or False: You can only connect one storage account to a NER resource.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ Only a single storage account is allowed per resource :contentReference[oaicite:4]{index=4}."
+        },
+        {
+          "question": "Multiple labels allowed on same text span?",
+          "options": ["True", "False"],
+          "answer": "False",
+          "type": "medium",
+          "explanation": "✅ Entities should not overlap; labeling should be distinct :contentReference[oaicite:5]{index=5}."
+        },
+        {
+          "question": "Which metric balances Precision and Recall for NER?",
+          "options": ["Accuracy", "Latency", "F1 Score", "Throughput"],
+          "answer": "F1 Score",
+          "type": "medium",
+          "explanation": "✅ F1 is the harmonic mean of precision and recall :contentReference[oaicite:6]{index=6}."
+        },
+        {
+          "question": "Scenario: Your model misses many entities—what helps?",
+          "options": [
+            "Add more negative samples",
+            "Add more labeled examples for that entity",
+            "Switch to translation",
+            "Use sentiment analysis"
+          ],
+          "answer": "Add more labeled examples for that entity",
+          "type": "medium",
+          "explanation": "✅ More examples help improve recall for that entity."
+        },
+        {
+          "question": "How long do training job records persist?",
+          "options": ["24 hours", "7 days", "30 days", "Indefinitely"],
+          "answer": "7 days",
+          "type": "hard",
+          "explanation": "✅ Training job details expire after 7 days :contentReference[oaicite:7]{index=7}."
+        },
+        {
+          "question": "True or False: Only one training job can run at a time.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ Parallel trainings per project are not allowed :contentReference[oaicite:8]{index=8}."
+        },
+        {
+          "question": "What REST endpoint starts training?",
+          "options": [
+            "POST /trainNER",
+            "POST /projects/{proj}/:train",
+            "GET /projects/train",
+            "POST /ner/train"
+          ],
+          "answer": "POST /projects/{proj}/:train",
+          "type": "hard",
+          "explanation": "✅ This is the REST API to initiate training :contentReference[oaicite:9]{index=9}."
+        },
+        {
+          "question": "Which JSON property holds entity span?",
+          "options": [
+            "startIndex/endIndex",
+            "regionOffset/regionLength",
+            "entitySpan",
+            "spanStart/spanLength"
+          ],
+          "answer": "regionOffset/regionLength",
+          "type": "hard",
+          "explanation": "✅ The SDK uses regionOffset and regionLength to define spans :contentReference[oaicite:10]{index=10}."
+        },
+        {
+          "question": "Scenario: You have English and French docs—how to support both?",
+          "options": [
+            "Create separate projects",
+            "Enable multilingual option",
+            "Translate French manually",
+            "Use sentiment mode"
+          ],
+          "answer": "Enable multilingual option",
+          "type": "hard",
+          "explanation": "✅ Multilingual mode allows cross-language extraction :contentReference[oaicite:11]{index=11}."
+        },
+        {
+          "question": "Which role must you assign to the storage account?",
+          "options": [
+            "Reader",
+            "Blob Data Contributor",
+            "Contributor",
+            "Virtual Machine User"
+          ],
+          "answer": "Blob Data Contributor",
+          "type": "hard",
+          "explanation": "✅ Required for NER service to access data :contentReference[oaicite:12]{index=12}."
+        },
+        {
+          "question": "True or False: You can delete a NER project via Language Studio.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ Studio supports deletion of projects :contentReference[oaicite:13]{index=13}."
+        },
+        {
+          "question": "Which batch size limit applies to runtime analysis?",
+          "options": [
+            "Max 25 docs",
+            "Max 100 docs",
+            "Unlimited",
+            "Max 10 docs"
+          ],
+          "answer": "Max 25 docs",
+          "type": "hard",
+          "explanation": "✅ Runtime NER supports up to 25 documents per batch :contentReference[oaicite:14]{index=14}."
+        },
+        {
+          "question": "What's the character limit per document?",
+          "options": [
+            "50,000 chars",
+            "125,000 chars",
+            "512 chars",
+            "1 million chars"
+          ],
+          "answer": "125,000 chars",
+          "type": "hard",
+          "explanation": "✅ API limit per document is 125K characters :contentReference[oaicite:15]{index=15}."
+        },
+        {
+          "question": "Which performance metric shows proportion of correct extractions?",
+          "options": ["Precision", "Recall", "Latency", "Cost"],
+          "answer": "Precision",
+          "type": "medium",
+          "explanation": "✅ Precision measures correct entity extractions among predicted ones."
+        },
+        {
+          "question": "Recall measures:",
+          "options": [
+            "Correctes predicted/all actual",
+            "Latency per doc",
+            "Model size",
+            "Cost per query"
+          ],
+          "answer": "Correct predicted/all actual",
+          "type": "medium",
+          "explanation": "✅ Recall is TP/(TP+FN), capturing missing entities."
+        },
+        {
+          "question": "Why use the confusion matrix?",
+          "options": [
+            "To see wrong entity types",
+            "To evaluate runtime latency",
+            "To count docs",
+            "To measure cost"
+          ],
+          "answer": "To see wrong entity types",
+          "type": "medium",
+          "explanation": "✅ Helps identify which entity types are misclassified :contentReference[oaicite:16]{index=16}."
+        },
+        {
+          "question": "Coding: Which Python SDK module handles runtime NER?",
+          "options": [
+            "azure_ai_language.TextAnalysisClient",
+            "azure_ai_language.CustomEntityRecognitionClient",
+            "azure_ai_language.KeyPhraseClient",
+            "azure_ai_language.EntityLinkingClient"
+          ],
+          "answer": "azure_ai_language.CustomEntityRecognitionClient",
+          "type": "hard",
+          "explanation": "✅ This client handles custom NER runtime calls :contentReference[oaicite:17]{index=17}."
+        },
+        {
+          "question": "Scenario: Model underperforms—best next step?",
+          "options": [
+            "Add more labeled data",
+            "Delete model",
+            "Change region",
+            "Use translation API"
+          ],
+          "answer": "Add more labeled data",
+          "type": "medium",
+          "explanation": "✅ Additional examples improve model performance."
+        },
+        {
+          "question": "What architecture does Custom NER use?",
+          "options": ["Transformer-based", "Rule-based only", "HMM", "SVM"],
+          "answer": "Transformer-based",
+          "type": "hard",
+          "explanation": "✅ Custom NER uses modern transformer models :contentReference[oaicite:18]{index=18}."
+        },
+        {
+          "question": "True or False: Custom NER supports active learning.",
+          "options": ["True", "False"],
+          "answer": "False",
+          "type": "medium",
+          "explanation": "❌ Active learning isn't currently offered in custom NER."
+        },
+        {
+          "question": "Which data attribute ensures well-labeled datasets?",
+          "options": [
+            "Precision labeling guidelines",
+            "CSV format only",
+            "Machine translation",
+            "Random labeling"
+          ],
+          "answer": "Precision labeling guidelines",
+          "type": "medium",
+          "explanation": "✅ Precision, consistency, and completeness are crucial :contentReference[oaicite:19]{index=19}."
+        },
+        {
+          "question": "Scenario: You have nested entities—what do you do?",
+          "options": [
+            "Avoid nesting, split spans",
+            "Leave as is",
+            "Use multi-label",
+            "Switch to text classification"
+          ],
+          "answer": "Avoid nesting, split spans",
+          "type": "hard",
+          "explanation": "✅ NER expects non-overlapping spans; you need to separate nested entities :contentReference[oaicite:20]{index=20}."
+        },
+        {
+          "question": "What ensures responsible AI compliance?",
+          "options": [
+            "Responsible AI notice checked",
+            "Model retraining daily",
+            "Use only free tier",
+            "Use translation API"
+          ],
+          "answer": "Responsible AI notice checked",
+          "type": "medium",
+          "explanation": "✅ Users must acknowledge responsible AI when creating projects :contentReference[oaicite:21]{index=21}."
+        },
+        {
+          "question": "How do you delete a custom NER resource?",
+          "options": [
+            "Via Language Studio delete button",
+            "CLI only",
+            "Cannot delete",
+            "Azure ML portal"
+          ],
+          "answer": "Via Language Studio delete button",
+          "type": "medium",
+          "explanation": "✅ Studio UI enables project deletion :contentReference[oaicite:22]{index=22}."
+        }
+      ]
     }
   ]
 }

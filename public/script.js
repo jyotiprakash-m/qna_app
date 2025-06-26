@@ -46,8 +46,13 @@ function renderUnitNavbar() {
     btn.onclick = () => {
       currentUnit = idx;
       currentQuestion = 0;
+      // Ensure unitScores for this unit is initialized
+      if (!unitScores[currentUnit]) {
+        unitScores[currentUnit] = [];
+      }
       renderUnitNavbar();
       showQuestion(currentUnit, currentQuestion);
+      renderUnitScore(); // Update score display immediately
     };
     navbar.appendChild(btn);
   });
