@@ -6,15 +6,37 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="quiz-container">
-      <h1>Azure AI-102 Quiz</h1>
-      <div id="quiz"></div>
-      <button id="prev">Previous</button>
-      <button id="next" style="display: none">Next</button>
-      <!-- Remove or hide submit button -->
-      <button id="submit" style="display: none">Submit</button>
-      <div id="results"></div>
+    <div class="app-flex" style="min-height: 100vh">
+      <nav
+        id="unit-navbar"
+        style="
+          min-width: 200px;
+          background: #f3f4f6;
+          padding: 24px 0 24px 0;
+          border-radius: 16px 0 0 16px;
+          margin-right: 24px;
+        "
+      >
+        <!-- Units will be loaded here -->
+      </nav>
+      <div class="quiz-container">
+        <h1>Azure AI-102 Quiz</h1>
+        <div style="margin-bottom: 18px;">
+          <label for="module-select" class="module-select-label">Select Module: </label>
+          <select id="module-select">
+            <option value="module_1.json">Module 1: Introduction to Azure AI</option>
+            <option value="module_2_ai_agent.json">Module 2: AI Agents</option>
+            <!-- Add more modules here -->
+          </select>
+        </div>
+        <div id="quiz"></div>
+        <button id="prev">Previous</button>
+        <button id="next" style="display: none">Next</button>
+        <button id="submit" style="display: none">Submit</button>
+        <div id="results"></div>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>
 </html>
+<!-- create single ,multiple choice , senario based questions . make sure you build atleast 20 questions . modorate and hard question must be included . provide the json data with my format . also include coding and in-depth question . elaborate why option is correct and other option are wrong -->

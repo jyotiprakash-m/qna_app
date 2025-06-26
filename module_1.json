@@ -1,0 +1,2129 @@
+{
+  "units": [
+    {
+      "name": "Unit 1: Introduction to Azure AI",
+      "questions": [
+        {
+          "question": "What is the primary goal of preparing for Azure AI development?",
+          "options": [
+            "To learn programming languages",
+            "To identify AI services and create a development environment",
+            "To deploy applications on Azure",
+            "To manage Azure subscriptions"
+          ],
+          "answer": "To identify AI services and create a development environment",
+          "type": "single",
+          "difficulty": "easy",
+          "explanation": "Preparing for Azure AI development involves identifying AI services and setting up the development environment."
+        },
+        {
+          "question": "Which of the following best defines Artificial Intelligence?",
+          "options": [
+            "A system that stores large amounts of data",
+            "A set of algorithms that mimic human intelligence",
+            "A cloud-based storage solution",
+            "A programming language for automation"
+          ],
+          "answer": "A set of algorithms that mimic human intelligence",
+          "type": "single",
+          "difficulty": "easy",
+          "explanation": "AI is defined as a set of algorithms that mimic human intelligence."
+        },
+        {
+          "question": "Which capabilities are commonly associated with AI?",
+          "options": [
+            "Vision",
+            "Speech",
+            "Language understanding",
+            "Decision-making",
+            "Data storage"
+          ],
+          "answer": [
+            "Vision",
+            "Speech",
+            "Language understanding",
+            "Decision-making"
+          ],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "AI commonly includes capabilities like vision, speech, language understanding, and decision-making."
+        },
+        {
+          "question": "Which Azure service would you use to add speech recognition to your application?",
+          "options": [
+            "Azure Blob Storage",
+            "Azure Cognitive Services",
+            "Azure Virtual Machines",
+            "Azure Functions"
+          ],
+          "answer": "Azure Cognitive Services",
+          "type": "single",
+          "difficulty": "easy",
+          "explanation": "Azure Cognitive Services provides APIs for speech recognition and other AI capabilities."
+        },
+        {
+          "question": "Azure AI Services include which of the following?",
+          "options": ["Language", "Vision", "Speech", "Decision", "Networking"],
+          "answer": ["Language", "Vision", "Speech", "Decision"],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "Azure AI Services include Language, Vision, Speech, and Decision, but not Networking."
+        },
+        {
+          "question": "What is the purpose of Azure AI Foundry?",
+          "options": [
+            "To manage Azure subscriptions",
+            "To provide a framework for building AI solutions",
+            "To monitor network traffic",
+            "To store AI models"
+          ],
+          "answer": "To provide a framework for building AI solutions",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "Azure AI Foundry provides a framework for building AI solutions."
+        },
+        {
+          "question": "Which feature of Azure AI Foundry helps in managing harmful content?",
+          "options": [
+            "Azure Monitor",
+            "Content Safety",
+            "Azure Firewall",
+            "Azure Key Vault"
+          ],
+          "answer": "Content Safety",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "Content Safety in Azure AI Foundry helps manage and filter harmful content."
+        },
+        {
+          "question": "Which SDK is commonly used for developing AI applications in Azure?",
+          "options": [
+            "Azure DevOps SDK",
+            "Azure AI Foundry SDK",
+            "Azure Storage SDK",
+            "Azure Compute SDK"
+          ],
+          "answer": "Azure AI Foundry SDK",
+          "type": "single",
+          "difficulty": "easy",
+          "explanation": "Azure AI Foundry SDK is designed for AI application development in Azure."
+        },
+        {
+          "question": "What are the benefits of using SDKs in AI development?",
+          "options": [
+            "Simplified integration",
+            "Pre-built functions",
+            "Faster development",
+            "Increased storage capacity"
+          ],
+          "answer": [
+            "Simplified integration",
+            "Pre-built functions",
+            "Faster development"
+          ],
+          "type": "multiple",
+          "difficulty": "easy",
+          "explanation": "SDKs offer simplified integration, pre-built functions, and faster development."
+        }
+      ]
+    },
+    {
+      "name": "Unit 2: Choose and deploy models from the model catalog in Azure AI Foundry portal",
+      "questions": [
+        {
+          "question": "What is the purpose of the Azure AI Foundry model catalog?",
+          "options": [
+            "To manage Azure subscriptions",
+            "To discover and deploy AI models",
+            "To monitor network traffic",
+            "To store user data"
+          ],
+          "answer": "To discover and deploy AI models",
+          "type": "single",
+          "difficulty": "easy",
+          "explanation": "The model catalog in Azure AI Foundry is used to discover and deploy AI models."
+        },
+        {
+          "question": "Which deployment options are available in Azure AI Foundry?",
+          "options": [
+            "Standard deployment",
+            "Managed compute",
+            "Batch deployment",
+            "All of the above"
+          ],
+          "answer": "All of the above",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "Azure AI Foundry supports standard, managed compute, and batch deployment options."
+        },
+        {
+          "question": "Which of the following are characteristics of models sold directly by Azure?",
+          "options": [
+            "Hosted by Microsoft",
+            "Community-driven innovation",
+            "Enterprise-grade SLAs",
+            "Validated by external providers"
+          ],
+          "answer": ["Hosted by Microsoft", "Enterprise-grade SLAs"],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "Models sold directly by Azure are hosted by Microsoft and come with enterprise-grade SLAs."
+        },
+        {
+          "question": "Scenario: You need to deploy a model with minimal infrastructure management and pay per API call. Which deployment option should you choose?",
+          "options": [
+            "Managed compute",
+            "Standard deployment",
+            "Batch deployment",
+            "Custom deployment"
+          ],
+          "answer": "Standard deployment",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "Standard deployment allows pay-per-call usage without managing infrastructure."
+        },
+        {
+          "question": "Which models require Azure Marketplace subscription before deployment?",
+          "options": [
+            "Microsoft-hosted models",
+            "OpenAI models",
+            "Non-Microsoft models",
+            "All models"
+          ],
+          "answer": "Non-Microsoft models",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "Non-Microsoft models require Azure Marketplace subscription before deployment."
+        },
+        {
+          "question": "What are the benefits of using managed compute for model deployment?",
+          "options": [
+            "Dedicated virtual machines",
+            "Token-based billing",
+            "No authentication required",
+            "No content safety integration"
+          ],
+          "answer": "Dedicated virtual machines",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "Managed compute uses dedicated virtual machines for deployment."
+        },
+        {
+          "question": "Which filters are available in the model catalog to help discover models?",
+          "options": [
+            "Collection",
+            "Industry",
+            "Capabilities",
+            "All of the above"
+          ],
+          "answer": "All of the above",
+          "type": "single",
+          "difficulty": "easy",
+          "explanation": "The model catalog supports filters like collection, industry, and capabilities."
+        },
+        {
+          "question": "Scenario: You want to deploy a model that supports real-time scoring for large consistent volume. Which deployment type is best?",
+          "options": [
+            "Batch deployment",
+            "Standard deployment",
+            "Provisioned deployment",
+            "Managed compute"
+          ],
+          "answer": "Provisioned deployment",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "Provisioned deployment is best for real-time scoring with consistent volume."
+        },
+        {
+          "question": "Which of the following are true about models from Partners and Community?",
+          "options": [
+            "Hosted by Microsoft",
+            "Validated by providers",
+            "Support niche use cases",
+            "Offer enterprise SLAs"
+          ],
+          "answer": ["Validated by providers", "Support niche use cases"],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "Partner and community models are validated by providers and support niche use cases."
+        },
+        {
+          "question": "What is the billing basis for managed compute deployments?",
+          "options": [
+            "Token usage",
+            "API call count",
+            "Virtual machine core hours",
+            "Monthly subscription"
+          ],
+          "answer": "Virtual machine core hours",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "Managed compute deployments are billed based on virtual machine core hours."
+        },
+        {
+          "question": "Scenario: You want to test a model before deploying it. What feature should you use?",
+          "options": [
+            "Model leaderboard",
+            "Playground",
+            "Deployment wizard",
+            "Model card"
+          ],
+          "answer": "Playground",
+          "type": "single",
+          "difficulty": "easy",
+          "explanation": "The playground allows testing models before deployment."
+        },
+        {
+          "question": "Which of the following are deployment authentication methods for managed compute?",
+          "options": ["Keys", "Microsoft Entra ID", "OAuth", "None"],
+          "answer": ["Keys", "Microsoft Entra ID"],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "Managed compute supports both keys and Microsoft Entra ID for authentication."
+        },
+        {
+          "question": "What is the purpose of the model performance leaderboard?",
+          "options": [
+            "To compare model costs",
+            "To benchmark model performance",
+            "To list deprecated models",
+            "To manage deployments"
+          ],
+          "answer": "To benchmark model performance",
+          "type": "single",
+          "difficulty": "easy",
+          "explanation": "The leaderboard helps benchmark and compare model performance."
+        },
+        {
+          "question": "Which deployment option is best suited for cost-optimized batch jobs?",
+          "options": [
+            "Standard deployment",
+            "Provisioned deployment",
+            "Batch deployment",
+            "Managed compute"
+          ],
+          "answer": "Batch deployment",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "Batch deployment is optimized for cost-effective batch processing."
+        },
+        {
+          "question": "Scenario: You need to deploy a model with network isolation. Which deployment option supports this?",
+          "options": [
+            "Standard deployment",
+            "Managed compute",
+            "Batch deployment",
+            "Provisioned deployment"
+          ],
+          "answer": "Managed compute",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "Managed compute supports network isolation configurations."
+        },
+        {
+          "question": "Which of the following tabs are available on a model card?",
+          "options": [
+            "Quick facts",
+            "Benchmarks",
+            "Artifacts",
+            "All of the above"
+          ],
+          "answer": "All of the above",
+          "type": "single",
+          "difficulty": "easy",
+          "explanation": "Model cards include tabs like quick facts, benchmarks, and artifacts."
+        },
+        {
+          "question": "What happens when a model is deprecated in the catalog?",
+          "options": [
+            "It is removed immediately",
+            "Users are notified and given transition options",
+            "It becomes free to use",
+            "It is automatically updated"
+          ],
+          "answer": "Users are notified and given transition options",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "Deprecated models notify users and provide transition options."
+        },
+        {
+          "question": "Which of the following are inference task filters in the model catalog?",
+          "options": [
+            "Text generation",
+            "Image classification",
+            "Speech recognition",
+            "All of the above"
+          ],
+          "answer": "All of the above",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "Inference task filters include text, image, and speech tasks."
+        },
+        {
+          "question": "Scenario: You want to deploy a model with custom content filtering. Which deployment option supports this?",
+          "options": [
+            "Standard deployment",
+            "Managed compute",
+            "Azure OpenAI",
+            "None"
+          ],
+          "answer": "Azure OpenAI",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "Azure OpenAI supports custom content filtering."
+        },
+        {
+          "question": "Which of the following are true about the Azure AI Foundry playground?",
+          "options": [
+            "Supports real-time testing",
+            "Requires model deployment",
+            "Provides code samples",
+            "All of the above"
+          ],
+          "answer": "All of the above",
+          "type": "single",
+          "difficulty": "easy",
+          "explanation": "The playground supports testing, requires deployment, and provides code samples."
+        }
+      ]
+    },
+    {
+      "name": "Unit 3: Develop an AI app with the Azure AI Foundry SDK",
+      "questions": [
+        {
+          "question": "What is the primary purpose of the Azure AI Foundry SDK?",
+          "options": [
+            "To manage Azure subscriptions",
+            "To build and deploy AI applications using Azure services",
+            "To monitor network traffic",
+            "To create virtual machines"
+          ],
+          "answer": "To build and deploy AI applications using Azure services",
+          "type": "single",
+          "difficulty": "easy",
+          "explanation": "\u2705 The Azure AI Foundry SDK is designed to simplify the development and deployment of AI applications using Azure services. \u274c Managing subscriptions, monitoring traffic, and creating VMs are unrelated to AI SDK functionality."
+        },
+        {
+          "question": "Which programming language is primarily supported by the Azure AI Foundry SDK?",
+          "options": ["Java", "Python", "C++", "JavaScript"],
+          "answer": "Python",
+          "type": "single",
+          "difficulty": "easy",
+          "explanation": "\u2705 Python is the primary language supported by the Azure AI Foundry SDK, as shown in the documentation. \u274c Java, C++, and JavaScript are not officially supported for SDK usage."
+        },
+        {
+          "question": "Which component of the SDK is used to establish connections to Azure AI services?",
+          "options": [
+            "ChatClient",
+            "Connection",
+            "ModelCatalog",
+            "DeploymentManager"
+          ],
+          "answer": "Connection",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "\u2705 The 'Connection' class is used to authenticate and connect to Azure AI services. \u274c ChatClient is for chat interactions, ModelCatalog is for browsing models, and DeploymentManager handles deployments."
+        },
+        {
+          "question": "What is the role of the ChatClient class in the Azure AI Foundry SDK?",
+          "options": [
+            "To manage Azure resources",
+            "To interact with deployed chat models",
+            "To deploy models to production",
+            "To store training data"
+          ],
+          "answer": "To interact with deployed chat models",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "\u2705 ChatClient enables interaction with deployed chat models. \u274c It does not manage resources, deploy models, or store data."
+        },
+        {
+          "question": "Which of the following are required to initialize a Connection object in the SDK?",
+          "options": [
+            "API key",
+            "Endpoint URL",
+            "Model name",
+            "Subscription ID"
+          ],
+          "answer": ["API key", "Endpoint URL"],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "\u2705 API key and endpoint URL are essential for authentication. \u274c Model name and subscription ID are not required for initializing a connection."
+        },
+        {
+          "question": "Scenario: You want to deploy a model using the SDK. Which class should you use?",
+          "options": [
+            "Connection",
+            "DeploymentManager",
+            "ChatClient",
+            "ModelCatalog"
+          ],
+          "answer": "DeploymentManager",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "\u2705 DeploymentManager handles model deployment tasks. \u274c Connection is for authentication, ChatClient is for interaction, and ModelCatalog is for browsing models."
+        },
+        {
+          "question": "Which of the following tasks can be performed using the Azure AI Foundry SDK? (Select all that apply)",
+          "options": [
+            "Deploy models",
+            "Interact with chat models",
+            "Monitor network traffic",
+            "Browse model catalog"
+          ],
+          "answer": [
+            "Deploy models",
+            "Interact with chat models",
+            "Browse model catalog"
+          ],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "\u2705 The SDK supports deployment, interaction, and browsing models. \u274c Monitoring network traffic is not a feature of the SDK."
+        },
+        {
+          "question": "Which method is used to send a message to a chat model using ChatClient?",
+          "options": [
+            "send_message()",
+            "query_model()",
+            "chat()",
+            "interact()"
+          ],
+          "answer": "send_message()",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "\u2705 send_message() is the correct method to communicate with chat models. \u274c query_model(), chat(), and interact() are not valid SDK methods."
+        },
+        {
+          "question": "Scenario: You need to list all available models in the catalog. Which class should you use?",
+          "options": [
+            "ModelCatalog",
+            "ChatClient",
+            "Connection",
+            "DeploymentManager"
+          ],
+          "answer": "ModelCatalog",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "\u2705 ModelCatalog provides access to the list of available models. \u274c Other classes serve different purposes."
+        },
+        {
+          "question": "Which of the following are benefits of using the Azure AI Foundry SDK? (Select all that apply)",
+          "options": [
+            "Simplified development",
+            "Direct access to Azure AI services",
+            "Manual configuration of endpoints",
+            "Automated deployment workflows"
+          ],
+          "answer": [
+            "Simplified development",
+            "Direct access to Azure AI services",
+            "Automated deployment workflows"
+          ],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "\u2705 The SDK simplifies development, provides direct access, and supports automation. \u274c Manual configuration is not a benefit\u2014it\u2019s a drawback."
+        },
+        {
+          "question": "Coding: What is the correct way to initialize a ChatClient?",
+          "options": [
+            "ChatClient(api_key, endpoint)",
+            "ChatClient(connection)",
+            "ChatClient(model_name)",
+            "ChatClient()"
+          ],
+          "answer": "ChatClient(connection)",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "\u2705 ChatClient requires a Connection object for initialization. \u274c Other options are syntactically incorrect or missing required parameters."
+        },
+        {
+          "question": "Coding: Which method retrieves model metadata from the catalog?",
+          "options": [
+            "get_model_info()",
+            "fetch_metadata()",
+            "get_metadata()",
+            "get_model_metadata()"
+          ],
+          "answer": "get_model_metadata()",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "\u2705 get_model_metadata() is the correct method. \u274c Other options are not defined in the SDK."
+        },
+        {
+          "question": "Scenario: You want to improve a deployed model. What should you do?",
+          "options": [
+            "Retrain the model with new data",
+            "Change the endpoint URL",
+            "Delete the model",
+            "Use ChatClient to send feedback"
+          ],
+          "answer": "Retrain the model with new data",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "\u2705 Retraining with new data improves model performance. \u274c Changing endpoint or deleting the model does not improve it. ChatClient is for interaction, not training."
+        },
+        {
+          "question": "Which of the following are valid steps in developing an AI app using the SDK? (Select all that apply)",
+          "options": [
+            "Establish connection",
+            "Select model",
+            "Deploy model",
+            "Monitor CPU usage"
+          ],
+          "answer": ["Establish connection", "Select model", "Deploy model"],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "\u2705 These steps are part of the SDK workflow. \u274c Monitoring CPU usage is not part of SDK development."
+        },
+        {
+          "question": "What is the purpose of the exercise module in the SDK training?",
+          "options": [
+            "To test network latency",
+            "To practice using SDK components",
+            "To configure Azure subscriptions",
+            "To install third-party libraries"
+          ],
+          "answer": "To practice using SDK components",
+          "type": "single",
+          "difficulty": "easy",
+          "explanation": "\u2705 The exercise module provides hands-on practice. \u274c Other options are unrelated to SDK training."
+        },
+        {
+          "question": "Coding: Which class is used to deploy a model?",
+          "options": [
+            "ModelCatalog",
+            "DeploymentManager",
+            "ChatClient",
+            "Connection"
+          ],
+          "answer": "DeploymentManager",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "\u2705 DeploymentManager handles deployment. \u274c Other classes serve different purposes."
+        },
+        {
+          "question": "Scenario: You receive an error while sending a message using ChatClient. What should you check first?",
+          "options": [
+            "Model name",
+            "Connection object",
+            "Deployment status",
+            "SDK version"
+          ],
+          "answer": ["Connection object", "Deployment status"],
+          "type": "multiple",
+          "difficulty": "hard",
+          "explanation": "\u2705 Connection and deployment status are critical for successful communication. \u274c Model name and SDK version are less likely to cause message errors."
+        },
+        {
+          "question": "Which of the following are true about the Azure AI Foundry SDK? (Select all that apply)",
+          "options": [
+            "It supports chat-based models",
+            "It requires manual endpoint configuration",
+            "It automates deployment",
+            "It provides access to model metadata"
+          ],
+          "answer": [
+            "It supports chat-based models",
+            "It automates deployment",
+            "It provides access to model metadata"
+          ],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "\u2705 The SDK supports chat models, automates deployment, and provides metadata. \u274c Manual endpoint configuration is not required."
+        },
+        {
+          "question": "Coding: How do you send a message using ChatClient?",
+          "options": [
+            "client.send_message('Hello')",
+            "client.chat('Hello')",
+            "client.query('Hello')",
+            "client.message('Hello')"
+          ],
+          "answer": "client.send_message('Hello')",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "\u2705 send_message() is the correct method. \u274c Other methods are not defined in the SDK."
+        }
+      ]
+    },
+    {
+      "name": "Unit 4: Develop a RAG-based solution with your own data using Azure AI Foundry",
+      "questions": [
+        {
+          "question": "What does RAG stand for in the context of Azure AI Foundry?",
+          "options": [
+            "Random Access Gateway",
+            "Recursive AI Generator",
+            "Retrieval-Augmented Generation",
+            "Resource Allocation Grid"
+          ],
+          "answer": "Retrieval-Augmented Generation",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ RAG = Retrieval-Augmented Generation—retrieves relevant data then generates grounded output. ❌ Other terms don’t match the pattern :contentReference[oaicite:2]{index=2}."
+        },
+        {
+          "question": "Why is indexing your data essential in a RAG workflow?",
+          "options": [
+            "Speed retrieval",
+            "Reduce costs",
+            "Enable vector search",
+            "All of the above"
+          ],
+          "answer": "All of the above",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Indexing enables efficient, cost-effective retrieval and supports vector searches :contentReference[oaicite:3]{index=3}."
+        },
+        {
+          "question": "Which Azure service stores your vectorized documents?",
+          "options": [
+            "Azure Blob Storage",
+            "Azure AI Search",
+            "Azure Cosmos DB",
+            "Azure SQL"
+          ],
+          "answer": "Azure AI Search",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Azure AI Search is optimized for vector + text retrieval. ❌ Blob, Cosmos, SQL aren’t built for RAG patterns :contentReference[oaicite:4]{index=4}."
+        },
+        {
+          "question": "What two model types are deployed in Part 1 of the Azure AI Foundry tutorial?",
+          "options": [
+            "Speech & Translation",
+            "OpenAI chat & Embedding",
+            "Vision & Translation",
+            "OpenAI fine-tuning & QnA"
+          ],
+          "answer": ["OpenAI chat & Embedding"],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "✅ gpt-4o-mini (chat) and text-embedding‑ada‑002 (embedding) are deployed :contentReference[oaicite:5]{index=5}."
+        },
+        {
+          "question": "Coding: What Python package installs the AI Foundry SDK?",
+          "options": [
+            "azure-ai-foundry",
+            "azure-ai-inference",
+            "azure-ai-projects",
+            "azure-ai-search"
+          ],
+          "answer": "azure-ai-projects",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ The tutorial uses `azure-ai-projects` along with inference and search-documents :contentReference[oaicite:6]{index=6}."
+        },
+        {
+          "question": "What is the name of the environment variable for the Search endpoint?",
+          "options": [
+            "AZURE_AI_SEARCH_ENDPOINT",
+            "SEARCH_ENDPOINT",
+            "AI_SEARCH_URL",
+            "AZURE_SEARCH_SERVICE"
+          ],
+          "answer": "AZURE_AI_SEARCH_ENDPOINT",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ The SDK expects AZURE_AI_SEARCH_ENDPOINT. Other names are incorrect."
+        },
+        {
+          "question": "How do you generate embeddings in Python using Foundry?",
+          "options": [
+            "EmbeddingsClient.embed(...)",
+            "openai_client.chat.create(...)",
+            "index.search_documents(...)",
+            "AIProjectClient.build()"
+          ],
+          "answer": "EmbeddingsClient.embed(...)",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ You use the EmbeddingsClient.embed method :contentReference[oaicite:7]{index=7}."
+        },
+        {
+          "question": "Why might you specify input_type=QUERY in embed call?",
+          "options": [
+            "Optimize for querying",
+            "Enable GPU use",
+            "Support multi-language",
+            "Enable segmentation"
+          ],
+          "answer": "Optimize for querying",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ QUERY input type optimizes vectors for retrieval matching :contentReference[oaicite:8]{index=8}."
+        },
+        {
+          "question": "Which field type in a search index holds embeddings?",
+          "options": [
+            "Edm.String",
+            "Collection(Edm.Double) vector",
+            "Edm.Int32",
+            "Edm.Boolean"
+          ],
+          "answer": "Collection(Edm.Double) vector",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ Embeddings are numeric arrays; stored as double collections, not strings or ints."
+        },
+        {
+          "question": "What two search methods can Azure AI Search use in RAG?",
+          "options": [
+            "Keyword & vector search",
+            "SQL query & table scan",
+            "Image classification & OCR",
+            "Streaming & batch"
+          ],
+          "answer": ["Keyword & vector search"],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "✅ Azure AI Search supports both keyword and vector querying :contentReference[oaicite:9]{index=9}."
+        },
+        {
+          "question": "What feature re-ranks results using semantic models?",
+          "options": [
+            "BM25",
+            "Semantic ranker",
+            "Cosine sorter",
+            "Inverted indexer"
+          ],
+          "answer": "Semantic ranker",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ Semantic ranker reorders a BM25 result set using ML models :contentReference[oaicite:10]{index=10}."
+        },
+        {
+          "question": "Scenario: Chat returns irrelevant answers despite index being populated. Likely issue?",
+          "options": [
+            "Using wrong embedding model",
+            "Empty index",
+            "Missing semantic ranker",
+            "Expired auth key"
+          ],
+          "answer": ["Empty index", "Expired auth key"],
+          "type": "multiple",
+          "difficulty": "hard",
+          "explanation": "✅ No data or invalid credentials will break retrieval. Semantic ranker isn’t required."
+        },
+        {
+          "question": "Which data chunking strategy is recommended before embedding?",
+          "options": [
+            "Whole file",
+            "Fixed-size chunks",
+            "Line-by-line",
+            "Single word"
+          ],
+          "answer": "Fixed-size chunks",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Fixed chunks respect model token limits and encode context."
+        },
+        {
+          "question": "In code-first RAG, what orchestrates retrieval and generation?",
+          "options": ["LangChain", "Azure Portal", "Blob Storage", "Key Vault"],
+          "answer": "LangChain",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ LangChain coordinates RAG workflows. 🔀 Other options don’t."
+        },
+        {
+          "question": "What does hybrid search combine?",
+          "options": [
+            "Vector + textual search",
+            "Image + video search",
+            "SQL + NoSQL",
+            "Blob + Table"
+          ],
+          "answer": "Vector + textual search",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Hybrid = vector + keyword search for improved recall :contentReference[oaicite:11]{index=11}."
+        },
+        {
+          "question": "What feature limits token usage when constructing prompts?",
+          "options": ["Chunking", "Encryption", "Caching", "Scaling"],
+          "answer": "Chunking",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Chunking ensures each document fits the LLM’s context window."
+        },
+        {
+          "question": "Which SDK method queries the index?",
+          "options": [
+            "index.search_documents()",
+            "client.get_index()",
+            "search.run_query()",
+            "openai_client.query_index()"
+          ],
+          "answer": "index.search_documents()",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ This method executes queries. Other names are incorrect."
+        },
+        {
+          "question": "Module assess: What's the goal of RAG?",
+          "options": [
+            "Prevent hallucinations",
+            "Use private data",
+            "Avoid retraining",
+            "All of the above"
+          ],
+          "answer": "All of the above",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ RAG constrains answers to real data, is efficient, and doesn’t require retraining."
+        },
+        {
+          "question": "Scenario: You need secure secrets management for keys. What do you use?",
+          "options": [
+            "Azure Key Vault",
+            ".env file",
+            "Search Index",
+            "Blob Storage"
+          ],
+          "answer": "Azure Key Vault",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Key Vault is designed for secure storage of secrets; .env is insecure, search/blobs are wrong."
+        },
+        {
+          "question": "Why use vector search over only textual search?",
+          "options": [
+            "Semantic matching",
+            "Lower cost",
+            "Faster indexing",
+            "More accurate storage"
+          ],
+          "answer": "Semantic matching",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ Vector search finds semantically similar docs. Others are false benefits."
+        },
+        {
+          "question": "Which tool in Azure AI Studio builds the RAG app?",
+          "options": [
+            "Prompt Flow",
+            "Azure Data Factory",
+            "Power BI",
+            "HDInsight"
+          ],
+          "answer": "Prompt Flow",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Prompt Flow orchestrates steps for retrieval and generation in UI."
+        },
+        {
+          "question": "What environment variable stores embedding model name?",
+          "options": [
+            "EMBEDDINGS_MODEL",
+            "CHAT_MODEL",
+            "SEARCH_MODEL",
+            "BOT_MODEL"
+          ],
+          "answer": "EMBEDDINGS_MODEL",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ The tutorial uses EMBEDDINGS_MODEL to reference embedding deployment."
+        },
+        {
+          "question": "Scenario: Bot timed out generating answer. What’s a good fix?",
+          "options": [
+            "Reduce top k results",
+            "Increase model size",
+            "Add more documents",
+            "Use different region"
+          ],
+          "answer": "Reduce top k results",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ Fewer retrieved docs → smaller prompt → faster response."
+        },
+        {
+          "question": "What should you delete to avoid extra Azure costs after experiment?",
+          "options": [
+            "Search service",
+            "Model deployments",
+            "Foundry project",
+            "All of the above"
+          ],
+          "answer": "All of the above",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Remove all provisioned resources to stop billing."
+        },
+        {
+          "question": "In Azure AI Search queries, default max results is?",
+          "options": ["50 for text, k-NN for vector", "10", "100", "1000"],
+          "answer": "50 for text, k-NN for vector",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ Default is 50 for full text, vector uses k‑nearest‑neighbor :contentReference[oaicite:12]{index=12}."
+        },
+        {
+          "question": "Which field attribute makes a field returned in search?",
+          "options": ["retrievable", "searchable", "filterable", "sortable"],
+          "answer": "retrievable",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ Only retrievable fields are included in responses; others affect search/filter logic."
+        },
+        {
+          "question": "During embedding, if input > token limit, what should you do?",
+          "options": [
+            "Chunk it",
+            "Raise exception",
+            "Ignore",
+            "Convert to lower case"
+          ],
+          "answer": "Chunk it",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Chunking prevents exceeding model token limits :contentReference[oaicite:13]{index=13}."
+        },
+        {
+          "question": "Scenario: You run hybrid search, but cost is high. What do you adjust?",
+          "options": [
+            "Lower vector k",
+            "Disable semantic ranker",
+            "Increase filters",
+            "Increase chunk size"
+          ],
+          "answer": ["Lower vector k", "Disable semantic ranker"],
+          "type": "multiple",
+          "difficulty": "hard",
+          "explanation": "✅ Fewer vectors and no rerank reduces compute and latency costs."
+        },
+        {
+          "question": "What role does Prompt Flow play?",
+          "options": [
+            "Orchestration of retrieval, prompt, and chat",
+            "Indexing documents",
+            "Deploying models",
+            "Managing resource groups"
+          ],
+          "answer": "Orchestration of retrieval, prompt, and chat",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Prompt Flow designs and runs logic; it doesn’t index or deploy."
+        },
+        {
+          "question": "What does RAG stand for in the context of Azure AI Foundry?",
+          "options": [
+            "Retrieval-Augmented Generation",
+            "Random Access Gateway",
+            "Rapid AI Generation",
+            "Resource Allocation Grid"
+          ],
+          "answer": "Retrieval-Augmented Generation",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "\u2705 'Retrieval-Augmented Generation' is correct because RAG combines retrieval of external data with generative models to improve responses. \u274c 'Random Access Gateway', 'Rapid AI Generation', and 'Resource Allocation Grid' are unrelated to AI model architecture."
+        },
+        {
+          "question": "Which component is essential for grounding a language model with your own data?",
+          "options": [
+            "Search index",
+            "Virtual machine",
+            "Blob storage",
+            "Load balancer"
+          ],
+          "answer": "Search index",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "\u2705 'Search index' is correct because it enables efficient retrieval of relevant documents for grounding. \u274c 'Virtual machine' and 'Blob storage' are infrastructure components, and 'Load balancer' is used for traffic distribution, not data grounding."
+        },
+        {
+          "question": "Which of the following are steps in building a RAG-based copilot in Azure AI Foundry?",
+          "options": [
+            "Create a search index",
+            "Deploy a model",
+            "Configure a chat client",
+            "Set up a load balancer"
+          ],
+          "answer": [
+            "Create a search index",
+            "Deploy a model",
+            "Configure a chat client"
+          ],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "\u2705 'Create a search index', 'Deploy a model', and 'Configure a chat client' are all part of building a RAG-based copilot. \u274c 'Set up a load balancer' is not typically required for this workflow."
+        },
+        {
+          "question": "Scenario: You want to improve the accuracy of responses from your copilot. What should you do?",
+          "options": [
+            "Add more documents to the search index",
+            "Increase the number of virtual machines",
+            "Use a larger font in the UI",
+            "Disable grounding"
+          ],
+          "answer": "Add more documents to the search index",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "\u2705 Adding more relevant documents improves grounding and response accuracy. \u274c Increasing virtual machines affects performance, not accuracy. Font size and disabling grounding do not enhance model understanding."
+        },
+        {
+          "question": "Which Python SDK is used to interact with Azure AI Foundry?",
+          "options": [
+            "azure-ai-foundry",
+            "azureml-sdk",
+            "openai-sdk",
+            "azure-cognitive-sdk"
+          ],
+          "answer": "azure-ai-foundry",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "\u2705 'azure-ai-foundry' is the correct SDK for building apps with Azure AI Foundry. \u274c The other SDKs are for different services like Azure ML or OpenAI."
+        },
+        {
+          "question": "What is the purpose of the 'grounding' parameter in the chat client configuration?",
+          "options": [
+            "To enable UI customization",
+            "To connect to the internet",
+            "To provide context from external data",
+            "To store logs"
+          ],
+          "answer": "To provide context from external data",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "\u2705 Grounding allows the model to use external data for context. \u274c UI customization, internet connection, and logging are unrelated to grounding."
+        },
+        {
+          "question": "Which of the following are valid sources for grounding data in Azure AI Foundry?",
+          "options": [
+            "PDF documents",
+            "Web pages",
+            "Excel files",
+            "Audio files"
+          ],
+          "answer": ["PDF documents", "Web pages", "Excel files"],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "\u2705 PDF, web pages, and Excel files can be indexed for grounding. \u274c Audio files are not typically used for text-based grounding."
+        },
+        {
+          "question": "Scenario: You deployed a model but it returns generic answers. What is the most likely issue?",
+          "options": [
+            "Grounding is not configured",
+            "Model is too large",
+            "UI is not responsive",
+            "Search index is overloaded"
+          ],
+          "answer": "Grounding is not configured",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "\u2705 Without grounding, the model lacks context and returns generic responses. \u274c Model size and UI responsiveness do not affect answer specificity. Search index overload would cause performance issues, not generic answers."
+        },
+        {
+          "question": "Which method is used to send a query to the chat client in the Azure AI Foundry SDK?",
+          "options": [
+            "chat.send()",
+            "client.query()",
+            "chat_client.ask()",
+            "chat_client.send_message()"
+          ],
+          "answer": "chat_client.send_message()",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "\u2705 'chat_client.send_message()' is the correct method to send queries. \u274c The other methods are either incorrect or not part of the SDK."
+        },
+        {
+          "question": "What is the benefit of using RAG over a traditional language model?",
+          "options": [
+            "Faster training",
+            "Reduced cost",
+            "Improved accuracy with external data",
+            "Better UI design"
+          ],
+          "answer": "Improved accuracy with external data",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "\u2705 RAG improves accuracy by incorporating external data. \u274c Faster training and reduced cost are not guaranteed. UI design is unrelated."
+        }
+      ]
+    },
+    {
+      "name": "Unit: Fine-tune a language model with Azure AI Foundry",
+      "questions": [
+        {
+          "question": "What is the main reason to fine-tune a language model?",
+          "options": [
+            "Improve general reasoning over many tasks",
+            "Customize behavior for your specific data",
+            "Reduce model size",
+            "Eliminate need for prompt engineering"
+          ],
+          "answer": "Customize behavior for your specific data",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Fine-tuning adapts models to domain-specific data :contentReference[oaicite:2]{index=2}. ❌ It doesn’t necessarily reduce size or replace prompt engineering entirely."
+        },
+        {
+          "question": "Which fine-tuning method does Azure AI Foundry use to limit parameter updates?",
+          "options": [
+            "Backpropagation",
+            "LoRA (Low-Rank Adaptation)",
+            "Knowledge Distillation",
+            "Zero-shot tuning"
+          ],
+          "answer": "LoRA (Low-Rank Adaptation)",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ Azure uses LoRA to update fewer parameters efficiently :contentReference[oaicite:3]{index=3}."
+        },
+        {
+          "question": "Which scenarios are ideal for fine-tuning? (Choose 2)",
+          "options": [
+            "Adapting to technical domain language",
+            "Reducing inference latency",
+            "Matching brand tone",
+            "Increasing model size"
+          ],
+          "answer": [
+            "Adapting to technical domain language",
+            "Matching brand tone"
+          ],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "✅ Fine-tuning helps adapt jargon and tone :contentReference[oaicite:4]{index=4}. Latency reduction and size increase are secondary effects."
+        },
+        {
+          "question": "What file format is required for training data?",
+          "options": [".csv", ".jsonl", ".xml", ".txt"],
+          "answer": ".jsonl",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Azure AI Foundry expects JSON Lines with prompt/completion pairs :contentReference[oaicite:5]{index=5}."
+        },
+        {
+          "question": "In JSONL fine-tuning format, what are the top-level keys?",
+          "options": [
+            "‘prompt’ & ‘completion’",
+            "‘input’ & ‘output’",
+            "‘question’ & ‘answer’",
+            "‘text’ & ‘response’"
+          ],
+          "answer": "‘prompt’ & ‘completion’",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ The expected format uses prompt/completion pairs :contentReference[oaicite:6]{index=6}."
+        },
+        {
+          "question": "Scenario: After fine-tuning, the model outputs generic responses. What's wrong?",
+          "options": [
+            "Training dataset inadequate",
+            "Using wrong base model",
+            "Forgot to deploy custom model",
+            "Jsonl file had syntax error"
+          ],
+          "answer": [
+            "Training dataset inadequate",
+            "Forgot to deploy custom model",
+            "Jsonl file had syntax error"
+          ],
+          "type": "multiple",
+          "difficulty": "hard",
+          "explanation": "✅ All could lead to fallback to base model or broken fine-tuning."
+        },
+        {
+          "question": "Which environment in Azure AI Foundry houses fine-tuning steps?",
+          "options": [
+            "Prompt Flow",
+            "Model Catalog Cabin",
+            "Fine-tuning wizard",
+            "Playground"
+          ],
+          "answer": "Fine-tuning wizard",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Azure provides a fine-tune wizard in the portal :contentReference[oaicite:7]{index=7}."
+        },
+        {
+          "question": "What role does validation data play in fine-tuning?",
+          "options": [
+            "Required for deployment",
+            "Checks overfitting",
+            "Increases training speed",
+            "Used only for semantic search"
+          ],
+          "answer": "Checks overfitting",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Validation helps detect if model is overfitting to training data :contentReference[oaicite:8]{index=8}."
+        },
+        {
+          "question": "During fine-tuning, which parameter can control training length?",
+          "options": ["batch_size", "n_epochs", "embed_dim", "k_neighbors"],
+          "answer": "n_epochs",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ n_epochs defines number of passes over training data."
+        },
+        {
+          "question": "Which Azure role is needed to fine-tune models via Foundry?",
+          "options": [
+            "Reader",
+            "Cognitive Services OpenAI Contributor",
+            "Owner",
+            "Data Scientist"
+          ],
+          "answer": "Cognitive Services OpenAI Contributor",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ Required role per Microsoft docs :contentReference[oaicite:9]{index=9}."
+        },
+        {
+          "question": "What benefit does fine-tuning give over prompt engineering?",
+          "options": [
+            "Cheaper per-call cost",
+            "Can train on large example set",
+            "Removes token limit",
+            "Guarantees no hallucinations"
+          ],
+          "answer": "Can train on large example set",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ You can use more examples than fit in a prompt :contentReference[oaicite:10]{index=10}."
+        },
+        {
+          "question": "Which method is used in Python SDK to start fine-tuning?",
+          "options": [
+            "client.begin_finetune(...)",
+            "ml_client.finetune()",
+            "ml_client.models.create_finetune_job(...)",
+            "openai.FineTune.create(...)"
+          ],
+          "answer": "ml_client.models.create_finetune_job(...)",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ Use Azure MLClient to initiate fine-tune job; other methods are incorrect."
+        },
+        {
+          "question": "Why might one use a smaller base model like GPT‑4.1‑mini?",
+          "options": [
+            "Faster training & lower cost",
+            "Higher accuracy always",
+            "Supports more tokens",
+            "Auto-validates data"
+          ],
+          "answer": "Faster training & lower cost",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ Mini models are cheaper and faster to fine‑tune :contentReference[oaicite:11]{index=11}."
+        },
+        {
+          "question": "Scenario: Deployed fine-tuned model returns base model output. What could cause it?",
+          "options": [
+            "Validation not provided",
+            "Forgot to deploy tuned model",
+            "Wrong endpoint called",
+            "Batch size too small"
+          ],
+          "answer": ["Forgot to deploy tuned model", "Wrong endpoint called"],
+          "type": "multiple",
+          "difficulty": "hard",
+          "explanation": "✅ These issues would cause fallback to base model."
+        },
+        {
+          "question": "What is an advantage of standard deployment fine-tuning?",
+          "options": [
+            "Serverless compute",
+            "Managed VM infrastructure",
+            "On-prem only",
+            "Requires no subscription"
+          ],
+          "answer": "Serverless compute",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Standard fine-tuning uses serverless pricing and infrastructure :contentReference[oaicite:12]{index=12}."
+        },
+        {
+          "question": "Module assessment: Fine-tuning customizes weights, prompt engineering doesn’t—True or False?",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Fine-tuning updates model weights; prompt engineering only crafts input."
+        },
+        {
+          "question": "Which resource should you delete first to avoid unexpected charges?",
+          "options": [
+            "Fine-tuning job",
+            "Training data file",
+            "Custom model deployment",
+            "Validation dataset"
+          ],
+          "answer": "Custom model deployment",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Running deployment consumes compute; stop it first."
+        },
+        {
+          "question": "What determines supported base models for fine-tuning?",
+          "options": [
+            "Data size",
+            "Region & model provider",
+            "Azure subscription type",
+            "Prompt flow version"
+          ],
+          "answer": "Region & model provider",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ Support depends on provider availability in region :contentReference[oaicite:13]{index=13}."
+        },
+        {
+          "question": "Why does fine-tuning often reduce inference latency?",
+          "options": [
+            "Smaller context prompts",
+            "Model auto-compression",
+            "Runs on GPU only",
+            "Fewer tokens to send"
+          ],
+          "answer": ["Smaller context prompts", "Fewer tokens to send"],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "✅ Fine-tuned models need less prompt, reducing token volume :contentReference[oaicite:14]{index=14}."
+        },
+        {
+          "question": "How do you track fine-tuning progress?",
+          "options": [
+            "Monitor job status in portal",
+            "CLI ‘az ml job show’",
+            "Receive email on completion",
+            "No tracking supported"
+          ],
+          "answer": ["Monitor job status in portal", "CLI ‘az ml job show’"],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "✅ You can view status in portal or CLI. Email isn't a default feature."
+        },
+        {
+          "question": "In JSONL, missing completion key causes? (scenario)",
+          "options": [
+            "Validation error",
+            "Model trains with dummy text",
+            "Portal ignores record",
+            "Job still runs"
+          ],
+          "answer": "Validation error",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ Azure rejects malformed JSONL—it won’t reach training."
+        },
+        {
+          "question": "Which benefit does LoRA provide?",
+          "options": [
+            "Trainable on CPU only",
+            "Reduces parameter updates",
+            "Increases model size",
+            "Removes need for validation"
+          ],
+          "answer": "Reduces parameter updates",
+          "type": "hard",
+          "difficulty": "hard",
+          "explanation": "✅ LoRA updates only low-rank matrices, reducing computation :contentReference[oaicite:15]{index=15}."
+        },
+        {
+          "question": "Scenario: Your dataset is unbalanced and biased. Best practice?",
+          "options": [
+            "Use data balancing",
+            "Proceed and assess later",
+            "Ignore validation",
+            "Multiply majority class"
+          ],
+          "answer": "Use data balancing",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ Balanced data reduces bias. Oversampling majority worsens it."
+        },
+        {
+          "question": "In SDK, which library is required for ML workflow?",
+          "options": [
+            "azure-ai-ml",
+            "azure-ai-projects",
+            "azure-ai-search",
+            "openai"
+          ],
+          "answer": "azure-ai-ml",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ Azure‑AI‑ML is the SDK for MLClient and jobs."
+        },
+        {
+          "question": "After fine-tuning and deployment, where do you test the model?",
+          "options": [
+            "Azure Foundry Playground",
+            "Azure Portal Metrics",
+            "CLI only",
+            "Upload new dataset"
+          ],
+          "answer": "Azure Foundry Playground",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Playground allows interactive testing of deployed models."
+        },
+        {
+          "question": "Module summary: True or False — Fine-tuning always outperforms prompt engineering?",
+          "options": ["True", "False"],
+          "answer": "False",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ Prompt engineering can outperform fine-tuning in some cases :contentReference[oaicite:16]{index=16}."
+        }
+      ]
+    },
+    {
+      "name": "Unit: Implement a responsible generative AI solution in Azure AI Foundry",
+      "questions": [
+        {
+          "question": "What is the first phase in the responsible AI lifecycle in Azure AI Foundry?",
+          "options": [
+            "Mitigate harms",
+            "Identify potential harms",
+            "Plan responsible AI",
+            "Monitor and operate"
+          ],
+          "answer": "Plan responsible AI",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Planning sets goals, scope, and includes harm analysis. Later phases include identifying, mitigating, and operating :contentReference[oaicite:2]{index=2}."
+        },
+        {
+          "question": "Which is NOT a listed AI harm category in Azure Content Safety?",
+          "options": ["Violence", "Self-harm", "Misinformation", "Sexual"],
+          "answer": "Misinformation",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ The focus categories are hate, violence, self-harm, sexual :contentReference[oaicite:3]{index=3}. Misinformation isn’t directly filtered."
+        },
+        {
+          "question": "Which tools help measure harm in deployed Azure AI Foundry apps?",
+          "options": [
+            "Manual evaluation",
+            "AI-assisted evaluation",
+            "Both",
+            "None"
+          ],
+          "answer": "Both",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ The module includes manual and AI-assisted methods :contentReference[oaicite:4]{index=4}."
+        },
+        {
+          "question": "What filter system enforces content safety in Azure AI Foundry?",
+          "options": [
+            "Azure AI Content Safety",
+            "Azure Policy",
+            "Azure Key Vault",
+            "Azure Monitor"
+          ],
+          "answer": "Azure AI Content Safety",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ The portal integrates Content Safety for input/output filters :contentReference[oaicite:5]{index=5}."
+        },
+        {
+          "question": "Which content filter categories act on user inputs and model output? (select 2)",
+          "options": ["Hate", "Self-harm", "Encryption", "Prompt shields"],
+          "answer": ["Hate", "Self-harm"],
+          "type": "multiple",
+          "difficulty": "hard",
+          "explanation": "✅ Filters include hate, violence, self-harm, sexual, applied on both sides :contentReference[oaicite:6]{index=6}."
+        },
+        {
+          "question": "Scenario: A bot returns violent content. What mitigation layer likely failed?",
+          "options": [
+            "Input filter",
+            "Prompt shield",
+            "Policy enforcement",
+            "Observability"
+          ],
+          "answer": ["Input filter", "Policy enforcement"],
+          "type": "multiple",
+          "difficulty": "hard",
+          "explanation": "✅ Input or policy filters should block harmful output; observability logs but doesn’t block."
+        },
+        {
+          "question": "What is a prompt shield?",
+          "options": [
+            "Disables injection",
+            "Monitors prompt style",
+            "Separate API to mitigate injection",
+            "Logs all prompts"
+          ],
+          "answer": "Separate API to mitigate injection",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ Prompt Shields API defends against prompt injection attacks :contentReference[oaicite:7]{index=7}."
+        },
+        {
+          "question": "Which is a direct prompt injection threat?",
+          "options": [
+            "SQL attack",
+            "Jailbreak commands in input",
+            "Dataset poisoning",
+            "Model drift"
+          ],
+          "answer": "Jailbreak commands in input",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Direct injections misuse LLM behavior via input; others aren’t prompt injections :contentReference[oaicite:8]{index=8}."
+        },
+        {
+          "question": "Which severity level allows annotation but not filtering?",
+          "options": ["Safe", "Low", "Medium", "High"],
+          "answer": "Safe",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ 'Safe' labels content but doesn’t block it :contentReference[oaicite:9]{index=9}."
+        },
+        {
+          "question": "Scenario: You want stricter filters. Which step is correct?",
+          "options": [
+            "Create custom content filter",
+            "Disable default filter",
+            "Remove policy",
+            "Increase logging"
+          ],
+          "answer": "Create custom content filter",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Custom filters allow more restrictive thresholds :contentReference[oaicite:10]{index=10}."
+        },
+        {
+          "question": "What config page sets thresholds for filter categories?",
+          "options": [
+            "Guardrails + controls",
+            "Deployment page",
+            "Model catalog",
+            "Monitoring page"
+          ],
+          "answer": "Guardrails + controls",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ Thresholds configured under project → Guardrails + controls :contentReference[oaicite:11]{index=11}."
+        },
+        {
+          "question": "Which languages are supported for content filtering annotations?",
+          "options": [
+            "English only",
+            "Multiple languages including German, Japanese",
+            "All languages equally",
+            "Only EU languages"
+          ],
+          "answer": "Multiple languages including German, Japanese",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ Filter trained on English, German, Japanese, Spanish, French, Italian, Portuguese, Chinese :contentReference[oaicite:12]{index=12}."
+        },
+        {
+          "question": "Scenario: Harm measurement reveals many unsafe outputs. You should:",
+          "options": [
+            "Tighten thresholds",
+            "Retrain model",
+            "Add logging only",
+            "Ignore findings"
+          ],
+          "answer": "Tighten thresholds",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Tighter filters prevent harmful generation."
+        },
+        {
+          "question": "What is red-teaming in Azure Foundry?",
+          "options": [
+            "Simulated adversarial testing",
+            "Content moderation",
+            "Sales audit",
+            "Model architecture review"
+          ],
+          "answer": "Simulated adversarial testing",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ Automated adversarial probing mimics red-teaming :contentReference[oaicite:13]{index=13}."
+        },
+        {
+          "question": "Which metric catches prompt injections?",
+          "options": [
+            "Jailbreak flag",
+            "Token usage",
+            "Latency",
+            "Completion length"
+          ],
+          "answer": "Jailbreak flag",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ Content Safety classification flags jailbreaks :contentReference[oaicite:14]{index=14}."
+        },
+        {
+          "question": "Coding: How do you enable content filtering in Foundry SDK?",
+          "options": [
+            "Use ContentSafetyClient",
+            "Set filter=True",
+            "client.enable_filter()",
+            "No code needed"
+          ],
+          "answer": "Use ContentSafetyClient",
+          "type": "hard",
+          "difficulty": "hard",
+          "explanation": "✅ You program against the ContentSafetyClient API :contentReference[oaicite:15]{index=15}."
+        },
+        {
+          "question": "Module assess: Responsible AI includes planning, developing, measuring, mitigating, operating—True or False?",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ The lifecycle covers all five stages :contentReference[oaicite:16]{index=16}."
+        },
+
+        {
+          "question": "Which fallback triggers when filter blocks output?",
+          "options": [
+            "finish_reason=‘content_filter’",
+            "error code 404",
+            "null response",
+            "complete_text='BLOCKED'"
+          ],
+          "answer": "finish_reason=‘content_filter’",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ API finishes with content_filter reason :contentReference[oaicite:17]{index=17}."
+        },
+        {
+          "question": "Which phase focuses on logging, telemetry, and governance?",
+          "options": [
+            "Plan",
+            "Mitigate",
+            "Operate responsibly",
+            "Identify harms"
+          ],
+          "answer": "Operate responsibly",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Operation includes observability, telemetry, alerts :contentReference[oaicite:18]{index=18}."
+        },
+        {
+          "question": "Which service integrates alerts into Azure Foundry for security posture?",
+          "options": [
+            "Microsoft Defender for Cloud",
+            "Azure Sentinel",
+            "Power BI",
+            "Azure Monitor"
+          ],
+          "answer": "Microsoft Defender for Cloud",
+          "type": "hard",
+          "difficulty": "hard",
+          "explanation": "✅ Defender integrates into Foundry for runtime threat alerts :contentReference[oaicite:19]{index=19}."
+        },
+        {
+          "question": "Scenario: You want to detect copyright infringement. Which filter?",
+          "options": [
+            "Protected material detection",
+            "Hate filter",
+            "Sexual filter",
+            "Self-harm filter"
+          ],
+          "answer": "Protected material detection",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ Detects matches to known text/code using optional classifier :contentReference[oaicite:20]{index=20}."
+        },
+        {
+          "question": "Why configure prompt shields?",
+          "options": [
+            "To block indirect injections",
+            "To increase latency",
+            "To bypass filters",
+            "To monitor tokens"
+          ],
+          "answer": "To block indirect injections",
+          "type": "medium",
+          "explanation": "✅ Shields detect both direct and indirect prompt injection attacks :contentReference[oaicite:21]{index=21}."
+        },
+        {
+          "question": "What does 'Block few', 'Block some', 'Block all' refer to?",
+          "options": [
+            "Filter thresholds",
+            "Token limits",
+            "Deployment types",
+            "Log levels"
+          ],
+          "answer": "Filter thresholds",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ These thresholds control filter strictness per category :contentReference[oaicite:22]{index=22}."
+        },
+        {
+          "question": "During measurement, what tool helps assess guardrail effectiveness?",
+          "options": [
+            "AI-assisted evaluation",
+            "Load testing",
+            "Quota monitoring",
+            "Cost Analyzer"
+          ],
+          "answer": "AI-assisted evaluation",
+          "type": "hard",
+          "difficulty": "hard",
+          "explanation": "✅ AI-assisted evaluation reviews output systematically :contentReference[oaicite:23]{index=23}."
+        },
+        {
+          "question": "Which phase follows beyond deploying responsible filters?",
+          "options": [
+            "Operate responsibly",
+            "Plan responsible AI",
+            "Identify harms",
+            "Create custom models"
+          ],
+          "answer": "Operate responsibly",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Monitoring/operation comes after mitigation :contentReference[oaicite:24]{index=24}."
+        },
+        {
+          "question": "Scenario: Filter stops helpful medical advice. You should:",
+          "options": [
+            "Lower threshold for self-harm filter",
+            "Remove filter",
+            "Retrain model",
+            "Ignore"
+          ],
+          "answer": "Lower threshold for self-harm filter",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ Adjust the filter balance; removing filter is risky."
+        }
+      ]
+    },
+    {
+      "name": "Unit: Evaluate generative AI performance in Azure AI Foundry portal",
+      "questions": [
+        {
+          "question": "What is the primary goal of evaluating generative AI models in Azure AI Foundry?",
+          "options": [
+            "Reduce model size",
+            "Build confidence in accuracy and safety",
+            "Increase token usage",
+            "Avoid Azure billing"
+          ],
+          "answer": "Build confidence in accuracy and safety",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Evaluations aim to ensure models are accurate, safe, and meet user needs :contentReference[oaicite:2]{index=2}. Others are not evaluation goals."
+        },
+        {
+          "question": "Which evaluation types are supported in Azure AI Foundry?",
+          "options": [
+            "Manual evaluations",
+            "AI-assisted automated evaluations",
+            "Only manual evaluations",
+            "Third-party evaluations only"
+          ],
+          "answer": ["Manual evaluations", "AI-assisted automated evaluations"],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "✅ Both manual and AI-assisted automated evaluations are supported :contentReference[oaicite:3]{index=3}."
+        },
+        {
+          "question": "Which file formats are accepted for evaluation datasets?",
+          "options": [".csv", ".jsonl", ".xml", ".txt"],
+          "answer": [".csv", ".jsonl"],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "✅ Evaluation runs support CSV and JSONL formats :contentReference[oaicite:4]{index=4}."
+        },
+        {
+          "question": "Which metric does NOT require ground truth data?",
+          "options": ["ROUGE", "F1 Score", "AI-assisted coherence", "BLEU"],
+          "answer": "AI-assisted coherence",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ AI-assisted metrics use a judge model, ground‑truth metrics do need reference text :contentReference[oaicite:5]{index=5}."
+        },
+        {
+          "question": "What risk metrics are tracked by automated evaluations?",
+          "options": [
+            "Violence",
+            "Sexual content",
+            "Self‑harm",
+            "All of the above"
+          ],
+          "answer": "All of the above",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Automated evaluations include safety metrics across multiple categories :contentReference[oaicite:6]{index=6}."
+        },
+        {
+          "question": "Scenario: You don’t have expected outputs but still want evaluation metrics. What do you do?",
+          "options": [
+            "Use AI-assisted evaluation",
+            "Skip evaluation",
+            "Only manual review",
+            "Upload placeholder responses"
+          ],
+          "answer": "Use AI-assisted evaluation",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ AI-assisted works without ground truth; manual review is optional but not required."
+        },
+        {
+          "question": "Which tab lets you import human-graded responses?",
+          "options": [
+            "Manual evaluations",
+            "Automated evaluations",
+            "Overview",
+            "Benchmark"
+          ],
+          "answer": "Manual evaluations",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Manual mode lets you import data and grade responses :contentReference[oaicite:7]{index=7}."
+        },
+        {
+          "question": "What indicates an evaluation run finished with SafeAI?",
+          "options": [
+            "Console message",
+            "Detailed metrics and summaries",
+            "Error log",
+            "JSON only"
+          ],
+          "answer": "Detailed metrics and summaries",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ The UI shows summary tiles and raw data :contentReference[oaicite:8]{index=8}."
+        },
+        {
+          "question": "Which Azure regions support AI-assisted risk/safety metrics?",
+          "options": [
+            "East US 2, France Central, UK South, Sweden Central",
+            "West US only",
+            "Global regions all",
+            "Asia Pacific only"
+          ],
+          "answer": "East US 2, France Central, UK South, Sweden Central",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ Risk/safety AI-assisted evaluation is region-limited :contentReference[oaicite:9]{index=9}."
+        },
+        {
+          "question": "In automated evaluation, what is the role of a judge model?",
+          "options": [
+            "Generate outputs",
+            "Score responses",
+            "Store metrics",
+            "Encrypt data"
+          ],
+          "answer": "Score responses",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ A separate model grades coherence, relevance, similarity etc. :contentReference[oaicite:10]{index=10}."
+        },
+        {
+          "question": "Scenario: Two consecutive runs produce different scores on same data. This is because:",
+          "options": [
+            "Human error",
+            "Evaluator uses LLM with randomness",
+            "Data changed",
+            "Bug"
+          ],
+          "answer": "Evaluator uses LLM with randomness",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ AI-assisted metrics are non-deterministic due to randomness :contentReference[oaicite:11]{index=11}."
+        },
+        {
+          "question": "Which textual similarity metrics are supported? (Select 3)",
+          "options": ["BLEU", "METEOR", "ROUGE", "CONTENT_CHECKER"],
+          "answer": ["BLEU", "METEOR", "ROUGE"],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "✅ BLEU, METEOR, ROUGE are supported :contentReference[oaicite:12]{index=12}."
+        },
+        {
+          "question": "What are groundedness evaluators used for?",
+          "options": [
+            "Check factual alignment with context",
+            "Check grammar only",
+            "Check latency",
+            "Check token usage"
+          ],
+          "answer": "Check factual alignment with context",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Groundedness ensures output aligns with provided context :contentReference[oaicite:13]{index=13}."
+        },
+        {
+          "question": "Which component allows comparing multiple evaluation runs?",
+          "options": [
+            "Evaluator library dashboard",
+            "Prompt Flow GUI",
+            "Azure portal metrics",
+            "Storage explorer"
+          ],
+          "answer": "Evaluator library dashboard",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ The Evaluator library dashboard in Foundry UI supports run comparisons :contentReference[oaicite:14]{index=14}."
+        },
+        {
+          "question": "What SDK can you use to automate evaluations via code?",
+          "options": [
+            "Azure AI Foundry Evaluation SDK",
+            "Azure ML SDK",
+            "PromptFlow SDK",
+            "OpenAI Python SDK"
+          ],
+          "answer": ["Azure AI Foundry Evaluation SDK", "PromptFlow SDK"],
+          "type": "multiple",
+          "difficulty": "hard",
+          "explanation": "✅ Both the Evaluation SDK and Prompt Flow SDK support code-driven runs :contentReference[oaicite:15]{index=15}."
+        },
+        {
+          "question": "Scenario: You need to identify edge-case failures before production. You would use:",
+          "options": [
+            "Pre-production evaluation with adversarial simulators",
+            "Manual live testing",
+            "Profiling CPU usage",
+            "Cost estimation"
+          ],
+          "answer": "Pre-production evaluation with adversarial simulators",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ Adversarial simulators help identify edge-case safety failures :contentReference[oaicite:16]{index=16}."
+        },
+        {
+          "question": "Which human-in-the-loop method is supported for evaluation?",
+          "options": [
+            "Manual scoring",
+            "Crowdsourcing",
+            "Automated only",
+            "No human input"
+          ],
+          "answer": "Manual scoring",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Manual scoring with thumbs up/down is supported :contentReference[oaicite:17]{index=17}."
+        },
+        {
+          "question": "Which phase comes after manual and automated evaluation in the MLOps lifecycle?",
+          "options": [
+            "Operate responsibly / Monitoring",
+            "Plan model architecture",
+            "Train more data",
+            "Deploy to kiosk"
+          ],
+          "answer": "Operate responsibly / Monitoring",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ After evaluations, production monitoring begins :contentReference[oaicite:18]{index=18}."
+        },
+        {
+          "question": "What element must be mapped to configure evaluations?",
+          "options": [
+            "Dataset columns to query, ground truth, response",
+            "Azure region to test",
+            "Prompt flow version",
+            "API key"
+          ],
+          "answer": "Dataset columns to query, ground truth, response",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ You map dataset fields to required inputs :contentReference[oaicite:19]{index=19}."
+        },
+        {
+          "question": "Coding: In manual evaluation, which CLI command retrieves run status?",
+          "options": [
+            "az ai-foundry evaluation show",
+            "az ml job show",
+            "az ai-foundry run status",
+            "az openai eval status"
+          ],
+          "answer": "az ai-foundry evaluation show",
+          "type": "hard",
+          "explanation": "✅ The Foundry CLI provides evaluation show commands; others refer to ML or OpenAI SDK."
+        },
+        {
+          "question": "Why might automated metrics vary between runs?",
+          "options": [
+            "Randomness in LLM judge",
+            "Network jitter",
+            "Time of day",
+            "Azure subscription tier"
+          ],
+          "answer": "Randomness in LLM judge",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ AI-assisted metrics exhibit nondeterministic outputs :contentReference[oaicite:20]{index=20}."
+        },
+        {
+          "question": "Which metric focuses on response linguistic quality?",
+          "options": ["Fluency", "Groundedness", "Violence", "Self-harm"],
+          "answer": "Fluency",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Fluency measures readability and natural language flow :contentReference[oaicite:21]{index=21}."
+        },
+        {
+          "question": "Which evaluator category would you use for code security?",
+          "options": [
+            "Code vulnerability",
+            "Groundedness",
+            "F1 score",
+            "Hate content"
+          ],
+          "answer": "Code vulnerability",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ The safety/security evaluator can detect code issues :contentReference[oaicite:22]{index=22}."
+        },
+        {
+          "question": "Scenario: You want to compare GPT‑3.5 and GPT‑4 responses. How?",
+          "options": [
+            "Run two evaluation runs and compare via dashboard",
+            "Call both in same prompt",
+            "Use Azure portal cost estimation",
+            "Use only manual eval"
+          ],
+          "answer": "Run two evaluation runs and compare via dashboard",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ You deploy both and compare results via evaluation dashboard :contentReference[oaicite:23]{index=23}."
+        },
+        {
+          "question": "Module assess: True or False — Evaluation metrics are required to deploy a model.",
+          "options": ["True", "False"],
+          "answer": "False",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Evaluations are optional but recommended before/after deployment."
+        },
+        {
+          "question": "What evaluation phase helps detect ungrounded hallucinations?",
+          "options": [
+            "Ungrounded attributes evaluator",
+            "F1 score",
+            "Manual review",
+            "BLEU"
+          ],
+          "answer": ["Ungrounded attributes evaluator", "Manual review"],
+          "type": "multiple",
+          "difficulty": "hard",
+          "explanation": "✅ Ungrounded evaluator and manual review catch hallucinations :contentReference[oaicite:24]{index=24}."
+        },
+        {
+          "question": "During evaluation setup, what's the 'evaluation target'?",
+          "options": [
+            "Fine-tuned model or dataset",
+            "Azure region",
+            "Prompt flow version",
+            "Storage account"
+          ],
+          "answer": "Fine-tuned model or dataset",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ You choose between evaluating model or dataset :contentReference[oaicite:25]{index=25}."
+        }
+      ]
+    }
+  ]
+}

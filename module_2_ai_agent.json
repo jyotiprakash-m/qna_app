@@ -1,0 +1,1581 @@
+{
+  "units": [
+    {
+      "name": "Unit 1: Get started with AI agent development on Azure",
+      "questions": [
+        {
+          "question": "What is the defining capability of an AI agent compared to an assistant?",
+          "options": [
+            "Regenerates responses",
+            "Autonomously completes goals using tools",
+            "Stores user preferences",
+            "Only answers queries"
+          ],
+          "answer": "Autonomously completes goals using tools",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Agents not only converse but also take actions and orchestrate tasks via tools. Assistants support conversation only :contentReference[oaicite:2]{index=2}."
+        },
+        {
+          "question": "Which components make up an Azure AI agent? (Select 3)",
+          "options": [
+            "LLM model",
+            "Instructions/Prompt",
+            "Identity Management",
+            "Tools"
+          ],
+          "answer": ["LLM model", "Instructions/Prompt", "Tools"],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "✅ Agents consist of a model, instructions, and callable tools. Identity is supported, but not a core component :contentReference[oaicite:3]{index=3}."
+        },
+        {
+          "question": "Scenario: You need multi-step reasoning and network calls. Should you use an agent?",
+          "options": [
+            "Yes, use an agent",
+            "No, use basic LLM API",
+            "Use only embeddings",
+            "Use speech service"
+          ],
+          "answer": "Yes, use an agent",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Agents orchestrate multi-step logic, network/tool calls—LLM alone can't do that."
+        },
+        {
+          "question": "Which service provides orchestration, observability, and policy enforcement for agents?",
+          "options": [
+            "Azure AI Foundry Agent Service",
+            "Azure OpenAI Service",
+            "Azure Logic Apps",
+            "Azure Functions"
+          ],
+          "answer": "Azure AI Foundry Agent Service",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ This service is designed to orchestrate agents with governance :contentReference[oaicite:4]{index=4}."
+        },
+        {
+          "question": "Which benefits are provided by Azure AI Foundry Agent Service? (Select 3)",
+          "options": [
+            "Tool orchestration",
+            "RBAC & access control",
+            "Content filters",
+            "Automatic hardware scaling"
+          ],
+          "answer": [
+            "Tool orchestration",
+            "RBAC & access control",
+            "Content filters"
+          ],
+          "type": "multiple",
+          "difficulty": "hard",
+          "explanation": "✅ It handles tool orchestration, identity/RBAC, and content policy. Scaling is not directly a core benefit."
+        },
+        {
+          "question": "In what stage of agent lifecycle do you define model/tool instructions?",
+          "options": [
+            "Introduction",
+            "Agent development",
+            "Module summary",
+            "Region selection"
+          ],
+          "answer": "Agent development",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ You configure behavior/tools during agent development :contentReference[oaicite:5]{index=5}."
+        },
+        {
+          "question": "Coding: Which SDK do you use to call the agent in code-first style?",
+          "options": [
+            "Azure SDK ‘azure-ai-projects’",
+            "azure-ai-search",
+            "azure-ai-textanalytics",
+            "azure-cosmos"
+          ],
+          "answer": "Azure SDK ‘azure-ai-projects’",
+          "type": "hard",
+          "explanation": "✅ The Projects SDK is used to deploy agents via code :contentReference[oaicite:6]{index=6}."
+        },
+        {
+          "question": "Scenario: Agent fails tool call due to network error. Which feature retries automatically?",
+          "options": [
+            "Tool orchestration",
+            "Retry policies",
+            "Content filters",
+            "Observability"
+          ],
+          "answer": "Retry policies",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ The service includes retries for failed tool actions :contentReference[oaicite:7]{index=7}."
+        },
+        {
+          "question": "Module assessment: True or False—Azure AI Agent Service integrates with Application Insights for telemetry.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Observability includes traces/logs via Application Insights :contentReference[oaicite:8]{index=8}."
+        },
+        {
+          "question": "Which element ensures access control for agents?",
+          "options": [
+            "Azure Entra (RBAC)",
+            "Token cache",
+            "Blob encryption",
+            "DNS firewall"
+          ],
+          "answer": "Azure Entra (RBAC)",
+          "type": "medium",
+          "difficulty": "medium",
+          "explanation": "✅ The service uses RBAC via Azure Entra identity :contentReference[oaicite:9]{index=9}."
+        },
+        {
+          "question": "Which kind of agent coordination is supported?",
+          "options": [
+            "Single-step scripting",
+            "Multi-agent messaging",
+            "Manual handoff only",
+            "No inter-agent communication"
+          ],
+          "answer": "Multi-agent messaging",
+          "type": "medium",
+          "difficulty": "hard",
+          "explanation": "✅ The service supports agent-to-agent messaging and orchestration :contentReference[oaicite:10]{index=10}."
+        },
+        {
+          "question": "Scenario: You need to give agent LLM access to private company data. What should you do?",
+          "options": [
+            "Attach Azure AI Search tool",
+            "Upload to public blob",
+            "Use speech service",
+            "Use Azure function only"
+          ],
+          "answer": "Attach Azure AI Search tool",
+          "type": "medium",
+          "explanation": "✅ Tools like Azure AI Search enable secure data access. Public blob leaks data."
+        },
+        {
+          "question": "What is the purpose of instructions in an agent?",
+          "options": [
+            "Define agent goals and constraints",
+            "Store API keys",
+            "Host logs",
+            "Manage resource quotas"
+          ],
+          "answer": "Define agent goals and constraints",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Instructions act as system prompts for agent behavior :contentReference[oaicite:11]{index=11}."
+        },
+        {
+          "question": "Coding: Which method initiates an agent run via SDK?",
+          "options": [
+            "client.begin_agent_run(...)",
+            "client.run_agent()",
+            "run_agent_job()",
+            "submitAgentRequest()"
+          ],
+          "answer": "client.begin_agent_run(...)",
+          "type": "hard",
+          "explanation": "✅ Methods follow pattern begin_agent_run. Others are incorrect."
+        },
+        {
+          "question": "Which scenario best fits agent usage?",
+          "options": [
+            "Single Q&A prompt",
+            "Multi-step workflow with actions",
+            "Batch embedding only",
+            "Tensor computations"
+          ],
+          "answer": "Multi-step workflow with actions",
+          "type": "medium",
+          "explanation": "✅ Agents orchestrate multi-step workflows with tool integrations."
+        },
+        {
+          "question": "Module assess: True or False—Agents can only use open-source models in Foundry.",
+          "options": ["True", "False"],
+          "answer": "False",
+          "type": "medium",
+          "explanation": "✅ Agents support GPT, Mistral, Llama, etc., including Microsoft OpenAI models :contentReference[oaicite:12]{index=12}."
+        },
+        {
+          "question": "Scenario: You forgot to configure content filters. Risk?",
+          "options": [
+            "Agent may produce unsafe content",
+            "Agent runs faster",
+            "Agent logs missing",
+            "Agent costs increase"
+          ],
+          "answer": "Agent may produce unsafe content",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ Content filters help prevent unsafe outputs—if missing, agents may produce harmful content."
+        },
+        {
+          "question": "Which Azure SDK supports code-first agent creation?",
+          "options": [
+            "azure-ai-foundry",
+            "azure-ai-projects",
+            "azure-ai-language",
+            "azure-ai-ml"
+          ],
+          "answer": "azure-ai-projects",
+          "type": "hard",
+          "explanation": "✅ Projects SDK supports agent creation by code :contentReference[oaicite:13]{index=13}."
+        },
+        {
+          "question": "What type of observability is NOT provided by Agent Service?",
+          "options": [
+            "Function call tracing",
+            "Thread-level visibility",
+            "Application Insights integration",
+            "GPU utilization graphs"
+          ],
+          "answer": "GPU utilization graphs",
+          "type": "hard",
+          "explanation": "✅ GPU metrics are VM-level; Foundry focuses on thread, tool, trace logs."
+        },
+        {
+          "question": "Scenario: One agent needs to consult another agent. Is that possible?",
+          "options": [
+            "Yes—multi-agent messaging supported",
+            "No—only single agent flows",
+            "Only via HTTP triggers",
+            "Only within same tenant"
+          ],
+          "answer": "Yes—multi-agent messaging supported",
+          "type": "hard",
+          "explanation": "✅ Agents can orchestrate or delegate via multi-agent messaging :contentReference[oaicite:14]{index=14}."
+        },
+        {
+          "question": "Which phase introduces the Agent Service in the module?",
+          "options": [
+            "Introduction",
+            "What are agents?",
+            "Azure AI Agent Service",
+            "Summary"
+          ],
+          "answer": "Azure AI Agent Service",
+          "type": "medium",
+          "explanation": "✅ The module explains the service in the designated section :contentReference[oaicite:15]{index=15}."
+        },
+        {
+          "question": "Coding: To test your agent in portal, what feature is used?",
+          "options": [
+            "Playground / Test pane",
+            "Blob Explorer",
+            "Log Analytics",
+            "Function Monitor"
+          ],
+          "answer": "Playground / Test pane",
+          "type": "medium",
+          "explanation": "✅ Agents can be tested interactively in portal’s playground."
+        },
+        {
+          "question": "What does observability allow you to inspect?",
+          "options": [
+            "Every agent decision and tool invocation",
+            "Only errors",
+            "Only logs",
+            "Only runtime stats"
+          ],
+          "answer": "Every agent decision and tool invocation",
+          "type": "hard",
+          "explanation": "✅ Full traceability of state, tool calls, messages is provided :contentReference[oaicite:16]{index=16}."
+        },
+        {
+          "question": "Module assess: True or False—Agents built with Foundry can run without tool integration.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ You can build agents that only use LLM prompts without tools—though less potent."
+        },
+        {
+          "question": "Scenario: You want secure tool access within VNet. What should you configure?",
+          "options": [
+            "Enable network isolation",
+            "Disable RBAC",
+            "Enable public endpoints",
+            "Use global Azure region"
+          ],
+          "answer": "Enable network isolation",
+          "type": "hard",
+          "explanation": "✅ Network isolation ensures secure tool access within private networks :contentReference[oaicite:17]{index=17}."
+        },
+        {
+          "question": "What can be used to gracefully handle unexpected tool errors?",
+          "options": [
+            "Error fallback instructions in prompts",
+            "Disable tools",
+            "Ignore errors",
+            "Retry only once"
+          ],
+          "answer": "Error fallback instructions in prompts",
+          "type": "hard",
+          "explanation": "✅ You can include fallback logic/instructions to handle errors in agent behavior."
+        },
+        {
+          "question": "Which mindset does Azure recommend adopting when building agents?",
+          "options": [
+            "Prototype to production mindset",
+            "Never log user data",
+            "Always use on-prem VMs",
+            "Avoid modular design"
+          ],
+          "answer": "Prototype to production mindset",
+          "type": "medium",
+          "explanation": "✅ The module emphasizes moving from quick prototypes to production agents :contentReference[oaicite:18]{index=18}."
+        }
+      ]
+    },
+    {
+      "name": "Unit 2: Develop an AI agent with Azure AI Foundry Agent Service",
+      "questions": [
+        {
+          "question": "What defines an AI agent in Azure AI Foundry Agent Service?",
+          "options": [
+            "A static chatbot",
+            "A system that uses LLMs with tools to autonomously complete goals",
+            "An Azure policy engine",
+            "A basic Q&A assistant"
+          ],
+          "answer": "A system that uses LLMs with tools to autonomously complete goals",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Agents combine LLMs with tools to perform multi-step tasks automatically. ❌ Chatbots and assistants only respond without autonomy."
+        },
+        {
+          "question": "Which three components make up an agent in Foundry Agent Service?",
+          "options": ["Model (LLM)", "Instructions", "Tools", "Blob Storage"],
+          "answer": ["Model (LLM)", "Instructions", "Tools"],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "✅ Agents are composed of a model, instructions, and callable tools. ❌ Blob Storage is not part of agent definition :contentReference[oaicite:2]{index=2}."
+        },
+        {
+          "question": "Which Azure role is required to create and manage agents?",
+          "options": [
+            "Azure AI User",
+            "Storage Blob Data Contributor",
+            "Virtual Machine Contributor",
+            "Reader"
+          ],
+          "answer": "Azure AI User",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ ‘Azure AI User’ role grants permissions for creating/editing agents in Foundry :contentReference[oaicite:3]{index=3}."
+        },
+        {
+          "question": "In which project scope can agents be created?",
+          "options": [
+            "Across all Azure subscriptions",
+            "Per Foundry project",
+            "Only in hub-based projects",
+            "In Resource Group only"
+          ],
+          "answer": "Per Foundry project",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Agents live inside a Foundry project, providing isolation :contentReference[oaicite:4]{index=4}."
+        },
+        {
+          "question": "Scenario: You need access to internal documents. Which tool should be added to the agent?",
+          "options": ["Azure AI Search", "Blob Storage", "Key Vault", "SQL DB"],
+          "answer": "Azure AI Search",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ AI Search is used for retrieving internal data; Blob and DB aren't searchable directly by agent."
+        },
+        {
+          "question": "What is the Agent Playground used for?",
+          "options": [
+            "Typing LLM prompts only",
+            "Testing agent behavior interactively",
+            "Deploying Kubernetes pods",
+            "Managing Azure policies"
+          ],
+          "answer": "Testing agent behavior interactively",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Playground provides an interactive UI to test agents; not used for infra."
+        },
+        {
+          "question": "Which SDK package can be used to create agents via code?",
+          "options": [
+            "azure-ai-projects",
+            "azure-cosmos",
+            "azure-storage-blob",
+            "azure-ai-ml"
+          ],
+          "answer": "azure-ai-projects",
+          "type": "hard",
+          "explanation": "✅ The azure-ai-projects SDK contains client classes for agent creation via code :contentReference[oaicite:5]{index=5}."
+        },
+        {
+          "question": "Coding: Which method initializes an agent run?",
+          "options": [
+            "client.begin_agent_run()",
+            "client.run()",
+            "agent.start()",
+            "agent.execute()"
+          ],
+          "answer": "client.begin_agent_run()",
+          "type": "hard",
+          "explanation": "✅ The code pattern uses `begin_agent_run`; others are not found in SDK docs."
+        },
+        {
+          "question": "What role do tools play in agent interactions?",
+          "options": [
+            "Improve LLM reasoning",
+            "Provide external data or actions",
+            "Store logs",
+            "Authenticate users"
+          ],
+          "answer": "Provide external data or actions",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Tools let agents fetch real-time data or act in the environment. They don’t store logs or handle auth."
+        },
+        {
+          "question": "Scenario: Tool call fails intermittently. Feature to retry tools?",
+          "options": [
+            "Retry policies",
+            "Manual retry only",
+            "No retry",
+            "Auto scaling"
+          ],
+          "answer": "Retry policies",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ Agent Service includes retry policies to manage intermittent failures :contentReference[oaicite:6]{index=6}."
+        },
+        {
+          "question": "Which observability feature is not supported?",
+          "options": [
+            "Application Insights tracing",
+            "Thread-level logs",
+            "GPU utilization metrics",
+            "Structured message history"
+          ],
+          "answer": "GPU utilization metrics",
+          "type": "hard",
+          "explanation": "✅ Foundry provides application-level tracing and thread logs. VM-level GPU metrics require external tools."
+        },
+        {
+          "question": "What does multi-agent orchestration enable?",
+          "options": [
+            "Parallel tasks with multiple agents",
+            "Manual handoff only",
+            "Single threaded execution",
+            "No inter-agent communication"
+          ],
+          "answer": "Parallel tasks with multiple agents",
+          "type": "medium",
+          "explanation": "✅ Agents can connect and delegate tasks to other agents :contentReference[oaicite:7]{index=7}."
+        },
+        {
+          "question": "Why use a Foundry Agent Service instead of custom orchestration?",
+          "options": [
+            "Built-in retry, tracing, RBAC, content safety",
+            "Cheaper compute costs",
+            "No SDK required",
+            "Limited scalability"
+          ],
+          "answer": "Built-in retry, tracing, RBAC, content safety",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Agent Service provides these features out-of-box vs hand-built orchestration."
+        },
+        {
+          "question": "Module assessment: True or False—Foundry agents maintain message history in memory only.",
+          "options": ["True", "False"],
+          "answer": "False",
+          "type": "medium",
+          "explanation": "✅ Threads are persisted via service storage :contentReference[oaicite:8]{index=8}."
+        },
+        {
+          "question": "Which identity service is used for RBAC in Foundry Agent Service?",
+          "options": [
+            "Microsoft Entra ID",
+            "Azure AD B2C",
+            "Access Keys",
+            "OAuth2 only"
+          ],
+          "answer": "Microsoft Entra ID",
+          "type": "medium",
+          "explanation": "✅ Azure Entra (formerly AD) is used for role management and access control :contentReference[oaicite:9]{index=9}."
+        },
+        {
+          "question": "When should you use Agent Service instead of Logic Apps?",
+          "options": [
+            "For LLM-tool orchestration",
+            "For simple HTTP workflows only",
+            "For data transformation",
+            "For VM provisioning"
+          ],
+          "answer": "For LLM-tool orchestration",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Agent Service specializes in LLM + tool orchestration, not general workflows."
+        },
+        {
+          "question": "Scenario: You require internet-isolated deployment. What feature supports that?",
+          "options": [
+            "Network Isolation",
+            "Public Endpoints",
+            "No RBAC",
+            "Logic Apps"
+          ],
+          "answer": "Network Isolation",
+          "type": "hard",
+          "explanation": "✅ The service supports VNet integration for private deployments :contentReference[oaicite:10]{index=10}."
+        },
+        {
+          "question": "Coding: Which tool definition is used for code interpretations?",
+          "options": [
+            "CodeInterpreterToolDefinition",
+            "ToolUtility",
+            "FunctionTool",
+            "AI Project Tool"
+          ],
+          "answer": "CodeInterpreterToolDefinition",
+          "type": "hard",
+          "explanation": "✅ The Quickstart uses this class for enabling code interpreter tool :contentReference[oaicite:11]{index=11}."
+        },
+        {
+          "question": "Which permission is NOT needed for Standard agent environment setup?",
+          "options": [
+            "Cosmos DB Contributor",
+            "Search Service Contributor",
+            "Key Vault Operator",
+            "Storage Blob Data Contributor"
+          ],
+          "answer": "Key Vault Operator",
+          "type": "hard",
+          "explanation": "✅ Foundry needs DB, search, storage roles; Key Vault role isn't required for standard setup :contentReference[oaicite:12]{index=12}."
+        },
+        {
+          "question": "Which protocol does REST API support for agent operations?",
+          "options": [
+            "OpenAI Assistants API compatible",
+            "Graph API",
+            "ARM template",
+            "SOAP"
+          ],
+          "answer": "OpenAI Assistants API compatible",
+          "type": "hard",
+          "explanation": "✅ The REST API aligns with OpenAI Assistants patterns for compatibility :contentReference[oaicite:13]{index=13}."
+        },
+        {
+          "question": "Scenario: You need to review detailed tool call steps after execution. Where do you look?",
+          "options": [
+            "Run steps in portal",
+            "App Insights dashboard",
+            "CPU metrics",
+            "Storage logs"
+          ],
+          "answer": "Run steps in portal",
+          "type": "medium",
+          "explanation": "✅ The portal shows individual Run steps including tool calls :contentReference[oaicite:14]{index=14}."
+        },
+        {
+          "question": "What is typically provisioned when creating an agent via portal?",
+          "options": [
+            "Model deployment, agent definition, playground",
+            "VM instance only",
+            "Storage account only",
+            "Database & VNet only"
+          ],
+          "answer": "Model deployment, agent definition, playground",
+          "type": "medium",
+          "explanation": "✅ Portal quickstart deploys model, sets up agent, and opens playground UI :contentReference[oaicite:15]{index=15}."
+        },
+        {
+          "question": "Module assess: True or False—Agents can only run one thread at a time.",
+          "options": ["True", "False"],
+          "answer": "False",
+          "type": "medium",
+          "explanation": "✅ Agents support multiple concurrent threads."
+        },
+        {
+          "question": "Which feature enables tool orchestration reliability?",
+          "options": [
+            "Contextual retry policies",
+            "Public endpoints",
+            "Manual tool calls only",
+            "Autoscaling"
+          ],
+          "answer": "Contextual retry policies",
+          "type": "medium",
+          "explanation": "✅ Retry policies improve reliability by handling transient errors :contentReference[oaicite:16]{index=16}."
+        },
+        {
+          "question": "In what region did Foundry GA launch multi-agent orchestration?",
+          "options": ["It’s global"],
+          "answer": "It’s global",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Multi-agent features launched generally with GA across supported regions :contentReference[oaicite:17]{index=17}."
+        },
+        {
+          "question": "What benefits does thread-level logging provide?",
+          "options": [
+            "Debugging agent decisions",
+            "Security traceability",
+            "Billing optimization",
+            "All of the above"
+          ],
+          "answer": ["Debugging agent decisions", "Security traceability"],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "✅ Logs help with debugging and security audits, but not billing :contentReference[oaicite:18]{index=18}."
+        },
+        {
+          "question": "Scenario: Developer requests ability to integrate code interpreter in JS. Suggest:",
+          "options": [
+            "Use @azure/ai-agents SDK with CodeInterpreterTool",
+            "Use Python only",
+            "Use REST API only",
+            "Use Logic App only"
+          ],
+          "answer": "Use @azure/ai-agents SDK with CodeInterpreterTool",
+          "type": "medium",
+          "explanation": "✅ The npm package supports JavaScript agent creation with tool definitions :contentReference[oaicite:19]{index=19}."
+        },
+        {
+          "question": "Which governor role limits who can run agent actions?",
+          "options": [
+            "Azure AI User",
+            "Azure AI Account Owner",
+            "Reader",
+            "Contributor"
+          ],
+          "answer": "Azure AI User",
+          "type": "hard",
+          "explanation": "✅ ‘Azure AI User’ grants permission for performing agent actions; others either admin or read-only."
+        },
+        {
+          "question": "Why choose Foundry Agent Service over DIY HTTP orchestration?",
+          "options": [
+            "Managed runtime with RBAC, retry, observability, tool orchestration",
+            "Lowest cost always",
+            "No need for Azure subscription",
+            "Runs on-prem only"
+          ],
+          "answer": "Managed runtime with RBAC, retry, observability, tool orchestration",
+          "type": "hard",
+          "explanation": "✅ The service manages essential concerns vs building them manually; cost and subscription options are unrelated."
+        }
+      ]
+    },
+    {
+      "name": "Unit 3: Develop an AI agent with Azure AI Foundry Agent Service (Custom Tools)",
+      "questions": [
+        {
+          "question": "Why should you use custom tools in an AI agent?",
+          "options": [
+            "To improve response speed",
+            "To integrate domain-specific actions or data",
+            "To replace LLM entirely",
+            "To bypass Azure billing"
+          ],
+          "answer": "To integrate domain-specific actions or data",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Custom tools allow agents to perform domain-specific tasks. ❌ They don’t replace the LLM or reduce cost directly."
+        },
+        {
+          "question": "Which tool type enables agents to run code dynamically?",
+          "options": [
+            "Prebuilt REST Tool",
+            "Azure AI Search Tool",
+            "Code Interpreter Tool",
+            "QnA Maker Tool"
+          ],
+          "answer": "Code Interpreter Tool",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Code interpreter executes code at runtime; QnA and search are data-only."
+        },
+        {
+          "question": "Which options exist for custom tools? (Choose 3)",
+          "options": [
+            "HTTP REST endpoints",
+            "Language models",
+            "Code Interpreter",
+            "Embedded LLMs"
+          ],
+          "answer": [
+            "HTTP REST endpoints",
+            "Code Interpreter",
+            "Embedded LLMs"
+          ],
+          "type": "multiple",
+          "difficulty": "hard",
+          "explanation": "✅ Agents support REST, code-runner, and even embedded LLMs as tools. ❌ Language models alone aren’t tools."
+        },
+        {
+          "question": "Scenario: You need to pull the latest stock price. Which tool do you add?",
+          "options": [
+            "HTTP REST tool pointing at finance API",
+            "Azure AI Search",
+            "Blob Storage",
+            "CosmosDB tool"
+          ],
+          "answer": "HTTP REST tool pointing at finance API",
+          "type": "medium",
+          "explanation": "✅ REST tools suit fetch-from-API use cases; search/cosmos are for indexed data."
+        },
+        {
+          "question": "Coding: In JavaScript SDK, which class defines a REST custom tool?",
+          "options": [
+            "RestToolDefinition",
+            "ToolRuntimeREST",
+            "HttpCustomTool",
+            "RestAgentTool"
+          ],
+          "answer": "RestToolDefinition",
+          "type": "hard",
+          "explanation": "✅ The MS Learn sample uses `RestToolDefinition` to define custom REST calls ."
+        },
+        {
+          "question": "Which authentication methods can you use for custom tools? (Select 2)",
+          "options": [
+            "API keys",
+            "OAuth",
+            "Windows NTLM",
+            "Shared Access Signatures"
+          ],
+          "answer": ["API keys", "OAuth"],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "✅ REST and code tools support API keys or OAuth. NTLM and SAS aren’t standard."
+        },
+        {
+          "question": "Why use embedded LLM as a custom tool?",
+          "options": [
+            "To offload compute",
+            "To enable offline execution",
+            "To run smaller LLMs locally",
+            "To reduce pricing"
+          ],
+          "answer": "To run smaller LLMs locally",
+          "type": "hard",
+          "explanation": "✅ Embedded LLMs let you deploy local/smaller models; they’re not free nor necessarily cheaper."
+        },
+        {
+          "question": "Scenario: You want to visualize data through the agent. What tool is best?",
+          "options": [
+            "Code interpreter with plotting library",
+            "HTTP REST tool only",
+            "Search tool",
+            "Model tool"
+          ],
+          "answer": "Code interpreter with plotting library",
+          "type": "medium",
+          "explanation": "✅ Code tool can import libraries and plot charts; REST/search only retrieve data."
+        },
+        {
+          "question": "What file must be uploaded to define code interpreter tools?",
+          "options": ["tool.py", "script.cs", "tool.json", "main.java"],
+          "answer": "tool.py",
+          "type": "medium",
+          "explanation": "✅ Sample uses Python file uploaded for execution; JSON is config only."
+        },
+        {
+          "question": "Module assessment: True or False—Custom tools can make non-LLM logic part of the agent.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ Custom tools integrate custom logic or APIs via agent ."
+        },
+        {
+          "question": "Which tool type requires sandboxing for safety?",
+          "options": [
+            "REST tool",
+            "Code interpreter",
+            "Search tool",
+            "Model tool"
+          ],
+          "answer": "Code interpreter",
+          "type": "hard",
+          "explanation": "✅ Code execution must be sandboxed to avoid unsafe operations."
+        },
+        {
+          "question": "Scenario: Custom tool returns error. How does the agent handle it?",
+          "options": [
+            "Throws exception back to user",
+            "Agent Service retries based on policy",
+            "Silently ignores it",
+            "Restarts the agent"
+          ],
+          "answer": "Agent Service retries based on policy",
+          "type": "hard",
+          "explanation": "✅ The service applies retry policies; it doesn’t crash or restart automatically."
+        },
+        {
+          "question": "Coding: Which property defines HTTP method in RestToolDefinition?",
+          "options": ["httpMethod", "method", "verb", "type"],
+          "answer": "httpMethod",
+          "type": "hard",
+          "explanation": "✅ Sample code uses `httpMethod:'GET'`. Others are not valid."
+        },
+        {
+          "question": "What does “cold start” refer to with embedded tools?",
+          "options": [
+            "Startup latency for tool container",
+            "Empty cache",
+            "First user login",
+            "VM provisioning"
+          ],
+          "answer": "Startup latency for tool container",
+          "type": "medium",
+          "explanation": "✅ Embedded or code tools warm-up on first call—introducing latency."
+        },
+        {
+          "question": "Which tool type allows TypeScript developers easiest integration?",
+          "options": [
+            "JavaScript REST tool using SDK",
+            "Python code tool only",
+            "Embedded LLM with Python",
+            "C# custom tool"
+          ],
+          "answer": "JavaScript REST tool using SDK",
+          "type": "medium",
+          "explanation": "✅ TypeScript/JS users can define REST tools via JS SDK easily."
+        },
+        {
+          "question": "Scenario: Posting to a secure API requires OAuth. How configure tool?",
+          "options": [
+            "Configure OAuth in RestToolDefinition",
+            "Use API key instead",
+            "Use popup login",
+            "Skip auth"
+          ],
+          "answer": "Configure OAuth in RestToolDefinition",
+          "type": "hard",
+          "explanation": "✅ The tool config allows OAuth flows. API key may not be supported by API."
+        },
+        {
+          "question": "Which prebuilt tool allows fetching company documents?",
+          "options": [
+            "Azure AI Search Tool",
+            "Code Interpreter",
+            "REST Tool to Blob",
+            "Embedded LLM"
+          ],
+          "answer": "Azure AI Search Tool",
+          "type": "medium",
+          "explanation": "✅ AI Search tool retrieves indexed documents. Code executes logic, not search."
+        },
+        {
+          "question": "Coding: How define body schema in RestToolDefinition?",
+          "options": [
+            "bodySchema property",
+            "bodyDefinition",
+            "requestSchema",
+            "payloadType"
+          ],
+          "answer": "bodySchema property",
+          "type": "hard",
+          "explanation": "✅ The JSON body schema is set under `bodySchema` in definition."
+        },
+        {
+          "question": "Module assess: True or False—Agent tools must be HTTPS endpoints.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ HTTP endpoints must be secure (HTTPS) for production use."
+        },
+        {
+          "question": "Which scenario fits code interpreter use?",
+          "options": [
+            "Real-time calculations",
+            "Data visualization",
+            "Complex transformations",
+            "All of the above"
+          ],
+          "answer": "All of the above",
+          "difficulty": "hard",
+          "explanation": "✅ Python tool supports math, charts, transforms—all needs code execution."
+        },
+        {
+          "question": "Scenario: You need offline tool use. Which tool is best?",
+          "options": [
+            "Embedded LLM",
+            "REST tool",
+            "AI Search",
+            "CosmosDB tool"
+          ],
+          "answer": "Embedded LLM",
+          "type": "medium",
+          "explanation": "✅ Embedded models run inside service offline; REST requires network."
+        },
+        {
+          "question": "What must be defined for embedded tools?",
+          "options": [
+            "Model id and prompts",
+            "Blob storage path",
+            "HTTP URL",
+            "Database connection"
+          ],
+          "answer": "Model id and prompts",
+          "type": "hard",
+          "explanation": "✅ Embedded tools require specifying which embedded model to run."
+        },
+        {
+          "question": "Scenario: Tool returns JSON, but parser fails. What do you do?",
+          "options": [
+            "Modify responseSchema",
+            "Ignore error",
+            "Drop tool",
+            "Wrap output in string"
+          ],
+          "answer": "Modify responseSchema",
+          "type": "hard",
+          "explanation": "✅ Adjusting schema ensures JSON is parsed correctly by agent framework."
+        },
+        {
+          "question": "Which security concern exists with custom tools?",
+          "options": [
+            "Credentials leakage",
+            "Uncontrolled code execution",
+            "API abuse",
+            "All of the above"
+          ],
+          "answer": "All of the above",
+          "type": "medium",
+          "explanation": "✅ Custom tools can leak credentials, run unsafe code, or cause API misuse."
+        },
+        {
+          "question": "Which tool can fetch embeddings for documents?",
+          "options": [
+            "AI Search tool",
+            "Code tool",
+            "REST tool to embeddings endpoint",
+            "Embedded LLM"
+          ],
+          "answer": "REST tool to embeddings endpoint",
+          "type": "medium",
+          "explanation": "✅ A REST tool can call an embeddings API; Search doesn't expose embeddings."
+        },
+        {
+          "question": "Module summary: Custom tools improve agent value—True or False?",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ Custom tools extend agent capabilities for domain-specific tasks."
+        },
+        {
+          "question": "Why is schema definition critical for custom tools?",
+          "options": [
+            "Ensures agent interprets parameters/response correctly",
+            "Enables single-sign-on",
+            "Improves caching",
+            "Reduces cost"
+          ],
+          "answer": "Ensures agent interprets parameters/response correctly",
+          "type": "hard",
+          "explanation": "✅ Correct schema is essential so agent knows what to send/expect."
+        },
+        {
+          "question": "Coding: In Python, which SDK is used to upload a code tool?",
+          "options": [
+            "ProjectsPythonSDK code_tool.upload()",
+            "azure-ai-ml upload_code_tool()",
+            "azure-ai-projects code_tool.upload()",
+            "ai_sdk.register_tool()"
+          ],
+          "answer": "azure-ai-projects code_tool.upload()",
+          "type": "hard",
+          "explanation": "✅ The Projects Python SDK uses that method to add a code tool."
+        }
+      ]
+    },
+    {
+      "name": "Unit 4: Develop an AI agent with Semantic Kernel",
+      "questions": [
+        {
+          "question": "What is Semantic Kernel?",
+          "options": [
+            "A VM for AI compute",
+            "An open‑source SDK to build AI agents",
+            "Azure storage service",
+            "A Python web framework"
+          ],
+          "answer": "An open‑source SDK to build AI agents",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ SK is a lightweight open‑source SDK for composing LLMs, logic, and plugins :contentReference[oaicite:1]{index=1}."
+        },
+        {
+          "question": "Which language(s) does Semantic Kernel support?",
+          "options": ["C# and Python", "C# only", "JavaScript only", "Go"],
+          "answer": "C# and Python",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ SK provides SDKs in .NET and Python (Java support coming later) :contentReference[oaicite:2]{index=2}."
+        },
+        {
+          "question": "What is an AzureAIAgent in Semantic Kernel?",
+          "options": [
+            "REST endpoint",
+            "Agent type with Foundry integration",
+            "Storage container",
+            "Authentication plugin"
+          ],
+          "answer": "Agent type with Foundry integration",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ AzureAIAgent is a Semantic Kernel agent integrated with Foundry Agent Service :contentReference[oaicite:3]{index=3}."
+        },
+        {
+          "question": "Which package is required for AzureAIAgent in .NET?",
+          "options": [
+            "Microsoft.SemanticKernel.Agents.AzureAI",
+            "Microsoft.SemanticKernel.Storage",
+            "Azure.OpenAI.Agent",
+            "Microsoft.BotFramework.SDK"
+          ],
+          "answer": "Microsoft.SemanticKernel.Agents.AzureAI",
+          "type": "single",
+          "difficulty": "hard",
+          "explanation": "✅ That package exposes the AzureAIAgent types :contentReference[oaicite:4]{index=4}."
+        },
+        {
+          "question": "Scenario: You want to call a custom Light plugin. Which SK feature do you use?",
+          "options": ["AddPlugin", "UseSkill", "IncludeTool", "LoadModel"],
+          "answer": "AddPlugin",
+          "type": "medium",
+          "explanation": "✅ Plugins are registered via `kernel.add_plugin` in SK :contentReference[oaicite:5]{index=5}."
+        },
+        {
+          "question": "Which two types of plugin functions are supported?",
+          "options": [
+            "Retrieval and task automation",
+            "Database and UI",
+            "Logging and storage",
+            "Monitoring and observability"
+          ],
+          "answer": ["Retrieval and task automation"],
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Plugins provide functions for data retrieval or actions :contentReference[oaicite:6]{index=6}."
+        },
+        {
+          "question": "How do you import a plugin from a class in C#?",
+          "options": [
+            "builder.Plugins.AddFromType<LightsPlugin>()",
+            "kernel.LoadPlugin(\"Lights.dll\")",
+            "AddPluginClass(\"LightsPlugin\")",
+            "kernel.Import(\"plugin.cs\")"
+          ],
+          "answer": "builder.Plugins.AddFromType<LightsPlugin>()",
+          "type": "hard",
+          "explanation": "✅ This matches the SK example :contentReference[oaicite:7]{index=7}."
+        },
+        {
+          "question": "In Python, how do you enable function calling?",
+          "options": [
+            "FunctionChoiceBehavior.Auto()",
+            "enable_functions=True",
+            "use_plugins=True",
+            "auto_call=True"
+          ],
+          "answer": "FunctionChoiceBehavior.Auto()",
+          "type": "hard",
+          "explanation": "✅ Execution settings use FunctionChoiceBehavior.Auto() :contentReference[oaicite:8]{index=8}."
+        },
+        {
+          "question": "What is the KernelFunction attribute used for?",
+          "options": [
+            "Expose methods to LLMs",
+            "Define REST endpoints",
+            "Register service clients",
+            "Decorate data models"
+          ],
+          "answer": "Expose methods to LLMs",
+          "type": "medium",
+          "explanation": "✅ It annotates methods for LLM function calling :contentReference[oaicite:9]{index=9}."
+        },
+        {
+          "question": "Scenario: Plugin methods aren't executed. Why?",
+          "options": [
+            "Plugin not added",
+            "FunctionChoiceBehavior disabled",
+            "Agent not created",
+            "All of the above"
+          ],
+          "answer": "All of the above",
+          "type": "hard",
+          "explanation": "✅ Missing plugin, disabled calling, or agent misconfiguration could cause that."
+        },
+        {
+          "question": "Which agent architecture supports planning, tool use, and history?",
+          "options": [
+            "ChatCompletionAgent",
+            "AzureAIAgent",
+            "SimpleBot",
+            "FunctionAgent"
+          ],
+          "answer": "ChatCompletionAgent",
+          "type": "medium",
+          "difficulty": "hard",
+          "explanation": "✅ ChatCompletionAgent supports planning and tool calling :contentReference[oaicite:10]{index=10}."
+        },
+        {
+          "question": "What does kernel.Clone() allow?",
+          "options": [
+            "Create a duplicate with custom plugins",
+            "Backup memory",
+            "Reset the LLM",
+            "Export logs"
+          ],
+          "answer": "Create a duplicate with custom plugins",
+          "type": "hard",
+          "explanation": "✅ Example clones kernel to isolate plugin context :contentReference[oaicite:11]{index=11}."
+        },
+        {
+          "question": "Scenario: Agent must run offline. Which approach?",
+          "options": [
+            "Use embedded model plugin",
+            "Use REST API",
+            "Always online",
+            "Use Cosmos plugin"
+          ],
+          "answer": "Use embedded model plugin",
+          "type": "medium",
+          "explanation": "✅ Embedded LLMs allow offline execution as custom tools."
+        },
+        {
+          "question": "Coding: Which class creates AzureAIAgent client in Python?",
+          "options": [
+            "AzureAIAgent.create_client",
+            "AzureAgentClient.new()",
+            "AgentClient.build()",
+            "SemanticAgent.factory()"
+          ],
+          "answer": "AzureAIAgent.create_client",
+          "type": "hard",
+          "explanation": "✅ This method is used in documentation to initialize client :contentReference[oaicite:12]{index=12}."
+        },
+        {
+          "question": "What handles conversation history?",
+          "options": [
+            "AzureAIAgentThread",
+            "ChatMemory",
+            "ConversationStore",
+            "HistoryAgent"
+          ],
+          "answer": "AzureAIAgentThread",
+          "type": "hard",
+          "explanation": "✅ It manages threads and state :contentReference[oaicite:13]{index=13}."
+        },
+        {
+          "question": "Which plugin type can use OpenAPI specs?",
+          "options": [
+            "Plugins from type/class",
+            "OpenAPI‑based plugins",
+            "REST tools only",
+            "Database plugins"
+          ],
+          "answer": "OpenAPI‑based plugins",
+          "type": "medium",
+          "explanation": "✅ SK supports plugins from OpenAPI :contentReference[oaicite:14]{index=14}."
+        },
+        {
+          "question": "Module assessment: True or False—SK plugins let you integrate existing business logic.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ Plugins expose your logic to be called by agents :contentReference[oaicite:15]{index=15}."
+        },
+        {
+          "question": "Which is NOT part of SK agent workflow?",
+          "options": [
+            "Function calls",
+            "Model planning",
+            "Plugin invocation",
+            "Azure VM scaling"
+          ],
+          "answer": "Azure VM scaling",
+          "type": "medium",
+          "explanation": "✅ SK orchestrates logic, not infra scaling."
+        },
+        {
+          "question": "Scenario: You spoof plugin output schema. What happens?",
+          "options": [
+            "Parsing error",
+            "Silent ignore",
+            "Plugin executes anyway",
+            "Agent retries"
+          ],
+          "answer": "Parsing error",
+          "type": "hard",
+          "explanation": "✅ Incorrect schema prevents correct function handling."
+        },
+        {
+          "question": "Which SK feature allows intermediate result access?",
+          "options": [
+            "FunctionResultContent callbacks",
+            "Thread logs only",
+            "Memory dumps",
+            "None"
+          ],
+          "answer": "FunctionResultContent callbacks",
+          "type": "hard",
+          "explanation": "✅ Python CLR example shows handling intermediate outputs :contentReference[oaicite:16]{index=16}."
+        },
+        {
+          "question": "Why choose ChatCompletionAgent over vanilla model?",
+          "options": [
+            "Auto tool calling",
+            "No need for REST",
+            "Cheaper",
+            "No coding"
+          ],
+          "answer": "Auto tool calling",
+          "type": "medium",
+          "explanation": "✅ It handles function selection and invocation."
+        },
+        {
+          "question": "Which plugin import order matters?",
+          "options": [
+            "Import before agent creation",
+            "Import after deployment",
+            "Order doesn’t matter",
+            "Only JSON plugins"
+          ],
+          "answer": "Import before agent creation",
+          "type": "hard",
+          "explanation": "✅ Plugins must be added to kernel before building agent."
+        },
+        {
+          "question": "What qualifies SK as future‑proof?",
+          "options": [
+            "Model‑agnostic connectors",
+            "Only works with GPT‑4",
+            "Fixed SDK versions",
+            "Requires Azure only"
+          ],
+          "answer": "Model‑agnostic connectors",
+          "type": "medium",
+          "explanation": "✅ SK supports switching AI providers easily :contentReference[oaicite:17]{index=17}."
+        },
+        {
+          "question": "Scenario: Agent returns incomplete response after plugin call. You should?",
+          "options": [
+            "Inspect FunctionResultContent",
+            "Ignore",
+            "Re-deploy model",
+            "Cache response"
+          ],
+          "answer": "Inspect FunctionResultContent",
+          "type": "hard",
+          "explanation": "✅ Intermediate callback shows plugin outputs."
+        },
+        {
+          "question": "Coding: In C#, which builder method adds OpenAI chat service?",
+          "options": [
+            "builder.AddAzureOpenAIChatCompletion",
+            "builder.AddChatService",
+            "kernel.ConfigureOpenAI",
+            "builder.AddOpenAIClient"
+          ],
+          "answer": "builder.AddAzureOpenAIChatCompletion",
+          "type": "hard",
+          "explanation": "✅ This is the documented method :contentReference[oaicite:18]{index=18}."
+        },
+        {
+          "question": "Module summary: Plugins are reusable SK components—True or False?",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ Plugins implement reusable functions for reuse across agents :contentReference[oaicite:19]{index=19}."
+        }
+      ]
+    },
+    {
+      "name": "Unit 5: Orchestrate a multi-agent solution using Semantic Kernel",
+      "questions": [
+        {
+          "question": "What is the primary purpose of multi-agent orchestration in Semantic Kernel?",
+          "options": [
+            "Run a single LLM sequentially",
+            "Coordinate specialized agents to collaborate on complex tasks",
+            "Store data in Cosmos DB",
+            "Scale GPU compute"
+          ],
+          "answer": "Coordinate specialized agents to collaborate on complex tasks",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Multi-agent orchestration enables multiple agents with different expertise to work together :contentReference[oaicite:1]{index=1}."
+        },
+        {
+          "question": "Which orchestration patterns are supported? (Select 3)",
+          "options": ["Sequential", "Concurrent", "Magentic", "MapReduce"],
+          "answer": ["Sequential", "Concurrent", "Magentic"],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "✅ SK supports Sequential, Concurrent, Handoff, Group Chat and Magentic :contentReference[oaicite:2]{index=2}."
+        },
+        {
+          "question": "What class is used to create a group chat among agents?",
+          "options": [
+            "AgentGroupChat",
+            "KernelGroupAgent",
+            "ChatOrchestrator",
+            "AgentTeam"
+          ],
+          "answer": "AgentGroupChat",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ AgentGroupChat handles multi-agent conversations :contentReference[oaicite:3]{index=3}."
+        },
+        {
+          "question": "Scenario: You have writer, reviewer, and editor agents. Which strategy selects next speaker?",
+          "options": [
+            "KernelFunctionSelectionStrategy",
+            "RegexSelectionStrategy",
+            "FixedOrderStrategy",
+            "RandomSelectionStrategy"
+          ],
+          "answer": "KernelFunctionSelectionStrategy",
+          "type": "medium",
+          "explanation": "✅ A KernelFunction-based strategy lets you route turn-taking dynamically :contentReference[oaicite:4]{index=4}."
+        },
+        {
+          "question": "Coding: In C#, how do you create a function for termination logic?",
+          "options": [
+            "KernelFunction terminationFunction = AgentGroupChat.CreatePromptFunctionForStrategy(...)",
+            "new TerminationPrompt(...)",
+            "KernelTermination terminate = new(...)",
+            "CreateTerminationKernel()"
+          ],
+          "answer": "KernelFunction terminationFunction = AgentGroupChat.CreatePromptFunctionForStrategy(...)",
+          "type": "hard",
+          "explanation": "✅ This method generates a KernelFunction from prompt for termination logic :contentReference[oaicite:5]{index=5}."
+        },
+        {
+          "question": "What does RegexTerminationStrategy do?",
+          "options": [
+            "Ends chat when pattern matches response",
+            "Chooses next agent",
+            "Clears memory using regex",
+            "Fetches documents"
+          ],
+          "answer": "Ends chat when pattern matches response",
+          "type": "medium",
+          "explanation": "✅ It ends multi-agent chat when a regex matches the agent output :contentReference[oaicite:6]{index=6}."
+        },
+        {
+          "question": "Which setting avoids infinite loops in agent chat?",
+          "options": [
+            "MaximumIterations",
+            "LoopDetector",
+            "TokenLimit",
+            "AgentTimeout"
+          ],
+          "answer": "MaximumIterations",
+          "type": "medium",
+          "explanation": "✅ MaximumIterations encloses a cap on conversation rounds :contentReference[oaicite:7]{index=7}."
+        },
+        {
+          "question": "Scenario: Conversation never ends. What might be missing?",
+          "options": [
+            "TerminationStrategy",
+            "SelectionStrategy",
+            "Agent definitions",
+            "Kernel initialization"
+          ],
+          "answer": "TerminationStrategy",
+          "type": "hard",
+          "explanation": "✅ Without termination logic, AgentGroupChat won't know when to stop :contentReference[oaicite:8]{index=8}."
+        },
+        {
+          "question": "Which orchestration pattern best fits concurrent brainstorming?",
+          "options": ["Concurrent", "Sequential", "Handoff", "Regex"],
+          "answer": "Concurrent",
+          "type": "medium",
+          "explanation": "✅ Concurrent pattern asks all agents simultaneously, useful for brainstorming :contentReference[oaicite:9]{index=9}."
+        },
+        {
+          "question": "What does Magentic orchestration refer to?",
+          "options": [
+            "Group chat–like agent collaboration",
+            "Memory-optimized execution",
+            "Magnet-based file retrieval",
+            "Kernel memory reduction"
+          ],
+          "answer": "Group chat–like agent collaboration",
+          "type": "medium",
+          "explanation": "✅ Magentic is a variation of group chat orchestration :contentReference[oaicite:10]{index=10}."
+        },
+        {
+          "question": "Coding: In Python, which class implements a termination strategy via function?",
+          "options": [
+            "KernelFunctionTerminationStrategy",
+            "RegexTerminator",
+            "FunctionTermStrategy",
+            "AgentTerminator"
+          ],
+          "answer": "KernelFunctionTerminationStrategy",
+          "type": "hard",
+          "explanation": "✅ That class wraps a function for termination logic in SK python :contentReference[oaicite:11]{index=11}."
+        },
+        {
+          "question": "Module assessment: True or False—AgentGroupChat uses selection strategy before each turn.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ Each agent turn is determined by the selection strategy :contentReference[oaicite:12]{index=12}."
+        },
+        {
+          "question": "What does HistoryReducer do in group chat?",
+          "options": [
+            "Trims conversation context for prompts",
+            "Deletes chat logs",
+            "Encrypts history",
+            "Summarizes history"
+          ],
+          "answer": "Trims conversation context for prompts",
+          "type": "hard",
+          "explanation": "✅ HistoryReducer limits history context to manage prompt size :contentReference[oaicite:13]{index=13}."
+        },
+        {
+          "question": "Scenario: You need to escalate to manager agent after three turns. Which strategy?",
+          "options": [
+            "Custom KernelFunctionSelectionStrategy",
+            "RegexSelectionStrategy",
+            "RandomSelectionStrategy",
+            "FixedOrderStrategy"
+          ],
+          "answer": "Custom KernelFunctionSelectionStrategy",
+          "type": "hard",
+          "explanation": "✅ Defines custom logic via prompt to route based on history :contentReference[oaicite:14]{index=14}."
+        },
+        {
+          "question": "Which pattern passes output from one agent to another?",
+          "options": ["Sequential", "Concurrent", "Random", "Magentic"],
+          "answer": "Sequential",
+          "type": "medium",
+          "explanation": "✅ Sequential orchestration pipelines responses between agents :contentReference[oaicite:15]{index=15}."
+        },
+        {
+          "question": "Which predefined selection strategy keeps track of round-robin order?",
+          "options": [
+            "KernelFunctionSelectionStrategy",
+            "RoundRobinSelectionStrategy",
+            "AggregatorSelectionStrategy",
+            "Sequential"
+          ],
+          "answer": "KernelFunctionSelectionStrategy",
+          "type": "hard",
+          "explanation": "✅ KernelFunction based strategy can implement round-robin via code/prompt :contentReference[oaicite:16]{index=16}."
+        },
+        {
+          "question": "What does AggregatorTerminationStrategy do?",
+          "options": [
+            "Stops when aggregator determines stop",
+            "Stops on regex match",
+            "Selects next agent",
+            "Generates summary"
+          ],
+          "answer": "Stops when aggregator determines stop",
+          "type": "hard",
+          "explanation": "✅ AggregatorTerminationStrategy ends chat when aggregate logic signals done :contentReference[oaicite:17]{index=17}."
+        },
+        {
+          "question": "Scenario: History becomes too long and errors occur—solution?",
+          "options": [
+            "Use HistoryReducer",
+            "Delete oldest messages manually",
+            "Reset chat every turn",
+            "Use only single agent"
+          ],
+          "answer": "Use HistoryReducer",
+          "type": "hard",
+          "explanation": "✅ Uses reducer to keep context within limits :contentReference[oaicite:18]{index=18}."
+        },
+        {
+          "question": "True or False—Multi-agent orchestration is still experimental.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ Agent Orchestration is experimental and evolving :contentReference[oaicite:19]{index=19}."
+        },
+        {
+          "question": "Which orchestration pattern suits parallel analysis?",
+          "options": ["Concurrent", "Sequential", "Handoff", "Regex"],
+          "answer": "Concurrent",
+          "type": "medium",
+          "explanation": "✅ Suitable for parallel perspectives and ensemble tasks :contentReference[oaicite:20]{index=20}."
+        },
+        {
+          "question": "What benefit does group chat orchestration provide?",
+          "options": [
+            "Shared memory among agents",
+            "Faster GPU compute",
+            "Data warehousing",
+            "Single-turn chat"
+          ],
+          "answer": "Shared memory among agents",
+          "type": "medium",
+          "explanation": "✅ All agents share context in the same chat history :contentReference[oaicite:21]{index=21}."
+        },
+        {
+          "question": "Which component implements agent history persistence?",
+          "options": [
+            "AgentGroupChat (ChatHistory)",
+            "Cosmos DB",
+            "Memory Cache",
+            "File System"
+          ],
+          "answer": "AgentGroupChat (ChatHistory)",
+          "type": "hard",
+          "explanation": "✅ The framework persists history via AgentGroupChat's thread implementation :contentReference[oaicite:22]{index=22}."
+        },
+        {
+          "question": "Scenario: You want to debug selection decisions. What to inspect?",
+          "options": [
+            "ResultParser logs of the selection strategy",
+            "Token usage",
+            "GPU usage",
+            "Auth logs"
+          ],
+          "answer": "ResultParser logs of the selection strategy",
+          "type": "hard",
+          "explanation": "✅ ResultParser delegate can log/trace strategy decisions :contentReference[oaicite:23]{index=23}."
+        },
+        {
+          "question": "Which orchestration pattern supports dynamic agent handoff based on context?",
+          "options": ["Handoff", "Sequential", "Concurrent", "Regex"],
+          "answer": "Handoff",
+          "type": "medium",
+          "explanation": "✅ Handoff pattern enables dynamic delegation when needed :contentReference[oaicite:24]{index=24}."
+        },
+        {
+          "question": "Coding: In Python, how to create concurrent orchestration?",
+          "options": [
+            "kernel.run_concurrent([agent_a, agent_b])",
+            "AgentGroupChat([...], pattern='concurrent')",
+            "GroupOrchestrator(mode='concurrent')",
+            "ConcurrentAgentLauncher(...)"
+          ],
+          "answer": "AgentGroupChat([...], pattern='concurrent')",
+          "type": "hard",
+          "explanation": "✅ Initialization with pattern parameter enables concurrent mode :contentReference[oaicite:25]{index=25}."
+        },
+        {
+          "question": "Module summary: True or False—TerminationStrategy must always reference at least one agent.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ TerminationStrategy requires agent(s) that can signal it :contentReference[oaicite:26]{index=26}."
+        }
+      ]
+    }
+  ]
+}
