@@ -123,7 +123,7 @@ export default function QuizPage() {
         ))}
       </nav>
       <div className="quizContainer">
-        <h1 className="quizTitle">Azure AI-102 Quiz</h1>
+        <h1 className="quizTitle">Azure AI-102 Quiz App</h1>
         <div className="moduleSelectRow">
           <label htmlFor="module-select" className="moduleSelectLabel">
             Select Module:
