@@ -295,6 +295,308 @@
           "explanation": "✅ The service supports up to 1,000 documents per batch."
         }
       ]
+    },
+    {
+      "name": "Unit 2: Create question answering solutions with Azure AI Language",
+      "questions": [
+        {
+          "question": "What is the primary goal of the question answering capability in Azure AI Language?",
+          "options": [
+            "Translate documents",
+            "Build conversational Q&A over your data",
+            "Generate embeddings",
+            "Host LLMs"
+          ],
+          "answer": "Build conversational Q&A over your data",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Question answering adds a conversational layer over data for Q&A applications :contentReference[oaicite:1]{index=1}. Others are unrelated."
+        },
+        {
+          "question": "What is the difference between QnA Maker and custom question answering?",
+          "options": [
+            "No difference",
+            "Custom QnA uses a deep learning ranker and multi-turn support",
+            "QnA Maker supports active learning, custom QnA doesn’t",
+            "Custom QnA is retired"
+          ],
+          "answer": "Custom QnA uses a deep learning ranker and multi-turn support",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Custom QnA adds enhanced ranking, multi-turn, region support :contentReference[oaicite:2]{index=2}. Options 1 and 4 are false; 3 is backwards."
+        },
+        {
+          "question": "Which step is required before creating a knowledge base?",
+          "options": [
+            "Connect to Azure Search",
+            "Create a VM",
+            "Import data to Cosmos DB",
+            "Enable LLM"
+          ],
+          "answer": "Connect to Azure Search",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Custom QnA relies on Azure Search index for knowledge base search :contentReference[oaicite:3]{index=3}."
+        },
+        {
+          "question": "What document source types are supported for QnA projects? (Select 2)",
+          "options": [
+            "PDF/URL",
+            "Word documents",
+            "Video files",
+            "Azure SQL DB"
+          ],
+          "answer": ["PDF/URL", "Word documents"],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "✅ Supports unstructured docs such as PDF, URL, DOCX. Others aren’t supported :contentReference[oaicite:4]{index=4}."
+        },
+        {
+          "question": "What is multi‑turn conversation?",
+          "options": [
+            "Translation chaining",
+            "Q&A with follow-up prompts",
+            "Embedding sequence",
+            "Single-turn generation"
+          ],
+          "answer": "Q&A with follow-up prompts",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Multi-turn supports conversational refinement via follow-up prompts :contentReference[oaicite:5]{index=5}."
+        },
+        {
+          "question": "Scenario: User asks 'My account', what enables guided follow-ups?",
+          "options": [
+            "Context-free search",
+            "Multi-turn prompts pulled from the KB",
+            "Active Learning",
+            "Language detection"
+          ],
+          "answer": "Multi-turn prompts pulled from the KB",
+          "type": "medium",
+          "explanation": "✅ Follow-up prompts in KB guide the next steps :contentReference[oaicite:6]{index=6}."
+        },
+        {
+          "question": "How do you add follow-up prompts in Language Studio?",
+          "options": [
+            "Use \"Answer and prompts\" section",
+            "Add custom REST calls",
+            "Run CLI script",
+            "Automatically enabled"
+          ],
+          "answer": "Use \"Answer and prompts\" section",
+          "type": "hard",
+          "explanation": "✅ Studio UI provides Answer & Prompts editor :contentReference[oaicite:7]{index=7}."
+        },
+        {
+          "question": "Which REST response property contains follow-up widgets?",
+          "options": [
+            "answers[0].context.prompts",
+            "answers[0].followUps",
+            "answers[0].suggestions",
+            "answers[0].alternateQuestions"
+          ],
+          "answer": "answers[0].context.prompts",
+          "type": "hard",
+          "difficulty": "hard",
+          "explanation": "✅ Prompts array appears under `context.prompts` :contentReference[oaicite:8]{index=8}."
+        },
+        {
+          "question": "What is active learning in Q&A?",
+          "options": [
+            "Model training in Azure ML",
+            "Suggesting alternate user questions based on real queries",
+            "Monitoring request latencies",
+            "Indexing embeddings"
+          ],
+          "answer": "Suggesting alternate user questions based on real queries",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Active learning provides suggestions to improve knowledge base :contentReference[oaicite:9]{index=9}."
+        },
+        {
+          "question": "Which triggers active learning?",
+          "options": [
+            "Strong ranking delta between top answers",
+            "Timer schedule only",
+            "All new questions",
+            "Vocabulary change"
+          ],
+          "answer": "Strong ranking delta between top answers",
+          "type": "hard",
+          "explanation": "✅ When top answers have close scores, suggestions generate :contentReference[oaicite:10]{index=10}."
+        },
+        {
+          "question": "How often are active learning suggestions generated?",
+          "options": [
+            "Every 5 minutes",
+            "Every 30 minutes when 5 similar queries cluster",
+            "Daily",
+            "Never"
+          ],
+          "answer": "Every 30 minutes when 5 similar queries cluster",
+          "type": "hard",
+          "explanation": "✅ According to clustering behavior in QnA Maker documentation :contentReference[oaicite:11]{index=11}."
+        },
+        {
+          "question": "After suggestions, what must you do to apply changes?",
+          "options": [
+            "Accept/reject suggestions, Save and Train, Publish",
+            "Auto-approved",
+            "Refresh index only",
+            "Run CLI"
+          ],
+          "answer": "Accept/reject suggestions, Save and Train, Publish",
+          "type": "medium",
+          "explanation": "✅ Workflow requires approval, training, publishing :contentReference[oaicite:12]{index=12}."
+        },
+        {
+          "question": "Coding: In C# using Azure.AI.Language.QuestionAnswering, which method gets multi-turn answers?",
+          "options": [
+            "GetAnswersAsync",
+            "AskQuestionAsync",
+            "GetAnswersWithContextAsync",
+            "CreateKnowledgeBaseAsync"
+          ],
+          "answer": "GetAnswersWithContextAsync",
+          "type": "hard",
+          "explanation": "✅ That method returns context for multi-turn Q&A."
+        },
+        {
+          "question": "Which client UIs support multi-turn conversation testing?",
+          "options": [
+            "Language Studio Test Pane",
+            "Azure Portal Overview",
+            "CLI only",
+            "Power BI"
+          ],
+          "answer": "Language Studio Test Pane",
+          "type": "medium",
+          "explanation": "✅ Studio provides interactive testing :contentReference[oaicite:13]{index=13}."
+        },
+        {
+          "question": "What distinguishes active versus implicit learning?",
+          "options": [
+            "User selects between close answers vs algorithm clusters scores",
+            "Active is manual, implicit is automated login",
+            "Both are the same",
+            "None"
+          ],
+          "answer": "User selects between close answers vs algorithm clusters scores",
+          "type": "medium",
+          "explanation": "✅ Active uses explicit selection; implicit uses internal score differences :contentReference[oaicite:14]{index=14}."
+        },
+        {
+          "question": "Which feature adds conversational personality to the KB?",
+          "options": [
+            "Chit‑chat persona",
+            "Custom avatars",
+            "Sentiment tuning",
+            "Key phrase extraction"
+          ],
+          "answer": "Chit‑chat persona",
+          "type": "medium",
+          "explanation": "✅ Chit‑chat adds conversational small talk :contentReference[oaicite:15]{index=15}."
+        },
+        {
+          "question": "Scenario: Bot responds too formally. How to add warmth?",
+          "options": [
+            "Add chit‑chat persona",
+            "Increase temperature",
+            "Add sentiment tuning",
+            "Enable active learning"
+          ],
+          "answer": "Add chit‑chat persona",
+          "type": "medium",
+          "explanation": "✅ Personas provide tone/styles; others irrelevant :contentReference[oaicite:16]{index=16}."
+        },
+        {
+          "question": "Module assess: True or False — You need to publish the KB to enable multi-turn in clients.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ KB must be published so clients can consume its endpoints."
+        },
+        {
+          "question": "What security boundary ensures your Q&A project is protected?",
+          "options": [
+            "Azure resource + Azure Search & managed identities",
+            "Public GitHub instance",
+            "Azure Functions only",
+            "No security needed"
+          ],
+          "answer": "Azure resource + Azure Search & managed identities",
+          "type": "hard",
+          "explanation": "✅ Project is secured via resource integration and identity."
+        },
+        {
+          "question": "Which REST query parameter sets the user ID for active learning?",
+          "options": ["userId", "sessionId", "clientUser", "profileId"],
+          "answer": "userId",
+          "type": "hard",
+          "explanation": "✅ API requires userId parameter for session context :contentReference[oaicite:17]{index=17}."
+        },
+        {
+          "question": "Scenario: You need support for German and English Q&A. How configure?",
+          "options": [
+            "Create multi‑language projects during creation",
+            "Use runtime parameter to switch",
+            "Add language detection first",
+            "Use translation API"
+          ],
+          "answer": "Create multi‑language projects during creation",
+          "type": "medium",
+          "explanation": "✅ Multi-language projects set at project creation :contentReference[oaicite:18]{index=18}."
+        },
+        {
+          "question": "What does layered ranking refer to?",
+          "options": [
+            "Search index + NLP ranker",
+            "GPU + CPU ranking",
+            "Language detection + sentiment",
+            "Active learning + multi-turn"
+          ],
+          "answer": "Search index + NLP ranker",
+          "type": "medium",
+          "explanation": "✅ First search layer, then NLP ranker orders results :contentReference[oaicite:19]{index=19}."
+        },
+        {
+          "question": "Coding: Which SDK package do you install in Python to use custom Q&A?",
+          "options": [
+            "azure-ai-language-questionanswering",
+            "azure-ai-textanalytics",
+            "azure-cognitiveservices-languageqa",
+            "azure-ai-qnamaker"
+          ],
+          "answer": "azure-ai-language-questionanswering",
+          "type": "hard",
+          "explanation": "✅ That’s the official Python package for custom question answering."
+        },
+        {
+          "question": "What is a ‘project’ in custom Q&A?",
+          "options": [
+            "Encapsulates KB, sources, multi‑turn, active learning",
+            "VM for hosting the service",
+            "Search index only",
+            "LLM deployment"
+          ],
+          "answer": "Encapsulates KB, sources, multi‑turn, active learning",
+          "type": "medium",
+          "explanation": "✅ Project bundles all features from source to consumable endpoint :contentReference[oaicite:20]{index=20}."
+        },
+        {
+          "question": "Which action is NOT covered by active learning?",
+          "options": [
+            "Auto-adding Q&A pairs",
+            "Suggesting alternate questions",
+            "Training ranker with accepted suggestions",
+            "Halting multi-turn context"
+          ],
+          "answer": "Halting multi-turn context",
+          "type": "hard",
+          "explanation": "✅ Active learning improves KB, doesn’t impact chat flow."
+        }
+      ]
     }
   ]
 }
