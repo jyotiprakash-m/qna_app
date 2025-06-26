@@ -1731,6 +1731,1100 @@
           "explanation": "✅ Studio UI enables project deletion :contentReference[oaicite:22]{index=22}."
         }
       ]
+    },
+    {
+      "name": "Unit 7: Translate text with Azure AI Translator service",
+      "questions": [
+        {
+          "question": "What is the primary purpose of Azure AI Translator service?",
+          "options": [
+            "Speech-to-text only",
+            "Image translation",
+            "Text translation, language detection, transliteration, and dictionaries",
+            "Text analytics"
+          ],
+          "answer": "Text translation, language detection, transliteration, and dictionaries",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ The service supports translation, detection, transliteration, dictionary lookup, etc. :contentReference[oaicite:1]{index=1}."
+        },
+        {
+          "question": "Which operation does Translator support? (Select 3)",
+          "options": ["Translate", "Detect", "Transliterate", "Entity Linking"],
+          "answer": ["Translate", "Detect", "Transliterate"],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "✅ It supports translation, detection, and transliteration; entity linking is a separate service :contentReference[oaicite:2]{index=2}."
+        },
+        {
+          "question": "What transliteration does?",
+          "options": [
+            "Converts text to speech",
+            "Translates meaning",
+            "Convert script (e.g., Latin script for Chinese)",
+            "Detect sentiment"
+          ],
+          "answer": "Convert script (e.g., Latin script for Chinese)",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Transliteration converts characters to another script :contentReference[oaicite:3]{index=3}."
+        },
+        {
+          "question": "Scenario: You need the pinyin for Chinese text. Which parameter do you specify?",
+          "options": [
+            "toScript=Latn",
+            "tone=True",
+            "scriptType=pinyin",
+            "language=latn"
+          ],
+          "answer": "toScript=Latn",
+          "type": "medium",
+          "explanation": "✅ The API supports toScript=Latn for Latin-script transliteration :contentReference[oaicite:4]{index=4}."
+        },
+        {
+          "question": "Which endpoint returns supported languages?",
+          "options": [
+            "GET /languages?api-version=3.0",
+            "GET /translate",
+            "POST /detect",
+            "GET /dictionaries"
+          ],
+          "answer": "GET /languages?api-version=3.0",
+          "type": "hard",
+          "explanation": "✅ That endpoint lists supported languages :contentReference[oaicite:5]{index=5}."
+        },
+        {
+          "question": "Which header is mandatory for translation API calls?",
+          "options": [
+            "Ocp-Apim-Subscription-Key",
+            "Authorization: Bearer",
+            "Accept-Encoding",
+            "User-Agent"
+          ],
+          "answer": "Ocp-Apim-Subscription-Key",
+          "type": "medium",
+          "explanation": "✅ Translator uses subscription key as auth header :contentReference[oaicite:6]{index=6}."
+        },
+        {
+          "question": "When using multi-service cognitive resource, which additional header is required?",
+          "options": [
+            "Ocp-Apim-Subscription-Region",
+            "Ocp-Apim-Resource-Id",
+            "Accept-Language",
+            "X-Region"
+          ],
+          "answer": "Ocp-Apim-Subscription-Region",
+          "type": "hard",
+          "explanation": "✅ Region header required for multi-service resources :contentReference[oaicite:7]{index=7}."
+        },
+        {
+          "question": "True or False: Language detection can be combined in the same call as translation.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ You can call detect+translate/transliterate in one request :contentReference[oaicite:8]{index=8}."
+        },
+        {
+          "question": "Which feature provides alternate translations in context?",
+          "options": [
+            "Dictionary examples",
+            "Sentiment analysis",
+            "Entity detection",
+            "Key phrase extraction"
+          ],
+          "answer": "Dictionary examples",
+          "type": "medium",
+          "explanation": "✅ Dictionary example API returns in-context alternates :contentReference[oaicite:9]{index=9}."
+        },
+        {
+          "question": "How many elements max in dictionary examples lookup array?",
+          "options": ["10", "25", "50", "100"],
+          "answer": "10",
+          "type": "hard",
+          "explanation": "✅ Dictionary examples limit is 10 elements :contentReference[oaicite:10]{index=10}."
+        },
+        {
+          "question": "Which authentication methods exist for Translator?",
+          "options": [
+            "Subscription key",
+            "OAuth2",
+            "Managed Identity",
+            "All of the above"
+          ],
+          "answer": "All of the above",
+          "type": "medium",
+          "explanation": "✅ Translator supports key, OAuth, and managed identity auth options."
+        },
+        {
+          "question": "Scenario: You need domain-specific terminology translations. What feature do you use?",
+          "options": [
+            "Custom Translator",
+            "Sentiment API",
+            "Dictionary lookup",
+            "Transliteration"
+          ],
+          "answer": "Custom Translator",
+          "type": "medium",
+          "explanation": "✅ Custom Translator allows domain-specific translation using custom models :contentReference[oaicite:11]{index=11}."
+        },
+        {
+          "question": "What minimum parallel sentences are needed to train a custom model?",
+          "options": ["10,000", "1,000", "100,000", "500"],
+          "answer": "10,000",
+          "type": "hard",
+          "explanation": "✅ Custom Translator requires at least 10k parallel sentences :contentReference[oaicite:12]{index=12}."
+        },
+        {
+          "question": "What is BLEU score used for?",
+          "options": [
+            "Evaluate translation quality",
+            "Detect language accuracy",
+            "Transliterate correctness",
+            "Sentiment confidence"
+          ],
+          "answer": "Evaluate translation quality",
+          "type": "medium",
+          "explanation": "✅ BLEU measures translation alignment with reference :contentReference[oaicite:13]{index=13}."
+        },
+        {
+          "question": "True or False: Custom models can be called via same Translate endpoint specifying category.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ Use category param with custom model ID :contentReference[oaicite:14]{index=14}."
+        },
+        {
+          "question": "Coding: Which field indicates detected language in response?",
+          "options": [
+            "detectedLanguage",
+            "langDetected",
+            "sourceLang",
+            "languageDetected"
+          ],
+          "answer": "detectedLanguage",
+          "type": "hard",
+          "explanation": "✅ Response JSON uses detectedLanguage object :contentReference[oaicite:15]{index=15}."
+        },
+        {
+          "question": "Which parameter retrieves Latin script transliteration?",
+          "options": ["toScript", "scriptType", "targetScript", "latinTrue"],
+          "answer": "toScript",
+          "type": "hard",
+          "explanation": "✅ API param toScript sets transliteration script :contentReference[oaicite:16]{index=16}."
+        },
+        {
+          "question": "Scenario: You want consistent brand translation across docs. You should use:",
+          "options": [
+            "Glossary",
+            "Dictionary lookup only",
+            "Language detection",
+            "Transliteration"
+          ],
+          "answer": "Glossary",
+          "type": "medium",
+          "explanation": "✅ Glossaries enforce consistent terminology :contentReference[oaicite:17]{index=17}."
+        },
+        {
+          "question": "Glossaries currently supported for which service?",
+          "options": [
+            "Document translation",
+            "Text translation",
+            "Transliteration",
+            "Dictionary lookup"
+          ],
+          "answer": "Document translation",
+          "type": "medium",
+          "explanation": "✅ Glossary support applies to document translation :contentReference[oaicite:18]{index=18}."
+        },
+        {
+          "question": "Module assessment: True or False—Glossary matching is case-sensitive by default.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ Glossaries apply only with exact casing :contentReference[oaicite:19]{index=19}."
+        },
+        {
+          "question": "Which endpoint returns dictionary examples?",
+          "options": [
+            "POST /dictionary/examples",
+            "GET /dictionary",
+            "POST /translate/dict",
+            "GET /examples"
+          ],
+          "answer": "POST /dictionary/examples",
+          "type": "hard",
+          "explanation": "✅ That's the documented endpoint :contentReference[oaicite:20]{index=20}."
+        },
+        {
+          "question": "Which error code indicates rate limiting?",
+          "options": ["429", "408", "503", "400"],
+          "answer": "429",
+          "type": "medium",
+          "explanation": "✅ HTTP 429 means throttling :contentReference[oaicite:21]{index=21}."
+        },
+        {
+          "question": "Which languages are supported by Translator?",
+          "options": [
+            "179 languages and variants",
+            "50 languages",
+            "Only major languages",
+            "All languages globally"
+          ],
+          "answer": "179 languages and variants",
+          "type": "hard",
+          "explanation": "✅ Translation supports 179 languages/variants :contentReference[oaicite:22]{index=22}."
+        },
+        {
+          "question": "What deployment option allows offline use?",
+          "options": [
+            "Translator container",
+            "CLI tool",
+            "Mobile SDK",
+            "Edge API"
+          ],
+          "answer": "Translator container",
+          "type": "medium",
+          "explanation": "✅ Containers support offline environments :contentReference[oaicite:23]{index=23}."
+        },
+        {
+          "question": "True or False: Dictionary example request body limit is 100 characters per text.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "hard",
+          "explanation": "✅ Each element must not exceed 100 chars :contentReference[oaicite:24]{index=24}."
+        },
+        {
+          "question": "Which parameter returns multiple target translations in one call?",
+          "options": [
+            "to=de&to=fr",
+            "multiple=true",
+            "languages=de,fr",
+            "targetAll=true"
+          ],
+          "answer": "to=de&to=fr",
+          "type": "hard",
+          "explanation": "✅ Multiple 'to' query parameters yield multi-language translations :contentReference[oaicite:25]{index=25}."
+        }
+      ]
+    },
+    {
+      "name": "Unit: Create speech-enabled apps with Azure AI services",
+      "questions": [
+        {
+          "question": "What is the purpose of the Azure AI Speech service?",
+          "options": [
+            "Process images",
+            "Enable speech recognition and synthesis",
+            "Run LLMs",
+            "Provide chatbot UI"
+          ],
+          "answer": "Enable speech recognition and synthesis",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ The module teaches how to use speech-to-text and text-to-speech APIs :contentReference[oaicite:1]{index=1}."
+        },
+        {
+          "question": "Which features are supported by the Speech-to-Text API? (Select 3)",
+          "options": [
+            "Real-time transcription",
+            "Batch transcription",
+            "Custom speech",
+            "Machine translation"
+          ],
+          "answer": [
+            "Real-time transcription",
+            "Batch transcription",
+            "Custom speech"
+          ],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "✅ Supports real-time, batch, and custom speech; translation is a different service :contentReference[oaicite:2]{index=2}."
+        },
+        {
+          "question": "Which SDKs support real-time speech-to-text? (Select 2)",
+          "options": ["Speech SDK", "Speech CLI", "Vision SDK", "Language SDK"],
+          "answer": ["Speech SDK", "Speech CLI"],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "✅ Speech SDK and CLI both support real-time transcription :contentReference[oaicite:3]{index=3}."
+        },
+        {
+          "question": "True or False: Batch transcription requires audio to be stored in Azure Blob.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ Batch transcription processes prerecorded audio from storage :contentReference[oaicite:4]{index=4}."
+        },
+        {
+          "question": "What parameter controls output detail level in RecognitionConfig?",
+          "options": ["detailed", "outputFormat", "formatLevel", "verbosity"],
+          "answer": "outputFormat",
+          "type": "hard",
+          "explanation": "✅ You can choose between simple and detailed formats :contentReference[oaicite:5]{index=5}."
+        },
+        {
+          "question": "Which quickstart method transcribes one utterance up to 30 seconds?",
+          "options": [
+            "RecognizeOnceAsync",
+            "StartContinuousRecognition",
+            "RecognizeFileAsync",
+            "BatchTranscribeAsync"
+          ],
+          "answer": "RecognizeOnceAsync",
+          "type": "medium",
+          "explanation": "✅ RecognizeOnceAsync handles short utterances :contentReference[oaicite:6]{index=6}."
+        },
+        {
+          "question": "Scenario: You want speaker diarization. Which feature to enable?",
+          "options": [
+            "speakerDiarization",
+            "speakerTagging",
+            "speakerSeparation",
+            "speakerIdentify"
+          ],
+          "answer": "speakerDiarization",
+          "type": "medium",
+          "explanation": "✅ The module mentions 'Speaker diarization' config :contentReference[oaicite:7]{index=7}."
+        },
+        {
+          "question": "Which SSML element adjusts voice pitch or rate?",
+          "options": ["<prosody>", "<break>", "<voice>", "<audio>"],
+          "answer": "<prosody>",
+          "type": "hard",
+          "explanation": "✅ SSML lets you control pitch, rate, volume via <prosody> :contentReference[oaicite:8]{index=8}."
+        },
+        {
+          "question": "True or False: You must include environment variables for SPEECH_KEY and ENDPOINT.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ Quickstarts require these env vars to run :contentReference[oaicite:9]{index=9}."
+        },
+        {
+          "question": "Which method is used in .NET to synthesize text to speech?",
+          "options": [
+            "SpeakTextAsync",
+            "SynthesizeAsync",
+            "ToSpeechAsync",
+            "RenderSpeechAsync"
+          ],
+          "answer": "SpeakTextAsync",
+          "type": "easy",
+          "explanation": "✅ Quickstart uses SpeakTextAsync :contentReference[oaicite:10]{index=10}."
+        },
+        {
+          "question": "When using SSML, which element allows switching voice mid-document?",
+          "options": ["<voice>", "<switch>", "<speaker>", "<segment>"],
+          "answer": "<voice>",
+          "type": "medium",
+          "explanation": "✅ SSML lets you embed multiple <voice> tags :contentReference[oaicite:11]{index=11}."
+        },
+        {
+          "question": "Which format(s) can synthesized audio be saved to? (Select 2)",
+          "options": ["MP3", "WAV", "PDF", "TXT"],
+          "answer": ["MP3", "WAV"],
+          "type": "medium",
+          "explanation": "✅ Audio formats include MP3 and WAV; PDF/TXT irrelevant :contentReference[oaicite:12]{index=12}."
+        },
+        {
+          "question": "Scenario: You want to animate lips. Which event do you use?",
+          "options": ["viseme", "bookmark", "break", "audio"],
+          "answer": "viseme",
+          "type": "hard",
+          "explanation": "✅ Viseme events produce mouth shapes :contentReference[oaicite:13]{index=13}."
+        },
+        {
+          "question": "Which SSML tag adds a pause between sentences?",
+          "options": ["<break>", "<silence>", "<pause>", "<gap>"],
+          "answer": "<break>",
+          "type": "medium",
+          "explanation": "✅ The <break> element defines pauses :contentReference[oaicite:14]{index=14}."
+        },
+        {
+          "question": "What determines voice accent for English text?",
+          "options": [
+            "Voice name",
+            "Language code only",
+            "Prosody rate",
+            "Synth format"
+          ],
+          "answer": "Voice name",
+          "type": "medium",
+          "explanation": "✅ Example uses Spanish-named voice to add accent :contentReference[oaicite:15]{index=15}."
+        },
+        {
+          "question": "True or False: All neural voices support viseme events.",
+          "options": ["True", "False"],
+          "answer": "False",
+          "type": "hard",
+          "explanation": "❌ Only en‑US neural voices support viseme :contentReference[oaicite:16]{index=16}."
+        },
+        {
+          "question": "Which role helps secure credentials in production?",
+          "options": [
+            "Managed Identity",
+            "ClientCertificate",
+            "SharedKeyLite",
+            "Anonymous"
+          ],
+          "answer": "Managed Identity",
+          "type": "medium",
+          "explanation": "✅ Guidelines recommend managed identity over key in prod :contentReference[oaicite:17]{index=17}."
+        },
+        {
+          "question": "In Python/Speech SDK, which class loads audio from file?",
+          "options": [
+            "AudioConfig.from_wav_file_input",
+            "AudioConfig.from_mic",
+            "AudioFileReader",
+            "SpeechAudioInput"
+          ],
+          "answer": "AudioConfig.from_wav_file_input",
+          "type": "hard",
+          "explanation": "✅ Python quickstart uses this method :contentReference[oaicite:18]{index=18}."
+        },
+        {
+          "question": "Scenario: Deployed to App Service and mic fails. What caused it?",
+          "options": [
+            "Using default microphone instead of file input",
+            "Missing ENdpoint env var",
+            "Wrong subscription key",
+            "Too much latency"
+          ],
+          "answer": "Using default microphone instead of file input",
+          "type": "hard",
+          "explanation": "✅ App Service has no mic; use upload and file input :contentReference[oaicite:19]{index=19}."
+        },
+        {
+          "question": "Module: True or False — You can use multiple voices in a single SSML file.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ SSML supports multiple <voice> elements :contentReference[oaicite:20]{index=20}."
+        },
+        {
+          "question": "Which SSML element adds custom audio clips?",
+          "options": ["<audio>", "<sound>", "<media>", "<clip>"],
+          "answer": "<audio>",
+          "type": "hard",
+          "explanation": "✅ <audio> inserts prerecorded clips :contentReference[oaicite:21]{index=21}."
+        },
+        {
+          "question": "What is the purpose of SSML?",
+          "options": [
+            "Fine-tune speech output (pitch, rate, volume)",
+            "Connect to microphone",
+            "Store text logs",
+            "Create image files"
+          ],
+          "answer": "Fine-tune speech output (pitch, rate, volume)",
+          "type": "medium",
+          "explanation": "✅ SSML adjusts prosody and delivery :contentReference[oaicite:22]{index=22}."
+        },
+        {
+          "question": "Which REST endpoint synthesizes SSML to speech?",
+          "options": [
+            "POST /cognitiveservices/v1",
+            "GET /speech/synthesize",
+            "POST /speak",
+            "PUT /synthesis"
+          ],
+          "answer": "POST /cognitiveservices/v1",
+          "type": "hard",
+          "explanation": "✅ REST SSML uses cognitiveservices/v1 :contentReference[oaicite:23]{index=23}."
+        },
+        {
+          "question": "Scenario: You need multilingual output with synced accents. Which element config?",
+          "options": [
+            "<voice name='es-ES-ElviraNeural'>",
+            "<voice name='en-GB-RobertNeural'>",
+            "<prosody variant='spanish'>",
+            "<audio src='spanish.mp3'>"
+          ],
+          "answer": "<voice name='es-ES-ElviraNeural'>",
+          "type": "medium",
+          "explanation": "✅ Named voice sets accent and multilingual support :contentReference[oaicite:24]{index=24}."
+        },
+        {
+          "question": "Which element inserts a 2-second silence?",
+          "options": [
+            "<break time=\"2000ms\"/>",
+            "<pause duration=\"2s\"/>",
+            "<silence length=\"2\"/>",
+            "<break time=\"2\"/>"
+          ],
+          "answer": "<break time=\"2000ms\"/>",
+          "type": "medium",
+          "explanation": "✅ SSML <break time> uses millisecond units :contentReference[oaicite:25]{index=25}."
+        },
+        {
+          "question": "How are neural voices billed?",
+          "options": [
+            "Per character including SSML tags",
+            "Per minute",
+            "Flat monthly fee",
+            "Free"
+          ],
+          "answer": "Per character including SSML tags",
+          "type": "hard",
+          "explanation": "✅ Billed per character, including SSML markup :contentReference[oaicite:26]{index=26}."
+        },
+        {
+          "question": "Scenario: You need phoneme-level pronunciation control. Which SSML tag do you use?",
+          "options": ["<phoneme>", "<prosody>", "<voice>", "<audio>"],
+          "answer": "<phoneme>",
+          "type": "hard",
+          "explanation": "✅ SSML supports <phoneme> for pronunciation :contentReference[oaicite:27]{index=27}."
+        },
+        {
+          "question": "True or False: You must select voice by name in REST endpoint.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ SSML and REST endpoint require explicit voice name :contentReference[oaicite:28]{index=28}."
+        }
+      ]
+    },
+    {
+      "name": "Unit 9: Translate Speech with the Azure AI Speech service",
+      "questions": [
+        {
+          "question": "What are the main capabilities of Azure Speech Translation?",
+          "options": [
+            "Speech to text translation",
+            "Speech to speech translation",
+            "Speaker recognition",
+            "Speech to speech and text translation"
+          ],
+          "answer": "Speech to text translation",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ The module focuses on speech-to-text translation. Speech-to-speech builds on that but isn't the core here :contentReference[oaicite:1]{index=1}."
+        },
+        {
+          "question": "Which SDK supports real-time speech translation? (Select 2)",
+          "options": ["Speech SDK", "Speech CLI", "REST API", "Language SDK"],
+          "answer": ["Speech SDK", "Speech CLI"],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "✅ Both SDK and CLI enable real-time translation; REST isn't used for live translation :contentReference[oaicite:2]{index=2}."
+        },
+        {
+          "question": "True or False: You must specify a source language when using multi-lingual translation.",
+          "options": ["True", "False"],
+          "answer": "False",
+          "type": "medium",
+          "explanation": "✅ Multi‑lingual mode auto-detects languages during translation :contentReference[oaicite:3]{index=3}."
+        },
+        {
+          "question": "What config object initializes speech translation in C#?",
+          "options": [
+            "SpeechRecognitionConfig",
+            "SpeechTranslationConfig",
+            "TranslateConfig",
+            "AudioTranslationConfig"
+          ],
+          "answer": "SpeechTranslationConfig",
+          "type": "medium",
+          "explanation": "✅ The module uses SpeechTranslationConfig.FromSubscription(...) :contentReference[oaicite:4]{index=4}."
+        },
+        {
+          "question": "Which method performs single-shot speech translation?",
+          "options": [
+            "RecognizeOnceAsync",
+            "TranslateOnceAsync",
+            "RecognizeAsync",
+            "TranslateSpeechAsync"
+          ],
+          "answer": "RecognizeOnceAsync",
+          "type": "hard",
+          "explanation": "✅ Quickstart uses RecognizeOnceAsync for single utterance translation :contentReference[oaicite:5]{index=5}."
+        },
+        {
+          "question": "Scenario: You need translation of Spanish audio to German text and French speech. Which config?",
+          "options": [
+            "Add both 'de' and 'fr' as target languages",
+            "Set source to 'es-DE'",
+            "Use multilingual mode without targets",
+            "Use RecognizeOnce without translating"
+          ],
+          "answer": "Add both 'de' and 'fr' as target languages",
+          "type": "medium",
+          "explanation": "✅ Multiple target languages supported by specifying each target :contentReference[oaicite:6]{index=6}."
+        },
+        {
+          "question": "Which header is required for authorization in translation API?",
+          "options": [
+            "Ocp-Apim-Subscription-Key",
+            "Authorization: Bearer",
+            "Api-Key",
+            "X-Auth"
+          ],
+          "answer": "Ocp-Apim-Subscription-Key",
+          "type": "medium",
+          "explanation": "✅ Speech service uses subscription key header :contentReference[oaicite:7]{index=7}."
+        },
+        {
+          "question": "True or False: The Speech CLI can translate microphone input.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ CLI example shows spx translate --microphone :contentReference[oaicite:8]{index=8}."
+        },
+        {
+          "question": "What output does RecognizeOnceAsync return on success?",
+          "options": [
+            "Translated text only",
+            "Source language text",
+            "Recognition reason",
+            "Both recognized and translated text"
+          ],
+          "answer": "Both recognized and translated text",
+          "type": "medium",
+          "explanation": "✅ Result has both source and translated texts :contentReference[oaicite:9]{index=9}."
+        },
+        {
+          "question": "Which SDK language is NOT supported for speech translation according to quickstart docs?",
+          "options": ["Go", "C#", "Python", "JavaScript"],
+          "answer": "Go",
+          "type": "hard",
+          "explanation": "✅ Go SDK doesn’t support translate speech :contentReference[oaicite:10]{index=10}."
+        },
+        {
+          "question": "How do you specify audio file input in Python?",
+          "options": [
+            "AudioConfig.from_wav_file_input",
+            "AudioConfig.from_mic",
+            "AudioConfig.file",
+            "AudioConfig.load()"
+          ],
+          "answer": "AudioConfig.from_wav_file_input",
+          "type": "medium",
+          "explanation": "✅ Quickstart uses this for file-based translation :contentReference[oaicite:11]{index=11}."
+        },
+        {
+          "question": "Which feature handles language switching mid-session?",
+          "options": [
+            "Multi-lingual speech translation",
+            "Batch translation",
+            "Single-language mode",
+            "Speech-to-text"
+          ],
+          "answer": "Multi-lingual speech translation",
+          "type": "medium",
+          "explanation": "✅ Supports session with multiple languages without restart :contentReference[oaicite:12]{index=12}."
+        },
+        {
+          "question": "Module question: True or False—Extended speech translation supports more than two target languages free of charge.",
+          "options": ["True", "False"],
+          "answer": "False",
+          "type": "hard",
+          "explanation": "✅ Third language incurs cost; free tier includes only two :contentReference[oaicite:13]{index=13}."
+        },
+        {
+          "question": "Which command sets credentials for CLI?",
+          "options": [
+            "spx config @key --set",
+            "spx login",
+            "az speech login",
+            "spx set credentials"
+          ],
+          "answer": "spx config @key --set",
+          "type": "hard",
+          "explanation": "✅ CLI uses spx config to set key and region :contentReference[oaicite:14]{index=14}."
+        },
+        {
+          "question": "Coding: Which Python class handles translation config?",
+          "options": [
+            "speechsdk.translation.SpeechTranslationConfig",
+            "speechsdk.SpeechConfig",
+            "speechsdk.TranslationRecognizerConfig",
+            "speechsdk.Constants"
+          ],
+          "answer": "speechsdk.translation.SpeechTranslationConfig",
+          "type": "hard",
+          "explanation": "✅ Used in quickstart code :contentReference[oaicite:15]{index=15}."
+        },
+        {
+          "question": "Why use multi-lingual mode over regular translation config?",
+          "options": [
+            "Supports auto source detection",
+            "Improves voice quality",
+            "Enables speaker ID",
+            "Speeds up translation"
+          ],
+          "answer": "Supports auto source detection",
+          "type": "medium",
+          "explanation": "✅ Multi-lingual mode can identify source languages dynamically :contentReference[oaicite:16]{index=16}."
+        },
+        {
+          "question": "Scenario: You need to translate a recorded MP4 video. What must you prepare?",
+          "options": [
+            "Install GStreamer and use PullAudioInputStream",
+            "Direct microphone input works",
+            "Use REST API",
+            "Convert video to text first"
+          ],
+          "answer": "Install GStreamer and use PullAudioInputStream",
+          "type": "hard",
+          "explanation": "✅ For compressed MP4, you need GStreamer support points :contentReference[oaicite:17]{index=17}."
+        },
+        {
+          "question": "What are ‘interim results’?",
+          "options": [
+            "Translations delivered before final silence",
+            "Only audio samples",
+            "Errors during translation",
+            "Batch transcription logs"
+          ],
+          "answer": "Translations delivered before final silence",
+          "type": "medium",
+          "explanation": "✅ Interim transcription/translation visible during streaming :contentReference[oaicite:18]{index=18}."
+        },
+        {
+          "question": "Module assessment: True or False—Speaker recognition is required for translation.",
+          "options": ["True", "False"],
+          "answer": "False",
+          "type": "medium",
+          "explanation": "✅ Speaker recognition is unrelated to translation :contentReference[oaicite:19]{index=19}."
+        },
+        {
+          "question": "Which reason indicates translation success in C# result?",
+          "options": [
+            "TranslatedSpeech",
+            "RecognizedSpeech",
+            "Canceled",
+            "NoMatch"
+          ],
+          "answer": "TranslatedSpeech",
+          "type": "hard",
+          "explanation": "✅ result.Reason == ResultReason.TranslatedSpeech indicates success :contentReference[oaicite:20]{index=20}."
+        },
+        {
+          "question": "True or False: TranslationRecognizer supports continuous recognition.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ It supports continuous translation using start/stop methods :contentReference[oaicite:21]{index=21}."
+        },
+        {
+          "question": "Which is the default timeout for single-shot translation before silence?",
+          "options": ["15 seconds", "30 seconds", "60 seconds", "No timeout"],
+          "answer": "15 seconds",
+          "type": "hard",
+          "explanation": "✅ RecognizeOnceAsync times out at ~15s or silence :contentReference[oaicite:22]{index=22}."
+        },
+        {
+          "question": "Coding: How do you close the recognizer in JS?",
+          "options": [
+            "translationRecognizer.close()",
+            "translationRecognizer.stop()",
+            "translationRecognizer.dispose()",
+            "translationRecognizer.end()"
+          ],
+          "answer": "translationRecognizer.close()",
+          "type": "hard",
+          "explanation": "✅ Node.js sample uses close after use :contentReference[oaicite:23]{index=23}."
+        },
+        {
+          "question": "Why set multiple 'target' languages in config?",
+          "options": [
+            "To receive parallel translations in one call",
+            "To improve accuracy",
+            "To reduce latency",
+            "To increase voice options"
+          ],
+          "answer": "To receive parallel translations in one call",
+          "type": "medium",
+          "explanation": "✅ Multiple targets simultaneously supported :contentReference[oaicite:24]{index=24}."
+        },
+        {
+          "question": "Scenario: Recognizer returns RecognizedSpeech but no translations. What’s wrong?",
+          "options": [
+            "No target languages added",
+            "Key is invalid",
+            "Audio file corrupt",
+            "Region mismatch"
+          ],
+          "answer": "No target languages added",
+          "type": "medium",
+          "explanation": "✅ If no targets are set, translation won't occur."
+        }
+      ]
+    },
+    {
+      "name": "Unit 10: Develop an audio-enabled generative AI application",
+      "questions": [
+        {
+          "question": "What is the main goal of this module?",
+          "options": [
+            "Deploy audio chat bots",
+            "Deploy text-only LLM",
+            "Build image classifiers",
+            "Create video editors"
+          ],
+          "answer": "Deploy audio chat bots",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ The module focuses on deploying audio-enabled chat apps via Azure AI Foundry :contentReference[oaicite:2]{index=2}."
+        },
+        {
+          "question": "Which service do you deploy to handle audio-enabled generative AI?",
+          "options": [
+            "Azure AI Foundry multimodal model",
+            "Azure OpenAI text-only",
+            "Azure Video Indexer",
+            "Azure Bot Service"
+          ],
+          "answer": "Azure AI Foundry multimodal model",
+          "type": "medium",
+          "explanation": "✅ You deploy a multimodal model (text + audio) in Azure AI Foundry :contentReference[oaicite:3]{index=3}."
+        },
+        {
+          "question": "Which model currently supports audio & text inputs?",
+          "options": ["Phi-4-multimodal-instruct", "GPT-3.5", "Phi-2", "Codex"],
+          "answer": "Phi-4-multimodal-instruct",
+          "type": "medium",
+          "explanation": "✅ The Phi‑4 multimodal model supports audio plus text :contentReference[oaicite:4]{index=4}."
+        },
+        {
+          "question": "True or False: You can send text, audio, and image in a single prompt.",
+          "options": ["True", "False"],
+          "answer": "False",
+          "type": "medium",
+          "explanation": "✅ The model doesn't support all three modalities at once :contentReference[oaicite:5]{index=5}."
+        },
+        {
+          "question": "Which SDK is used to build the audio chat app in Python?",
+          "options": [
+            "azure-ai-inference ChatCompletionsClient",
+            "azure-language TextAnalyticsClient",
+            "azure-cognitiveservices-speech SpeechRecognizer",
+            "azure-identity DefaultAzureCredential"
+          ],
+          "answer": "azure-ai-inference ChatCompletionsClient",
+          "type": "medium",
+          "explanation": "✅ The module uses ChatCompletionsClient from inference SDK :contentReference[oaicite:6]{index=6}."
+        },
+        {
+          "question": "What env var holds the audio file path?",
+          "options": [
+            "AUDIO_FILE",
+            "SPEECH_FILE",
+            "INPUT_AUDIO",
+            "AUDIO_SOURCE"
+          ],
+          "answer": "AUDIO_FILE",
+          "type": "hard",
+          "explanation": "✅ The lab uses AUDIO_FILE for audio in examples."
+        },
+        {
+          "question": "Scenario: You get 'invalid input' error sending MP3 audio. What’s likely wrong?",
+          "options": [
+            "Audio format unsupported",
+            "Model not deployed",
+            "Key expired",
+            "Wrong endpoint"
+          ],
+          "answer": "Audio format unsupported",
+          "type": "medium",
+          "explanation": "✅ The model may reject unsupported formats like MP3 :contentReference[oaicite:7]{index=7}."
+        },
+        {
+          "question": "Which ROS parameter sets model name in code?",
+          "options": ["model", "deployment_name", "model_id", "name"],
+          "answer": "model",
+          "type": "hard",
+          "explanation": "✅ In client code you specify `model=…`:contentReference[oaicite:8]{index=8}."
+        },
+        {
+          "question": "Which MIME type is used for audio input?",
+          "options": [
+            "audio/wav",
+            "text/plain",
+            "image/png",
+            "application/json"
+          ],
+          "answer": "audio/wav",
+          "type": "medium",
+          "explanation": "✅ WAV is the supported audio format in examples :contentReference[oaicite:9]{index=9}."
+        },
+        {
+          "question": "Which voice model is documented in GPT‑4o audio quickstart?",
+          "options": ["Alloy", "Echo", "Shimmer", "All of the above"],
+          "answer": "All of the above",
+          "type": "medium",
+          "explanation": "✅ Alloy, Echo, and Shimmer are supported voices :contentReference[oaicite:10]{index=10}."
+        },
+        {
+          "question": "True or False: Audio input must be ≤20 MB for GPT‑4o models.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ Max audio file size limit is 20 MB :contentReference[oaicite:11]{index=11}."
+        },
+        {
+          "question": "Multiple-choice: Which capabilities are supported by Phi-4o-Audio? (Select 2)",
+          "options": [
+            "Audio input comprehension",
+            "Audio output generation",
+            "Video analysis",
+            "Image generation"
+          ],
+          "answer": ["Audio input comprehension", "Audio output generation"],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "✅ It supports both audio in and audio out :contentReference[oaicite:12]{index=12}."
+        },
+        {
+          "question": "Scenario: Your chat app plays silence. What’s missing?",
+          "options": [
+            "Audio decoding step",
+            "Text prompt",
+            "Authentication header",
+            "Model deployment"
+          ],
+          "answer": "Audio decoding step",
+          "type": "medium",
+          "explanation": "✅ You must decode returned base64 audio to play sound properly."
+        },
+        {
+          "question": "Which Python method sends a chat message?",
+          "options": [
+            "client.get_chat_completion",
+            "client.create_chat",
+            "client.send_audio",
+            "client.chat()"
+          ],
+          "answer": "client.get_chat_completion",
+          "type": "hard",
+          "explanation": "✅ The inference SDK uses get_chat_completion :contentReference[oaicite:13]{index=13}."
+        },
+        {
+          "question": "Why avoid combining text, audio, image in single prompt?",
+          "options": [
+            "Model limitation",
+            "Licensing cost",
+            "Domain restrictions",
+            "Network latency"
+          ],
+          "answer": "Model limitation",
+          "type": "medium",
+          "explanation": "✅ The model doesn't allow all three at once :contentReference[oaicite:14]{index=14}."
+        },
+        {
+          "question": "Module assess: True or False—Audio output is base64-encoded in response.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ Examples show audio returned as base64 in JSON."
+        },
+        {
+          "question": "Which format is used for SSML in audio prompts?",
+          "options": ["<speak>", "<audio>", "<voice>", "<model>"],
+          "answer": "<speak>",
+          "type": "medium",
+          "explanation": "✅ Standard SSML root tag <speak> used :contentReference[oaicite:15]{index=15}."
+        },
+        {
+          "question": "Why set `contentType=audio/*` in chat client?",
+          "options": [
+            "To indicate audio input",
+            "For translation only",
+            "To enable subtitles",
+            "For text-only mode"
+          ],
+          "answer": "To indicate audio input",
+          "type": "medium",
+          "explanation": "✅ You must clarify that your input is audio."
+        },
+        {
+          "question": "True or False: The inference client supports Java SDK for audio multimodal.",
+          "options": ["True", "False"],
+          "answer": "False",
+          "type": "hard",
+          "explanation": "✅ Audio multimodal isn’t available in Java SDK yet :contentReference[oaicite:16]{index=16}."
+        },
+        {
+          "question": "Scenario: You need to stream audio as it's being generated. Which mode?",
+          "options": [
+            "Streaming chat completion",
+            "Batch chat",
+            "Prompt flow only",
+            "CLI mode"
+          ],
+          "answer": "Streaming chat completion",
+          "type": "medium",
+          "explanation": "✅ Streaming enables partial audio/text output as generated."
+        },
+        {
+          "question": "What MIME type indicates streamed audio in HTTP response?",
+          "options": [
+            "audio/wav",
+            "text/event-stream",
+            "application/octet-stream",
+            "multipart/mixed"
+          ],
+          "answer": "text/event-stream",
+          "type": "hard",
+          "explanation": "✅ Chat completions streaming uses event-stream MIME type."
+        },
+        {
+          "question": "Why include `audio=...` field in request JSON?",
+          "options": [
+            "To pass audio bytes",
+            "To set volume",
+            "To specify voice name",
+            "To enable emotions"
+          ],
+          "answer": "To pass audio bytes",
+          "type": "medium",
+          "explanation": "✅ You embed input audio in JSON for multimodal prompts."
+        },
+        {
+          "question": "Coding: Which Python package must you install?",
+          "options": [
+            "azure-ai-inference",
+            "azure-ai-language",
+            "azure-cognitiveservices-speech",
+            "azure-ai-textanalytics"
+          ],
+          "answer": "azure-ai-inference",
+          "type": "medium",
+          "explanation": "✅ The audio multimodal examples reference azure‑ai‑inference :contentReference[oaicite:17]{index=17}."
+        },
+        {
+          "question": "Which scenario suits fallback: audio->text->image?",
+          "options": [
+            "User sends audio with embedded image description",
+            "Text-only chat",
+            "Video processing",
+            "Translation only"
+          ],
+          "answer": "User sends audio with embedded image description",
+          "type": "hard",
+          "explanation": "✅ You might cascade modalities, e.g., first transcribe, then add context."
+        },
+        {
+          "question": "True or False: Model can summarize audio context in text output.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ The model can interpret tone and summarize audio context :contentReference[oaicite:18]{index=18}."
+        },
+        {
+          "question": "Which caveat is highlighted for previews?",
+          "options": [
+            "No SLA",
+            "Limited region availability",
+            "Feature may change",
+            "All of the above"
+          ],
+          "answer": "All of the above",
+          "type": "medium",
+          "explanation": "✅ Preview features have no SLA, limited regions, and may change :contentReference[oaicite:19]{index=19}."
+        }
+      ]
     }
   ]
 }

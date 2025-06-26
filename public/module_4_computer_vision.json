@@ -1,0 +1,883 @@
+{
+  "units": [
+    {
+      "name": "Unit 1: Analyze images",
+      "questions": [
+        {
+          "question": "What is the primary purpose of Azure AI Vision Image Analysis?",
+          "options": [
+            "Process speech",
+            "Analyze visual content of images using pre-trained models",
+            "Translate text",
+            "Host LLMs"
+          ],
+          "answer": "Analyze visual content of images using pre-trained models",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ The service extracts captions, tags, OCR, and object/location info from images :contentReference[oaicite:2]{index=2}."
+        },
+        {
+          "question": "Which feature(s) can be extracted from an image? (Select 3)",
+          "options": [
+            "Caption",
+            "OCR (Read)",
+            "Dense captions",
+            "Audio transcription"
+          ],
+          "answer": ["Caption", "OCR (Read)", "Dense captions"],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "✅ Supported features include caption, OCR, dense captions; audio transcription is unrelated :contentReference[oaicite:3]{index=3}."
+        },
+        {
+          "question": "What image formats are supported for analysis? (Select 2)",
+          "options": ["JPEG", "PNG", "MP4", "TXT"],
+          "answer": ["JPEG", "PNG"],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "✅ Valid formats include JPEG and PNG; MP4 and TXT are invalid :contentReference[oaicite:4]{index=4}."
+        },
+        {
+          "question": "What is the maximum image size supported?",
+          "options": ["20 MB", "100 MB", "500 KB", "Unlimited"],
+          "answer": "20 MB",
+          "type": "medium",
+          "explanation": "✅ The limit per image is 20 MB :contentReference[oaicite:5]{index=5}."
+        },
+        {
+          "question": "What minimum image dimension is required?",
+          "options": [
+            "50×50 pixels",
+            "10×10 pixels",
+            "1920×1080",
+            "No minimum"
+          ],
+          "answer": "50×50 pixels",
+          "type": "medium",
+          "explanation": "✅ Size must be at least 50×50 px :contentReference[oaicite:6]{index=6}."
+        },
+        {
+          "question": "Scenario: You need a human-readable caption for an image using code. Which VisualFeature enum is needed?",
+          "options": [
+            "VisualFeatures.CAPTION",
+            "VisualFeatures.FACES",
+            "VisualFeatures.COLOR",
+            "VisualFeatures.AUDIO"
+          ],
+          "answer": "VisualFeatures.CAPTION",
+          "type": "medium",
+          "explanation": "✅ CAPTION extracts image description; others are irrelevant :contentReference[oaicite:7]{index=7}."
+        },
+        {
+          "question": "Which authentication methods are supported? (Select 2)",
+          "options": [
+            "API key",
+            "Managed Identity (Entra ID)",
+            "OAuth2 token",
+            "SSH key"
+          ],
+          "answer": ["API key", "Managed Identity (Entra ID)"],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "✅ Supported auth includes key and Entra ID, not SSH or OAuth2 explicitly :contentReference[oaicite:8]{index=8}."
+        },
+        {
+          "question": "True or False: Gender-neutral captions can be enabled.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ Code can set `gender_neutral_caption=True` :contentReference[oaicite:9]{index=9}."
+        },
+        {
+          "question": "Which client constructor parameter is required for key authentication in Python?",
+          "options": [
+            "AzureKeyCredential(key)",
+            "DefaultAzureCredential",
+            "OAuthToken",
+            "SSHKey"
+          ],
+          "answer": "AzureKeyCredential(key)",
+          "type": "medium",
+          "explanation": "✅ Sample uses AzureKeyCredential(key) :contentReference[oaicite:10]{index=10}."
+        },
+        {
+          "question": "How do you analyze an image from URL in Python?",
+          "options": [
+            "client.analyze_from_url(...)",
+            "client.read_text(...)",
+            "client.detect_image_url(...)",
+            "client.url_analyze(...)"
+          ],
+          "answer": "client.analyze_from_url(...)",
+          "type": "hard",
+          "explanation": "✅ URL analysis uses analyze_from_url(...) :contentReference[oaicite:11]{index=11}."
+        },
+        {
+          "question": "True or False: OCR uses async endpoint separate from vision calls.",
+          "options": ["True", "False"],
+          "answer": "False",
+          "type": "medium",
+          "explanation": "✅ OCR is integrated via VisualFeatures.READ in same call :contentReference[oaicite:12]{index=12}."
+        },
+        {
+          "question": "Which visual feature detects people and their bounding boxes?",
+          "options": [
+            "VisualFeatures.PEOPLE",
+            "VisualFeatures.OBJECTS",
+            "VisualFeatures.TAGS",
+            "VisualFeatures.THUMBNAILS"
+          ],
+          "answer": "VisualFeatures.PEOPLE",
+          "type": "medium",
+          "explanation": "✅ PEOPLE detects humans, OBJECTS detect objects broadly :contentReference[oaicite:13]{index=13}."
+        },
+        {
+          "question": "Scenario: You need to generate smart thumbnails. Which feature is required?",
+          "options": [
+            "VisualFeatures.SMART_CROPS",
+            "VisualFeatures.CAPTION",
+            "VisualFeatures.TAGS",
+            "VisualFeatures.READ"
+          ],
+          "answer": "VisualFeatures.SMART_CROPS",
+          "type": "hard",
+          "explanation": "✅ SMART_CROPS identifies thumbnail-ready regions :contentReference[oaicite:14]{index=14}."
+        },
+        {
+          "question": "What exception is raised for a 401 Unauthorized error?",
+          "options": [
+            "HttpResponseError",
+            "KeyError",
+            "AuthException",
+            "ValueError"
+          ],
+          "answer": "HttpResponseError",
+          "type": "hard",
+          "explanation": "✅ SDK raises HttpResponseError on non-success codes :contentReference[oaicite:15]{index=15}."
+        },
+        {
+          "question": "Which pip package should you install for the Python Image Analysis client?",
+          "options": [
+            "azure-ai-vision-imageanalysis",
+            "azure-cognitiveservices-vision",
+            "azure-vision",
+            "azure-computer-vision"
+          ],
+          "answer": "azure-ai-vision-imageanalysis",
+          "type": "hard",
+          "explanation": "✅ Package name as per docs :contentReference[oaicite:16]{index=16}."
+        },
+        {
+          "question": "True or False: You can perform image analysis using environment variables alone without code.",
+          "options": ["True", "False"],
+          "answer": "False",
+          "type": "medium",
+          "explanation": "✅ You need code to create client and call `analyze` :contentReference[oaicite:17]{index=17}."
+        },
+        {
+          "question": "Which bounding structure does OCR return for text lines?",
+          "options": ["bounding_polygon", "rectangle", "box2D", "bboxList"],
+          "answer": "bounding_polygon",
+          "type": "hard",
+          "explanation": "✅ OCR provides bounding_polygon for each line :contentReference[oaicite:18]{index=18}."
+        },
+        {
+          "question": "Scenario: You receive a 'format not supported' error. Likely cause?",
+          "options": [
+            "Wrong image format",
+            "Insufficient permissions",
+            "Model deprecated",
+            "Service not provisioned"
+          ],
+          "answer": "Wrong image format",
+          "type": "medium",
+          "explanation": "✅ Happens if image isn't JPEG/PNG/GIF/BMP/WEBP/ICO/TIFF :contentReference[oaicite:19]{index=19}."
+        },
+        {
+          "question": "Which code block sets up async client in Python?",
+          "options": [
+            "from azure.ai.vision.imageanalysis.aio import ImageAnalysisClient",
+            "import asyncclient",
+            "from azure.async import VisionClient",
+            "import ImageAnalysisAsync"
+          ],
+          "answer": "from azure.ai.vision.imageanalysis.aio import ImageAnalysisClient",
+          "type": "hard",
+          "explanation": "✅ Async client import documented :contentReference[oaicite:20]{index=20}."
+        },
+        {
+          "question": "How do you request multiple features in a single analyze call?",
+          "options": [
+            "visual_features=[VisualFeatures.CAPTION, VisualFeatures.READ]",
+            "options=*",
+            "featuresAll=true",
+            "multi_feature=yes"
+          ],
+          "answer": "visual_features=[VisualFeatures.CAPTION, VisualFeatures.READ]",
+          "type": "medium",
+          "explanation": "✅ showing list usage in samples :contentReference[oaicite:21]{index=21}."
+        },
+        {
+          "question": "Which .NET enum represents tags feature?",
+          "options": [
+            "VisualFeatureTypes.Tags",
+            "VisualFeatures.TAGS",
+            "Feature.Tags",
+            "ImageTags"
+          ],
+          "answer": "VisualFeatureTypes.Tags",
+          "type": "hard",
+          "explanation": "✅ As shown in AI-102 lab code :contentReference[oaicite:22]{index=22}."
+        },
+        {
+          "question": "True or False: Analyze image returns both tags and categories by default.",
+          "options": ["True", "False"],
+          "answer": "False",
+          "type": "medium",
+          "explanation": "✅ You must specify categories in features parameter :contentReference[oaicite:23]{index=23}."
+        },
+        {
+          "question": "Which visual feature detects adult or racy content?",
+          "options": [
+            "VisualFeatureTypes.Adult",
+            "VisualFeatures.SAFETY",
+            "VisualFeatures.ADULT",
+            "VisualFeatureTypes.Safety"
+          ],
+          "answer": "VisualFeatureTypes.Adult",
+          "type": "medium",
+          "explanation": "✅ Adult detection uses VisualFeatureTypes.Adult :contentReference[oaicite:24]{index=24}."
+        },
+        {
+          "question": "Scenario: You want to identify brands/logos — which feature to include?",
+          "options": [
+            "VisualFeatureTypes.Brands",
+            "VisualFeatures.LOGO",
+            "VisualFeatures.BRAND",
+            "VisualFeatureTypes.Tags"
+          ],
+          "answer": "VisualFeatureTypes.Brands",
+          "type": "medium",
+          "explanation": "✅ Used in AI-102 lab :contentReference[oaicite:25]{index=25}."
+        },
+        {
+          "question": "What is the confidence range for captions?",
+          "options": ["0 to 1", "1 to 100", "0 to 10", "0 to 1000"],
+          "answer": "0 to 1",
+          "type": "medium",
+          "explanation": "✅ Captions include confidence float between 0 and 1 :contentReference[oaicite:26]{index=26}."
+        },
+        {
+          "question": "Coding: How do you print tag names in C# quickstart?",
+          "options": [
+            "foreach(var tag in tagsResult.Tags) Console.WriteLine(tag.Name)",
+            "tagsResult.print()",
+            "Console.Write(tagsResult)",
+            "tagsResult.tags.foreach(print)"
+          ],
+          "answer": "foreach(var tag in tagsResult.Tags) Console.WriteLine(tag.Name)",
+          "type": "hard",
+          "explanation": "✅ Example in AI-102 lab shows this loop :contentReference[oaicite:27]{index=27}."
+        },
+        {
+          "question": "True or False: You can analyze GIFs of more than one frame.",
+          "options": ["True", "False"],
+          "answer": "False",
+          "type": "medium",
+          "explanation": "✅ Only single-frame GIF is supported :contentReference[oaicite:28]{index=28}."
+        },
+        {
+          "question": "Which service should be used for handwritten document OCR instead?",
+          "options": [
+            "Document Intelligence Read model",
+            "Vision Read",
+            "Text Analytics OCR",
+            "Form Recognizer"
+          ],
+          "answer": "Document Intelligence Read model",
+          "type": "hard",
+          "explanation": "✅ Doc Intelligence Read is optimized for document OCR :contentReference[oaicite:29]{index=29}."
+        }
+      ]
+    },
+    {
+      "name": "Unit 2: Read text in images",
+      "questions": [
+        {
+          "question": "What capability does the Computer Vision Read API provide?",
+          "options": [
+            "Extracts printed and handwritten text from images",
+            "Translates text",
+            "Performs sentiment analysis",
+            "Generates image captions"
+          ],
+          "answer": "Extracts printed and handwritten text from images",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ The Read API is optimized for OCR on both printed and handwritten text :contentReference[oaicite:1]{index=1}."
+        },
+        {
+          "question": "Which API edition is synchronous and suited for real-time OCR of images?",
+          "options": [
+            "OCR (v4.0)",
+            "Document Read (asynchronous)",
+            "Translation API",
+            "Face API"
+          ],
+          "answer": "OCR (v4.0)",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ OCR v4.0 is synchronous and optimized for in‑the‑wild images :contentReference[oaicite:2]{index=2}."
+        },
+        {
+          "question": "Which option is asynchronous and designed for document-heavy use?",
+          "options": [
+            "Document Read model",
+            "OCR v4.0",
+            "Text Analytics",
+            "Speech-to-Text"
+          ],
+          "answer": "Document Read model",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Document Read asynchronously handles multi-page PDFs and scanned docs :contentReference[oaicite:3]{index=3}."
+        },
+        {
+          "question": "True or False: The Read API can detect multiple languages in one image automatically.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ By default it extracts all visible text without requiring a language code :contentReference[oaicite:4]{index=4}."
+        },
+        {
+          "question": "Which Python method submits an image for OCR?",
+          "options": [
+            "client.begin_read()",
+            "client.read_in_stream()",
+            "client.submit_ocr()",
+            "client.extract_text()"
+          ],
+          "answer": "client.begin_read()",
+          "type": "hard",
+          "explanation": "✅ Python SDK uses `begin_read()` to start the OCR operation :contentReference[oaicite:5]{index=5}."
+        },
+        {
+          "question": "How do you retrieve OCR results after submission?",
+          "options": [
+            "poll the returned operation object",
+            "call client.get_text()",
+            "await client.read()",
+            "use synchronous method only"
+          ],
+          "answer": "poll the returned operation object",
+          "type": "medium",
+          "explanation": "✅ You get an LROPoller from `begin_read()` and poll until done :contentReference[oaicite:6]{index=6}."
+        },
+        {
+          "question": "What is a typical operation suffix in REST for Read API?",
+          "options": ["/read/analyze", "/ocr", "/extract", "/vision/read"],
+          "answer": "/vision/v3.2/read/analyze",
+          "type": "hard",
+          "explanation": "✅ This endpoint is used for Read v3.2 OCR operations :contentReference[oaicite:7]{index=7}."
+        },
+        {
+          "question": "Which parameter can force a specific language during OCR?",
+          "options": ["language", "lang", "locale", "textLang"],
+          "answer": "language",
+          "type": "medium",
+          "explanation": "✅ You can set the `language` query to focus OCR on one language :contentReference[oaicite:8]{index=8}."
+        },
+        {
+          "question": "What is the default reading order for Latin languages?",
+          "options": [
+            "Left-to-right, top-to-bottom",
+            "Right-to-left",
+            "Bottom-to-top",
+            "Random"
+          ],
+          "answer": "Left-to-right, top-to-bottom",
+          "type": "medium",
+          "explanation": "✅ That is the default reading order when language unset :contentReference[oaicite:9]{index=9}."
+        },
+        {
+          "question": "Which extra parameter enables 'natural' reading order?",
+          "options": [
+            "readingOrder=natural",
+            "orderMode=natural",
+            "layout=natural",
+            "orderType=natural"
+          ],
+          "answer": "readingOrder=natural",
+          "type": "hard",
+          "explanation": "✅ Use `readingOrder=natural` for more human-like ordering :contentReference[oaicite:10]{index=10}."
+        },
+        {
+          "question": "Scenario: You only need text from the middle pages of a PDF. How?",
+          "options": [
+            "Set pages=3-5",
+            "Pass page range in body",
+            "Extract PDF manually",
+            "OCR can't do page filters"
+          ],
+          "answer": "Set pages=3-5",
+          "type": "medium",
+          "explanation": "✅ Use the `pages` query parameter to specify pages :contentReference[oaicite:11]{index=11}."
+        },
+        {
+          "question": "Which visual feature is NOT provided by the Read API?",
+          "options": [
+            "BoundingBoxes",
+            "Text content",
+            "Font color",
+            "Confidence score"
+          ],
+          "answer": "Font color",
+          "type": "medium",
+          "explanation": "✅ OCR returns text, positions, confidence, not color info."
+        },
+        {
+          "question": "What object holds the bounding polygon of a text line in JSON?",
+          "options": ["boundingPolygon", "rectangle", "poly", "coords"],
+          "answer": "boundingPolygon",
+          "type": "hard",
+          "explanation": "✅ Lines include `boundingPolygon` with coordinate arrays :contentReference[oaicite:12]{index=12}."
+        },
+        {
+          "question": "Which model-version can be specified in Read API?",
+          "options": ["2022-04-30", "2020-01-01", "2023-07-15", "2021-01-01"],
+          "answer": "2022-04-30",
+          "type": "hard",
+          "explanation": "✅ Model-version 2022‑04‑30 is documented in Read v3.2 API :contentReference[oaicite:13]{index=13}."
+        },
+        {
+          "question": "True or False: Handwritten text is supported in English only.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ Handwritten text support is currently English-only :contentReference[oaicite:14]{index=14}."
+        },
+        {
+          "question": "Which SDK exception arises on bad key?",
+          "options": [
+            "HttpResponseError",
+            "KeyError",
+            "UnauthorizedError",
+            "ValueError"
+          ],
+          "answer": "HttpResponseError",
+          "type": "hard",
+          "explanation": "✅ Python SDK throws HttpResponseError for HTTP 401/403 :contentReference[oaicite:15]{index=15}."
+        },
+        {
+          "question": "Why might OCR miss small font text?",
+          "options": [
+            "Image resolution too low",
+            "Wrong language",
+            "Key expired",
+            "OCR only reads large text"
+          ],
+          "answer": "Image resolution too low",
+          "type": "medium",
+          "explanation": "✅ Small or low-res text may not be detected by OCR :contentReference[oaicite:16]{index=16}."
+        },
+        {
+          "question": "Coding: Which pip package is used for Read API in Python?",
+          "options": [
+            "azure-ai-vision",
+            "azure-cognitiveservices-vision-computervision",
+            "azure-ai-textanalytics",
+            "azure-computer-vision"
+          ],
+          "answer": "azure-cognitiveservices-vision-computervision",
+          "type": "medium",
+          "explanation": "✅ The quickstart uses this package :contentReference[oaicite:17]{index=17}."
+        },
+        {
+          "question": "Scenario: You run Read API in browser studio—what do you do?",
+          "options": [
+            "Upload image file or URL",
+            "Use REST client",
+            "Use CLI only",
+            "Need Container"
+          ],
+          "answer": "Upload image file or URL",
+          "type": "medium",
+          "explanation": "✅ Studio allows file upload or URL input :contentReference[oaicite:18]{index=18}."
+        },
+        {
+          "question": "True or False: Read API can extract handwritten text in languages beyond English.",
+          "options": ["True", "False"],
+          "answer": "False",
+          "type": "medium",
+          "explanation": "✅ Handwriting beyond English is not yet supported :contentReference[oaicite:19]{index=19}."
+        },
+        {
+          "question": "Which parameter ensures correct text flow in Latin languages?",
+          "options": [
+            "readingOrder=natural",
+            "flowOrder=true",
+            "order=native",
+            "layout=flow"
+          ],
+          "answer": "readingOrder=natural",
+          "type": "medium",
+          "explanation": "✅ Human-friendly reading order uses that param :contentReference[oaicite:20]{index=20}."
+        },
+        {
+          "question": "Module assessment: True or False—You should wait for completion before accessing OCR results.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ Must poll operation until status == succeeded before reading :contentReference[oaicite:21]{index=21}."
+        },
+        {
+          "question": "Which Python method reads from a local image file?",
+          "options": [
+            "client.begin_read_in_stream()",
+            "client.begin_read_from_file()",
+            "client.read_local()",
+            "client.analyze_file()"
+          ],
+          "answer": "client.begin_read_in_stream()",
+          "type": "hard",
+          "explanation": "✅ `begin_read_in_stream()` processes local image data :contentReference[oaicite:22]{index=22}."
+        },
+        {
+          "question": "Scenario: You want to archive OCR results as JSON. What to use?",
+          "options": [
+            "Save raw operation result",
+            "Copy from console logs",
+            "Screenshot output",
+            "OCR doesn’t support JSON"
+          ],
+          "answer": "Save raw operation result",
+          "type": "medium",
+          "explanation": "✅ Use the operation result's `.as_dict()` or JSON output programmatically."
+        },
+        {
+          "question": "Which scenario calls for Document Read API instead of OCR v4.0?",
+          "options": [
+            "Large PDFs with tables",
+            "Single label sign on image",
+            "Real-time signage capture",
+            "Face detection"
+          ],
+          "answer": "Large PDFs with tables",
+          "type": "hard",
+          "explanation": "✅ Document Read handles structured layouts and large documents :contentReference[oaicite:23]{index=23}."
+        },
+        {
+          "question": "Why is OCR called 'universal script-based'?",
+          "options": [
+            "Supports multiple writing systems",
+            "Uses a single language only",
+            "Detects only Latin",
+            "Requires script input"
+          ],
+          "answer": "Supports multiple writing systems",
+          "type": "medium",
+          "explanation": "✅ The engine supports many scripts for global OCR :contentReference[oaicite:24]{index=24}."
+        }
+      ]
+    },
+    {
+      "name": "Unit 3: Detect, Analyze & Recognize Faces",
+      "questions": [
+        {
+          "question": "What capabilities does the Azure AI Face service offer? (Select 3)",
+          "options": [
+            "Face detection & analysis",
+            "Face verification & identification",
+            "Liveness detection",
+            "Image translation"
+          ],
+          "answer": [
+            "Face detection & analysis",
+            "Face verification & identification",
+            "Liveness detection"
+          ],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "✅ Face service supports detection, analysis, verification, ID, and liveness :contentReference[oaicite:1]{index=1}. Image translation is unrelated."
+        },
+        {
+          "question": "True or False: Face detection must be done before verification or identification.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ Detection provides face ID and bounding boxes needed for later verification and identification :contentReference[oaicite:2]{index=2}."
+        },
+        {
+          "question": "Which method in Python SDK creates the client?",
+          "options": [
+            "FaceClient(endpoint, credential)",
+            "ComputerVisionClient(...)",
+            "VisionClient(...)",
+            "ImageAnalysisClient(...)"
+          ],
+          "answer": "FaceClient(endpoint, credential)",
+          "type": "medium",
+          "explanation": "✅ Use `FaceClient(...)` from `azure.ai.vision.face` :contentReference[oaicite:3]{index=3}."
+        },
+        {
+          "question": "Which of the following detects facial landmarks (e.g., eyes, nose)?",
+          "options": [
+            "Detect with faceLandmarks=True",
+            "AnalyzeObjects",
+            "Read API",
+            "Tag Image"
+          ],
+          "answer": "Detect with faceLandmarks=True",
+          "type": "medium",
+          "explanation": "✅ Landmark detection is part of face detection with appropriate flags :contentReference[oaicite:4]{index=4}."
+        },
+        {
+          "question": "What shape describes location of a face in JSON?",
+          "options": [
+            "faceRectangle",
+            "boundingBox",
+            "locationPolygon",
+            "faceCoords"
+          ],
+          "answer": "faceRectangle",
+          "type": "easy",
+          "explanation": "✅ JSON returns `faceRectangle` with left, top, width, height :contentReference[oaicite:5]{index=5}."
+        },
+        {
+          "question": "Which attributes were recently restricted due to Responsible AI? (Select 2)",
+          "options": ["Emotion", "Age", "Hair color", "Liveness"],
+          "answer": ["Emotion", "Hair color"],
+          "type": "hard",
+          "explanation": "✅ Emotion and some appearance attributes are limited by policy :contentReference[oaicite:6]{index=6}."
+        },
+        {
+          "question": "Scenario: You received an 'UnsupportedFeature' error when requesting verification. Likely cause?",
+          "options": [
+            "Liveness not enabled",
+            "Your account lacks verification access",
+            "Invalid image format",
+            "Insufficient endpoint region"
+          ],
+          "answer": "Your account lacks verification access",
+          "type": "hard",
+          "explanation": "✅ Verification/ID require limited access; non-eligible accounts will error :contentReference[oaicite:7]{index=7}."
+        },
+        {
+          "question": "Which API supports 'find similar' faces?",
+          "options": [
+            "FaceClient.find_similar",
+            "VisionClient.compare_faces",
+            "ComputerVisionClient.findFaces",
+            "ImageAnalysisClient.getMatches"
+          ],
+          "answer": "FaceClient.find_similar",
+          "type": "medium",
+          "explanation": "✅ Correct method for similar-face search :contentReference[oaicite:8]{index=8}."
+        },
+        {
+          "question": "True or False: Face identification is 'one-to-many' matching.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ Identification compares against many in a group while verification is 1-to-1 :contentReference[oaicite:9]{index=9}."
+        },
+        {
+          "question": "Which structure groups multiple face templates for identity queries?",
+          "options": [
+            "LargePersonGroup",
+            "FaceCollection",
+            "FaceSet",
+            "GroupLibrary"
+          ],
+          "answer": "LargePersonGroup",
+          "type": "hard",
+          "explanation": "✅ Face service uses `LargePersonGroup` for identification tasks :contentReference[oaicite:10]{index=10}."
+        },
+        {
+          "question": "Coding: To verify two faces, which method is used?",
+          "options": [
+            "face_client.verify_face_to_face()",
+            "face_client.verify_face_to_person()",
+            "face_client.verify",
+            "face_client.check_identity()"
+          ],
+          "answer": "face_client.verify_face_to_face()",
+          "type": "hard",
+          "explanation": "✅ Use `verify_face_to_face` for 1-to-1 comparison."
+        },
+        {
+          "question": "Which feature helps prevent spoofing using photos or videos?",
+          "options": [
+            "Liveness detection",
+            "Face grouping",
+            "Face landmarks",
+            "Face attributes"
+          ],
+          "answer": "Liveness detection",
+          "type": "medium",
+          "explanation": "✅ Liveness confirms presence of a real person :contentReference[oaicite:11]{index=11}."
+        },
+        {
+          "question": "True or False: Face API returns a 'faceId' only if you request it.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ faceId returned when appropriate detection flags are enabled."
+        },
+        {
+          "question": "What does responsible AI guidance warn against with face attributes?",
+          "options": [
+            "Avoid inferring sensitive traits",
+            "Only use high-resolution images",
+            "Store faceTemplates indefinitely",
+            "Use only for marketing"
+          ],
+          "answer": "Avoid inferring sensitive traits",
+          "type": "medium",
+          "explanation": "✅ Responsible guidance discourages gender/ethnicity inference :contentReference[oaicite:12]{index=12}."
+        },
+        {
+          "question": "Scenario: You want more accurate gaze tracking. What helps?",
+          "options": [
+            "Use Detection_03 model for landmarks",
+            "Use generic thumbnail detection",
+            "Enable emotion analysis",
+            "Use OCR"
+          ],
+          "answer": "Use Detection_03 model for landmarks",
+          "type": "hard",
+          "explanation": "✅ Detection_03 gives more accurate landmarks needed for gaze :contentReference[oaicite:13]{index=13}."
+        },
+        {
+          "question": "Which data structure stores individual faces within a person group?",
+          "options": [
+            "Person within LargePersonGroup",
+            "FaceListItem",
+            "FaceReference",
+            "PersonFace"
+          ],
+          "answer": "Person within LargePersonGroup",
+          "type": "hard",
+          "explanation": "✅ Person group holds Person objects containing face data :contentReference[oaicite:14]{index=14}."
+        },
+        {
+          "question": "True or False: Face detection returns results in size-descending order.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ Faces are returned sorted by size descending :contentReference[oaicite:15]{index=15}."
+        },
+        {
+          "question": "Which method trains face group for identification?",
+          "options": [
+            "begin_train()",
+            "train_group()",
+            "start_identify_training()",
+            "model.train()"
+          ],
+          "answer": "begin_train()",
+          "type": "hard",
+          "explanation": "✅ Training for identification uses long-running operation `begin_train()` :contentReference[oaicite:16]{index=16}."
+        },
+        {
+          "question": "Why use FaceSessionClient?",
+          "options": [
+            "For liveness detection sessions",
+            "To batch detect faces",
+            "To identify celebrities",
+            "To analyze image text"
+          ],
+          "answer": "For liveness detection sessions",
+          "type": "medium",
+          "explanation": "✅ FaceSessionClient manages liveness detection flows :contentReference[oaicite:17]{index=17}."
+        },
+        {
+          "question": "Scenario: You need to find duplicates in a large dataset. Which feature?",
+          "options": [
+            "Find similar faces",
+            "Face verification",
+            "Analysis only",
+            "Text recognition"
+          ],
+          "answer": "Find similar faces",
+          "type": "medium",
+          "explanation": "✅ `find_similar` is used for de-duplication tasks :contentReference[oaicite:18]{index=18}."
+        },
+        {
+          "question": "What guideline is recommended for facial recognition privacy?",
+          "options": [
+            "Obtain consent and delete biometric data when done",
+            "Store indefinitely for performance",
+            "Use only in background apps",
+            "No logged auditing needed"
+          ],
+          "answer": "Obtain consent and delete biometric data when done",
+          "type": "hard",
+          "explanation": "✅ Responsible AI requires consent and data retention policies :contentReference[oaicite:19]{index=19}."
+        },
+        {
+          "question": "Which data type is returned for face landmarks in Python SDK?",
+          "options": [
+            "FaceLandmarks",
+            "LandmarkArray",
+            "facial_points",
+            "LandmarkCoordinates"
+          ],
+          "answer": "FaceLandmarks",
+          "type": "hard",
+          "explanation": "✅ Python returns a `FaceLandmarks` object :contentReference[oaicite:20]{index=20}."
+        },
+        {
+          "question": "True or False: You can only use one person group per FaceClient instance.",
+          "options": ["True", "False"],
+          "answer": "False",
+          "type": "medium",
+          "explanation": "✅ FaceClient can access multiple person groups."
+        },
+        {
+          "question": "Which call returns emotion attributes if permitted?",
+          "options": [
+            "face_client.detect with attributes=['emotion']",
+            "face_client.analyze_emotion",
+            "computer_vision.detect_emotion",
+            "face_client.read_emotion"
+          ],
+          "answer": "face_client.detect with attributes=['emotion']",
+          "type": "hard",
+          "explanation": "✅ Emotion attribute can be requested via `detect` attachments when allowed :contentReference[oaicite:21]{index=21}."
+        },
+        {
+          "question": "Scenario: You receive empty faces array for clear image. Likely cause?",
+          "options": [
+            "No limited access approval granted",
+            "Incorrect image URL",
+            "Network timeout",
+            "Wrong model version"
+          ],
+          "answer": "No limited access approval granted",
+          "type": "medium",
+          "explanation": "✅ Face detection is restricted until access is granted :contentReference[oaicite:22]{index=22}."
+        },
+        {
+          "question": "Which Visual Studio code snippet imports the FaceClient namespace in Python?",
+          "options": [
+            "from azure.ai.vision.face import FaceClient",
+            "import FaceClient",
+            "from azure.cognitiveservices.face import FaceClient",
+            "import azure.face.client"
+          ],
+          "answer": "from azure.ai.vision.face import FaceClient",
+          "type": "medium",
+          "explanation": "✅ Import matches preview face SDK :contentReference[oaicite:23]{index=23}."
+        },
+        {
+          "question": "True or False: FaceClient identifies min confidence of 0.7 by default.",
+          "options": ["True", "False"],
+          "answer": "False",
+          "type": "hard",
+          "explanation": "✅ Confidence threshold must be specified; no default set automatically."
+        }
+      ]
+    }
+  ]
+}
