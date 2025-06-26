@@ -5,7 +5,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Serve static files from 'static' directory (recommended)
-app.use(express.static(path.join(__dirname, "static")));
+app.use(express.static(path.join(__dirname, "public")));
 
 // Fallback: always serve index.html for SPA routes
 app.get("/", (req, res) => {
