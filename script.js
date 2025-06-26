@@ -3,6 +3,7 @@ let currentUnit = 0;
 let currentQuestion = 0;
 let answered = false;
 let currentModule = "module_1.json";
+let unitScores = []; // Track correct answers per unit
 
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("module-select").addEventListener("change", (e) => {
@@ -19,8 +20,10 @@ function loadModule(moduleFile) {
     .then((response) => response.json())
     .then((data) => {
       quizData = data.units;
+      unitScores = quizData.map(() => []); // Reset scores for each unit
       renderUnitNavbar();
       showQuestion(currentUnit, currentQuestion);
+      renderUnitScore();
     });
 }
 
@@ -106,9 +109,7 @@ function showAnswer(q) {
   let correct, user;
 
   if (isMulti) {
-    document
-      .querySelectorAll('input[name="option"]:checked')
-      .forEach((cb) => selected.push(cb.value));
+    document.querySelectorAll('input[name="option"]:checked').forEach(cb => selected.push(cb.value));
     correct = q.answer.slice().sort().join(", ");
     user = selected.slice().sort().join(", ");
     isCorrect = user === correct;
@@ -118,6 +119,9 @@ function showAnswer(q) {
     correct = q.answer;
     isCorrect = user === correct;
   }
+
+  // Record the answer for scoring
+  unitScores[currentUnit][currentQuestion] = isCorrect;
 
   answerDiv.innerHTML = `
     <div class="answer-box" style="flex-direction: column; gap: 8px;">
@@ -130,6 +134,8 @@ function showAnswer(q) {
       <div class="answer-explanation">${q.explanation}</div>
     </div>
   `;
+
+  renderUnitScore();
 }
 
 document.getElementById("next").onclick = () => {
@@ -145,5 +151,16 @@ document.getElementById("prev").onclick = () => {
     showQuestion(currentUnit, currentQuestion);
   }
 };
+
+function renderUnitScore() {
+  const scoreDiv = document.getElementById("unit-score");
+  if (!quizData) return;
+  const total = quizData[currentUnit].questions.length;
+  const correct = (unitScores[currentUnit] || []).filter(Boolean).length;
+  scoreDiv.innerHTML = `
+    <span>Score</span>
+    <span class="unit-score-badge">${correct} / ${total}</span>
+  `;
+}
 
 // You can add submit logic as needed
