@@ -878,6 +878,567 @@
           "explanation": "✅ Confidence threshold must be specified; no default set automatically."
         }
       ]
+    },
+    {
+      "name": "Unit 4: Classify images",
+      "questions": [
+        {
+          "question": "What does Azure Custom Vision allow you to do?",
+          "options": [
+            "Detect objects in video streams",
+            "Train and deploy custom image classifiers",
+            "Translate text in images",
+            "Perform face recognition"
+          ],
+          "answer": "Train and deploy custom image classifiers",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Custom Vision enables creation of tailored image classification models :contentReference[oaicite:1]{index=1}. Others are unrelated tasks."
+        },
+        {
+          "question": "Which classification types are supported? (Select 2)",
+          "options": [
+            "Multiclass",
+            "Multilabel",
+            "Binary only",
+            "Hierarchical"
+          ],
+          "answer": ["Multiclass", "Multilabel"],
+          "type": "multiple",
+          "difficulty": "medium",
+          "explanation": "✅ Supports multiclass (one tag per image) and multilabel (multiple tags) :contentReference[oaicite:2]{index=2}."
+        },
+        {
+          "question": "Scenario: You need to tag an image with 'apple' and 'fresh'. Which type should you choose?",
+          "options": [
+            "Multiclass",
+            "Multilabel",
+            "Hierarchical",
+            "Single label"
+          ],
+          "answer": "Multilabel",
+          "type": "medium",
+          "explanation": "✅ Multilabel enables multiple tags per image :contentReference[oaicite:3]{index=3}."
+        },
+        {
+          "question": "Which domain is best for food images?",
+          "options": ["Retail", "Food", "Generic", "Landmarks"],
+          "answer": "Food",
+          "type": "medium",
+          "explanation": "✅ The Food domain optimizes for dishes and ingredients :contentReference[oaicite:4]{index=4}."
+        },
+        {
+          "question": "True or False: You can change the classification type after project creation.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ You can update between multicl/class after creation :contentReference[oaicite:5]{index=5}."
+        },
+        {
+          "question": "Approximately how many images per tag are recommended to start?",
+          "options": ["50", "10", "500", "1000"],
+          "answer": "50",
+          "type": "medium",
+          "explanation": "✅ Docs suggest ~50 images/tag to bootstrap model :contentReference[oaicite:6]{index=6}."
+        },
+        {
+          "question": "Coding: Which client class is used to train a model in Python?",
+          "options": [
+            "CustomVisionTrainingClient",
+            "VisionClient",
+            "ImageClassifierClient",
+            "TransportTrainingClient"
+          ],
+          "answer": "CustomVisionTrainingClient",
+          "type": "hard",
+          "explanation": "✅ Python quickstart uses `CustomVisionTrainingClient(...)`:contentReference[oaicite:7]{index=7}."
+        },
+        {
+          "question": "Which authentication is required to publish a model for prediction?",
+          "options": [
+            "Prediction resource key",
+            "Subscription key",
+            "Admin-level Azure login",
+            "No authentication"
+          ],
+          "answer": "Prediction resource key",
+          "type": "medium",
+          "explanation": "✅ Prediction API access uses prediction resource key :contentReference[oaicite:8]{index=8}."
+        },
+        {
+          "question": "What does 'publish iteration' do?",
+          "options": [
+            "Makes model available via REST endpoint",
+            "Exports model to ONNX",
+            "Saves images",
+            "Deletes training data"
+          ],
+          "answer": "Makes model available via REST endpoint",
+          "type": "medium",
+          "explanation": "✅ Publishing makes the trained iteration accessible for predictions :contentReference[oaicite:9]{index=9}."
+        },
+        {
+          "question": "Scenario: You want to test your model programmatically after training. Which SDK is used?",
+          "options": [
+            "CustomVisionPredictionClient",
+            "CustomVisionTrainingClient",
+            "ImageAnalysisClient",
+            "ComputerVisionClient"
+          ],
+          "answer": "CustomVisionPredictionClient",
+          "type": "hard",
+          "explanation": "✅ Prediction client is used for evaluating models :contentReference[oaicite:10]{index=10}."
+        },
+        {
+          "question": "Which method performs single-image classification?",
+          "options": [
+            "predict_image",
+            "classify_image",
+            "analyze_class",
+            "detect_labels"
+          ],
+          "answer": "classify_image",
+          "type": "hard",
+          "explanation": "✅ Example uses `predictor.classify_image(...)` :contentReference[oaicite:11]{index=11}."
+        },
+        {
+          "question": "True or False: Confidence scores are shown as fractions between 0 and 1.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ Probabilities returned are normalized between 0 and 1 :contentReference[oaicite:12]{index=12}."
+        },
+        {
+          "question": "What is a threshold used for?",
+          "options": [
+            "Filter predictions by confidence",
+            "Set learning rate",
+            "Adjust image size",
+            "Increase storage"
+          ],
+          "answer": "Filter predictions by confidence",
+          "type": "medium",
+          "explanation": "✅ You can set a confidence threshold to ignore low-confidence labels :contentReference[oaicite:13]{index=13}."
+        },
+        {
+          "question": "Which formats can the interface export models to? (Select 2)",
+          "options": ["ONNX", "CoreML", "CSV", "MP3"],
+          "answer": ["ONNX", "CoreML"],
+          "type": "medium",
+          "explanation": "✅ Custom Vision supports ONNX and CoreML exports :contentReference[oaicite:14]{index=14}."
+        },
+        {
+          "question": "Which pricing tier offers free trials?",
+          "options": ["F0", "S1", "P0", "B1"],
+          "answer": "F0",
+          "type": "ease",
+          "explanation": "✅ F0 is the free tier for Custom Vision :contentReference[oaicite:15]{index=15}."
+        },
+        {
+          "question": "Scenario: You want classification offline, what should you do?",
+          "options": [
+            "Export model to container",
+            "Use OCR",
+            "Use Face API",
+            "Use Computer Vision"
+          ],
+          "answer": "Export model to container",
+          "type": "medium",
+          "explanation": "✅ Exporting enables edge deployment via containers :contentReference[oaicite:16]{index=16}."
+        },
+        {
+          "question": "What is the purpose of tag images?",
+          "options": [
+            "Provide labeled data for training",
+            "Generate thumbnails",
+            "Compress images",
+            "Translate image text"
+          ],
+          "answer": "Provide labeled data for training",
+          "type": "medium",
+          "explanation": "✅ Tagging teaches the model what to identify :contentReference[oaicite:17]{index=17}."
+        },
+        {
+          "question": "True or False: You can train a model with fewer than 10 images per tag.",
+          "options": ["True", "False"],
+          "answer": "False",
+          "type": "medium",
+          "explanation": "✅ Documentation suggests at least ~50 images/tag; lower counts reduce performance."
+        },
+        {
+          "question": "Which metric measures model's ability to differentiate between classes?",
+          "options": [
+            "Precision and recall",
+            "Frame rate",
+            "Latency",
+            "Storage usage"
+          ],
+          "answer": "Precision and recall",
+          "type": "hard",
+          "explanation": "✅ These are used in the performance metrics dashboard :contentReference[oaicite:18]{index=18}."
+        },
+        {
+          "question": "Which language SDK supports both training and prediction? (Select 2)",
+          "options": ["Python", "Go", "JavaScript", "C#"],
+          "answer": ["Python", "C#"],
+          "type": "medium",
+          "explanation": "✅ Both Python and C# have full SDK support :contentReference[oaicite:19]{index=19}."
+        },
+        {
+          "question": "Scenario: Your predictions are low confidence—what should you do?",
+          "options": [
+            "Add more labeled images",
+            "Increase endpoint tier",
+            "Use OCR instead",
+            "Resize images to smaller size"
+          ],
+          "answer": "Add more labeled images",
+          "type": "medium",
+          "explanation": "✅ More data helps improve accuracy :contentReference[oaicite:20]{index=20}."
+        },
+        {
+          "question": "Coding: Create a tag named 'Cat' in C# — which method?",
+          "options": [
+            "trainer.CreateTag(project.Id, \"Cat\")",
+            "trainer.AddLabel(\"Cat\")",
+            "predictor.CreateTag(\"Cat\")",
+            "client.NewTag(\"Cat\")"
+          ],
+          "answer": "trainer.CreateTag(project.Id, \"Cat\")",
+          "type": "hard",
+          "explanation": "✅ Code snippet shows tag creation via `CreateTag(...)` :contentReference[oaicite:21]{index=21}."
+        },
+        {
+          "question": "True or False: The Custom Vision portal lets you delete projects.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "ease",
+          "explanation": "✅ Projects can be deleted via portal :contentReference[oaicite:22]{index=22}."
+        },
+        {
+          "question": "Which Visual Studio Code extension can speed up lab work?",
+          "options": [
+            "Azure IoT Tools",
+            "Azure Custom Vision",
+            "Python",
+            "Live Share"
+          ],
+          "answer": "Azure Custom Vision",
+          "type": "medium",
+          "explanation": "✅ There is a Custom Vision extension to streamline workflows."
+        },
+        {
+          "question": "In module assessment: True or False—You need both training and prediction resources.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ Training and prediction each require their own resource :contentReference[oaicite:23]{index=23}."
+        },
+        {
+          "question": "What is 'active learning' in Custom Vision?",
+          "options": [
+            "Reviewing auto-tagged images to improve model",
+            "Adding new visual features",
+            "Applying OCR on tags",
+            "Automated checking of images"
+          ],
+          "answer": "Reviewing auto-tagged images to improve model",
+          "type": "hard",
+          "explanation": "✅ Custom Vision suggests images for review to enhance model :contentReference[oaicite:24]{index=24}."
+        }
+      ]
+    },
+    {
+      "name": "Unit 5: Detect objects in images",
+      "questions": [
+        {
+          "question": "What is the main purpose of object detection in Azure Custom Vision?",
+          "options": [
+            "Classify entire image into one label",
+            "Locate and classify multiple objects within an image",
+            "Detect text in images",
+            "Analyze face attributes"
+          ],
+          "answer": "Locate and classify multiple objects within an image",
+          "type": "single",
+          "difficulty": "medium",
+          "explanation": "✅ Object detection identifies and localizes multiple objects, unlike image classification which labels the full image."
+        },
+        {
+          "question": "Which annotation is required for object detection training?",
+          "options": [
+            "Bounding box + label",
+            "Single tag per image",
+            "Image caption",
+            "None"
+          ],
+          "answer": "Bounding box + label",
+          "type": "medium",
+          "explanation": "✅ Object detection requires bounding boxes with labels for each object in training images."
+        },
+        {
+          "question": "What type of Custom Vision project should you create for object detection?",
+          "options": [
+            "Object detection",
+            "Classification",
+            "Segmentation",
+            "OCR"
+          ],
+          "answer": "Object detection",
+          "type": "easy",
+          "explanation": "✅ You must select the object detection project type to enable bounding box training."
+        },
+        {
+          "question": "Which domain optimizes for traffic-related objects?",
+          "options": ["None (General)", "Retail", "Landmarks", "Food"],
+          "answer": "None (General)",
+          "type": "medium",
+          "explanation": "✅ The general ('none') domain handles diverse objects; others serve specific use cases."
+        },
+        {
+          "question": "True or False: You can mix tagged and untagged images in training.",
+          "options": ["True", "False"],
+          "answer": "False",
+          "type": "medium",
+          "explanation": "❌ Only fully tagged images with bounding boxes should be used in object detection training."
+        },
+        {
+          "question": "Approximately how many images per object class are recommended?",
+          "options": ["50", "10", "500", "1000"],
+          "answer": "50",
+          "type": "medium",
+          "explanation": "✅ Microsoft recommends starting with ~50 images per object class to bootstrap detection performance."
+        },
+        {
+          "question": "Scenario: You want to detect small objects that are hard to see. What should you do?",
+          "options": [
+            "Use close-up images and annotate accurately",
+            "Reduce image size",
+            "Use only classification project",
+            "Use text captions instead"
+          ],
+          "answer": "Use close-up images and annotate accurately",
+          "type": "medium",
+          "explanation": "✅ Detecting small objects requires higher resolution images and precise bounding boxes."
+        },
+        {
+          "question": "Which Python SDK client is used for training object detection?",
+          "options": [
+            "CustomVisionTrainingClient",
+            "ObjectDetectionTrainer",
+            "VisionClassifier",
+            "ImageAnalysisClient"
+          ],
+          "answer": "CustomVisionTrainingClient",
+          "type": "hard",
+          "explanation": "✅ The training client `CustomVisionTrainingClient` is used for both classification and object detection."
+        },
+        {
+          "question": "Which method publishes a trained object detection model?",
+          "options": [
+            "client.publish_iteration",
+            "client.deploy_model",
+            "client.publish_model",
+            "client.create_export"
+          ],
+          "answer": "client.publish_iteration",
+          "type": "hard",
+          "explanation": "✅ You publish an iteration of a Custom Vision project using `publish_iteration`."
+        },
+        {
+          "question": "True or False: Once an object detection model is published, you can get predictions with bounding boxes.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ Published models return both object labels and bounding boxes in predictions."
+        },
+        {
+          "question": "Scenario: You want the model to detect whether images contain a helmet and safety vest together. What project type and labeling approach?",
+          "options": [
+            "Object detection – bounding boxes per item",
+            "Classification – tags for helmet and vest",
+            "Classification – combined tag",
+            "OCR – text on vest"
+          ],
+          "answer": "Object detection – bounding boxes per item",
+          "type": "medium",
+          "explanation": "✅ Object detection with separate bounding boxes allows identifying both items in one image."
+        },
+        {
+          "question": "Which Python SDK client is used for getting prediction on images?",
+          "options": [
+            "CustomVisionPredictionClient",
+            "CustomVisionTrainingClient",
+            "VisionPredictionClient",
+            "DetectionClient"
+          ],
+          "answer": "CustomVisionPredictionClient",
+          "type": "hard",
+          "explanation": "✅ Prediction client `CustomVisionPredictionClient` is appropriate for post-training inference."
+        },
+        {
+          "question": "What parameter is required to specify the published model version?",
+          "options": [
+            "iteration_name",
+            "model_version",
+            "published_iteration_name",
+            "model_id"
+          ],
+          "answer": "published_iteration_name",
+          "type": "hard",
+          "explanation": "✅ The SDK requires the `published_iteration_name` to use the correct model endpoint."
+        },
+        {
+          "question": "Which property in prediction response holds bounding box data?",
+          "options": ["bounding_box", "box", "rectangle", "region"],
+          "answer": "bounding_box",
+          "type": "medium",
+          "explanation": "✅ The JSON response includes a `bounding_box` field describing the object's location."
+        },
+        {
+          "question": "True or False: You must export object detection models to use them offline.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ For offline or edge deployment, you must export to TensorFlow, ONNX, or CoreML container."
+        },
+        {
+          "question": "Which export formats are supported? (Select 2)",
+          "options": ["TensorFlow", "ONNX", "CSV", "MP3"],
+          "answer": ["TensorFlow", "ONNX"],
+          "type": "medium",
+          "explanation": "✅ Custom Vision supports TensorFlow and ONNX exports for object detection models."
+        },
+        {
+          "question": "Module assessment: True or False—You need separate training and prediction resources.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ Custom Vision requires dedicated training and prediction resources to function."
+        },
+        {
+          "question": "Scenario: You observe bounding boxes are duplicated heavily. What should you check?",
+          "options": [
+            "Set Non-Max Suppression correctly in prediction threshold",
+            "Reduce dataset size",
+            "Change annotation format",
+            "Switch to classification"
+          ],
+          "answer": "Set Non-Max Suppression correctly in prediction threshold",
+          "type": "hard",
+          "explanation": "✅ Proper suppression of duplicate boxes relies on threshold adjustments in detection settings."
+        },
+        {
+          "question": "Which metric is used to evaluate object detection accuracy?",
+          "options": [
+            "Mean average precision (mAP)",
+            "F1-score per image",
+            "ROC‑AUC",
+            "BLEU score"
+          ],
+          "answer": "Mean average precision (mAP)",
+          "type": "hard",
+          "explanation": "✅ mAP is a standard metric used to measure detection performance over IoU thresholds."
+        },
+        {
+          "question": "Coding: To create a new object tag called 'Car', which method is used?",
+          "options": [
+            "trainer.create_tag(project.id, 'Car')",
+            "trainer.create_object_tag('Car')",
+            "trainer.add_tag('Car')",
+            "trainer.new_class('Car')"
+          ],
+          "answer": "trainer.create_tag(project.id, 'Car')",
+          "type": "hard",
+          "explanation": "✅ Tag creation is done via `create_tag()` with project ID and name parameters."
+        },
+        {
+          "question": "True or False: You can add tags to images after model is published.",
+          "options": ["True", "False"],
+          "answer": "True",
+          "type": "medium",
+          "explanation": "✅ You can continue labeling and retraining new iterations post-publish."
+        },
+        {
+          "question": "Scenario: You need to detect rotated objects. What advice is best?",
+          "options": [
+            "Include rotated versions in training and annotate all",
+            "Only include upright objects",
+            "Use only classification",
+            "Use OCR to detect orientation"
+          ],
+          "answer": "Include rotated versions in training and annotate all",
+          "type": "medium",
+          "explanation": "✅ Training data should reflect object orientation variance to improve detection."
+        },
+        {
+          "question": "Which method triggers model training?",
+          "options": [
+            "trainer.train_project(project.id)",
+            "trainer.start_training(project)",
+            "trainer.begin_training()",
+            "trainer.create_iteration()"
+          ],
+          "answer": "trainer.train_project(project.id)",
+          "type": "hard",
+          "explanation": "✅ Training is initiated using `train_project()` in the training client."
+        },
+        {
+          "question": "Why would you set a lower confidence threshold in predictions?",
+          "options": [
+            "To capture more potential objects (with more false positives)",
+            "To reduce false positives",
+            "To speed up inference",
+            "To lower memory usage"
+          ],
+          "answer": "To capture more potential objects (with more false positives)",
+          "type": "medium",
+          "explanation": "✅ Lower threshold results in more detections but potentially more incorrect ones."
+        },
+        {
+          "question": "Which Visual Studio Code extension supports Custom Vision workflows?",
+          "options": [
+            "Azure Custom Vision",
+            "Python",
+            "Azure Storage",
+            "Live Share"
+          ],
+          "answer": "Azure Custom Vision",
+          "type": "medium",
+          "explanation": "✅ The Azure Custom Vision extension simplifies dataset labeling and retraining."
+        },
+        {
+          "question": "True or False: You need bounding boxes in inference calls to get localization.",
+          "options": ["True", "False"],
+          "answer": "False",
+          "type": "medium",
+          "explanation": "✅ The model returns bounding boxes in inference results automatically without annotation."
+        },
+        {
+          "question": "Scenario: You want to move object detection to edge device. What’s required?",
+          "options": [
+            "Export model and deploy container",
+            "Only reuse training resource",
+            "Switch to classification",
+            "Use desktop-only APIs"
+          ],
+          "answer": "Export model and deploy container",
+          "type": "medium",
+          "explanation": "✅ Edge deployment requires exported model and container runtime."
+        },
+        {
+          "question": "What improvement leverages 'active learning' in object detection?",
+          "options": [
+            "Reviewing and labeling suggested images to refine detection",
+            "Adjusting bounding boxes automatically",
+            "Translating labels to other languages",
+            "Compressing images for faster upload"
+          ],
+          "answer": "Reviewing and labeling suggested images to refine detection",
+          "type": "hard",
+          "explanation": "✅ Active learning suggests ambiguous detections for review to improve model iteratively."
+        }
+      ]
     }
   ]
 }
